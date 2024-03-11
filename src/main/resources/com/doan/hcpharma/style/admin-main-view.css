@@ -1,0 +1,96 @@
+.white-bg {
+    -fx-background-color: #fff;
+}
+
+.linear-background-color {
+    -fx-background-color: linear-gradient(#009d80,#036759);
+}
+
+.gray-background {
+    -fx-background-color: #E5E4E2;
+}
+
+.linear-blue-color {
+    -fx-background-color: linear-gradient(#20A4F3,#182B3A);
+}
+
+.linear-red-color {
+    -fx-background-color: linear-gradient(#44000B,#E0455F);
+}
+
+.linear-yellow-color {
+    -fx-background-color: linear-gradient( #D1A500 , #744B0F  );
+}
+
+.linear-green-color {
+    -fx-background-color: linear-gradient(#009d80,#036759);
+}
+
+.shadow {
+     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+.drop-shadow {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+}
+
+.bg-color {
+    -fx-background-color: #294B29
+}
+
+.radius {
+    -fx-background-radius: 10px;
+}
+
+.btn-main {
+    -fx-font-size: 13px;
+    -fx-background-color: transparent;
+    -fx-border-color: #fff;
+    -fx-border-width: 1px;
+    -fx-text-fill: #fff;
+    -fx-font-family: Arial;
+    -fx-cursor: hand;
+    -fx-border-radius: 5px;
+    -fx-transition: 0.2s ease-in-out
+}
+
+.btn-main:hover {
+    -fx-background-color: #fff;
+    -fx-text-fill: #294B29;
+}
+
+.header-line-admin {
+    -fx-border-color: linear-gradient(#009d80,#036759);
+    -fx-border-width: 0 0 0 2px;
+    -fx-padding: 0 0 0 4px
+}
+
+.header-admin {
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: #d4d4d4
+}
+
+
+.table-view{
+    -fx-padding: 0;
+    -fx-border-radius: 8px;
+    -fx-border-color: linear-gradient(to bottom right, #009d80,#036759);
+}
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom right, #009d80,#036759);
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 8px 8px 0 0 ;
+}
+.table-view .column-header, .filter{
+    -fx-size: 40px;
+    -fx-background-color: transparent;
+}
+.table-view .column-header .label{
+    -fx-font-family: Arial;
+    -fx-text-fill: #fff;
+}
+
+.hover-button:hover {
+    -fx-cursor: hand;
+}
+

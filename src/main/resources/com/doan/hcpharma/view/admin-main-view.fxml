@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="white-bg" stylesheets="@../style/admin-main-view.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doan.hcpharma.controller.MainController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="7.0" prefHeight="750.4" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="40.0" prefWidth="1086.0" stylesheets="@../style/admin-main-view.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-1.0" layoutY="-2.0" prefHeight="42.0" prefWidth="200.0" styleClass="linear-background-color">
+                           <children>
+                              <Text fill="WHITE" layoutX="45.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HC PHARMA">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <Circle fill="DODGERBLUE" layoutX="950.0" layoutY="21.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="135.0" />
+                        <Label layoutX="974.0" layoutY="12.0" text="Đang hoạt động" AnchorPane.rightAnchor="38.8" />
+                        <Circle fill="#00c120" layoutX="1072.0" layoutY="21.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="22.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="768.0" layoutY="12.0" prefHeight="18.0" prefWidth="156.0" text="Phạm Văn Chính" AnchorPane.rightAnchor="176.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="tabLable" layoutX="206.0" layoutY="6.0" styleClass="header-line-admin" stylesheets="@../style/admin-main-view.css" text="Tổng quan" AnchorPane.leftAnchor="206.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="691.8000000000001" layoutY="13.0" prefWidth="118.0" text="DD/MM/YYYY" textAlignment="RIGHT" AnchorPane.rightAnchor="289.79999999999995" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="header-admin" />
+                        <String fx:value="white-bg" />
+                     </styleClass>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="710.0" prefWidth="199.0" styleClass="linear-background-color" stylesheets="@../style/admin-main-view.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button layoutX="5.0" layoutY="249.0" mnemonicParsing="false" onAction="#showMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thuốc" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="5.0" layoutY="291.0" mnemonicParsing="false" onAction="#showStorageTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Khu vực lưu trữ" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="5.0" layoutY="357.0" mnemonicParsing="false" onAction="#showCustomerTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Khách hàng" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="5.0" layoutY="399.0" mnemonicParsing="false" onAction="#showEmployeeTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Nhân viên" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="5.0" layoutY="440.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Nhà cung cấp" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="6.0" layoutY="506.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Hóa đơn bán hàng" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="6.0" layoutY="548.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Hóa đơn nhập thuốc" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="6.0" layoutY="141.0" mnemonicParsing="false" onAction="#showOverviewTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Tổng quan" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="5.0" layoutY="614.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Quản lý tài khoản" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="5.0" layoutY="656.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thông tin tài khoản" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="6.0" layoutY="183.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thống kê" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="44.0" fitWidth="43.0" layoutX="81.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/user.png" />
+                           </image>
+                        </ImageView>
+                        <Line endX="97.59999084472656" endY="-7.62939453125E-5" layoutX="100.0" layoutY="103.0" startX="-100.00001525878906" startY="-6.103515625E-5">
+                           <stroke>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color green="1.0" blue="0.25" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006729475100942127">
+                                       <color>
+                                          <Color green="1.0" blue="0.25" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </stroke>
+                        </Line>
+                        <Label layoutX="11.0" layoutY="54.0" text="Chức vụ" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="76.0" text="Tên" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="69.0" layoutY="54.0" prefHeight="19.0" prefWidth="106.0" text="Quản lý" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="69.0" layoutY="76.0" prefHeight="19.0" prefWidth="120.0" text="Phạm Văn Chính" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/bar-chart.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/drugs.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/map.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/customer.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/teamwork.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/parcel.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/invoice.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="13.0" layoutY="556.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/invoice%20(1).png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="13.0" layoutY="622.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/management.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="13.0" layoutY="664.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/user%20(2).png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="radius" stylesheets="@../style/admin-main-view.css" BorderPane.alignment="CENTER">
+                     <children>
+
+<!--                        Overview Tab-->
+                        <AnchorPane fx:id="overviewTab" layoutX="225.0" layoutY="212.0" prefHeight="710.0" prefWidth="902.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="200.0" prefWidth="879.0" stylesheets="@../style/admin-main-view.css" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="14.0">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <ScrollPane layoutX="22.0" prefHeight="200.0" prefWidth="877.5999999999999" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <AnchorPane prefHeight="200.0" prefWidth="1100.0">
+                                             <children>
+                                                <AnchorPane layoutX="14.0" layoutY="17.0" prefHeight="156.0" prefWidth="227.0" stylesheets="@../style/admin-main-view.css">
+                                                   <styleClass>
+                                                      <String fx:value="linear-red-color" />
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                   </styleClass>
+                                                   <children>
+                                                      <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/medicine.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="totalMedicine" alignment="CENTER_RIGHT" layoutX="72.0" layoutY="21.0" prefHeight="19.0" prefWidth="134.0" text="100" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="122.0" prefHeight="19.0" prefWidth="134.0" text="Số lượng thuốc" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="289.0" layoutY="22.0" prefHeight="156.0" prefWidth="227.0" stylesheets="@../style/admin-main-view.css">
+                                                   <styleClass>
+                                                      <String fx:value="linear-yellow-color" />
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                   </styleClass>
+                                                   <children>
+                                                      <Label fx:id="totoalCash" alignment="CENTER_RIGHT" layoutX="72.0" layoutY="21.0" prefHeight="19.0" prefWidth="134.0" text="4.900.000 đ" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="122.0" prefHeight="19.0" prefWidth="134.0" text="Doanh số bán hàng" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="14.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/money.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="565.0" layoutY="22.0" prefHeight="156.0" prefWidth="227.0" stylesheets="@../style/admin-main-view.css">
+                                                   <styleClass>
+                                                      <String fx:value="linear-background-color" />
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                   </styleClass>
+                                                   <children>
+                                                      <Label fx:id="toatalOrder" alignment="CENTER_RIGHT" layoutX="72.0" layoutY="21.0" prefHeight="19.0" prefWidth="134.0" text="23" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="122.0" prefHeight="19.0" prefWidth="134.0" text="Tổng hóa đơn đã tạo" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="14.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/bill.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="843.0" layoutY="22.0" prefHeight="156.0" prefWidth="227.0" stylesheets="@../style/admin-main-view.css">
+                                                   <styleClass>
+                                                      <String fx:value="linear-blue-color" />
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                   </styleClass>
+                                                   <children>
+                                                      <Label fx:id="totalCustomer" alignment="CENTER_RIGHT" layoutX="72.0" layoutY="21.0" prefHeight="19.0" prefWidth="134.0" text="10" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="122.0" prefHeight="19.0" prefWidth="134.0" text="Khách hàng" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="14.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/user%20(1).png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="11.2" layoutY="224.0" prefHeight="478.0" prefWidth="878.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="224.0">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="14.0" layoutY="14.4" prefHeight="450.0" prefWidth="471.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="13.200000000000045" AnchorPane.topAnchor="14.0">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <TableView layoutX="120.0" layoutY="32.0" prefHeight="418.0" prefWidth="474.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+                                            <columns>
+                                              <TableColumn prefWidth="81.59999752044678" text="Mã HĐ" />
+                                              <TableColumn prefWidth="76.00003051757812" text="Mã KH" />
+                                                <TableColumn prefWidth="111.199951171875" text="Mã NV" />
+                                                <TableColumn prefWidth="106.4000244140625" text="Ngày lập HĐ" />
+                                                <TableColumn prefWidth="94.40001220703124" text="Tổng tiền" />
+                                            </columns>
+                                          </TableView>
+                                          <Label layoutX="5.0" layoutY="6.0" styleClass="header-line-admin" stylesheets="@../style/admin-main-view.css" text="Hóa đơn đã tạo">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="494.0" layoutY="12.0" prefHeight="210.0" prefWidth="370.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="251.99999999999997" AnchorPane.leftAnchor="494.4" AnchorPane.rightAnchor="13.199999999999932" AnchorPane.topAnchor="11.999999999999972">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <AreaChart prefHeight="288.0" prefWidth="435.2" title="Doanh số theo ngày" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </AreaChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="494.4" layoutY="230.6" prefHeight="233.0" prefWidth="370.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="10.199999999999989" AnchorPane.leftAnchor="494.4" AnchorPane.rightAnchor="12.799999999999955">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <BarChart layoutX="-65.0" layoutY="-83.0" prefHeight="317.6" prefWidth="435.2" title="Doanh số theo ngày" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </BarChart>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+
+<!--                        Medicine Tab-->
+                        <AnchorPane fx:id="medicineTab" layoutX="6.0" layoutY="2.0" prefHeight="703.0" prefWidth="900.0" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="2.0">
+                           <children>
+                              <TableView layoutX="7.0" layoutY="49.0" prefHeight="352.0" prefWidth="886.0" AnchorPane.bottomAnchor="301.4000000000001" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="6.399999999999977" AnchorPane.topAnchor="48.80000000000007">
+                                <columns>
+                                  <TableColumn prefWidth="97.60000896453857" text="Mã Thuốc" />
+                                  <TableColumn minWidth="0.0" prefWidth="88.80001831054688" text="Tên" />
+                                    <TableColumn prefWidth="89.59996032714844" text="Loại" />
+                                    <TableColumn prefWidth="67.20001220703125" text="Đơn vị" />
+                                    <TableColumn text="Giá" />
+                                    <TableColumn prefWidth="108.800048828125" text="Nhà cung cấp" />
+                                    <TableColumn prefWidth="103.199951171875" text="Ngày sản xuất" />
+                                    <TableColumn prefWidth="119.99993896484375" text="Ngày hết hạn" />
+                                    <TableColumn minWidth="0.0" prefWidth="141.60015869140625" text="Khu vực lưu trữ" />
+                                    <TableColumn prefWidth="119.99993896484375" text="Mô tả" />
+                                    <TableColumn minWidth="0.0" prefWidth="141.60015869140625" text="Giá nhập" />
+                                    <TableColumn minWidth="0.0" prefWidth="141.60015869140625" text="Ghi chú" />
+                                </columns>
+                              </TableView>
+                              <TextField layoutX="7.0" layoutY="14.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm thuốc">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <AnchorPane layoutX="7.0" layoutY="412.0" prefHeight="286.0" prefWidth="879.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="4.000000000000114" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="13.599999999999909">
+                                 <children>
+                                    <GridPane layoutX="15.2" layoutY="55.0" prefHeight="226.0" prefWidth="455.0" AnchorPane.leftAnchor="15.2" AnchorPane.rightAnchor="410.40000000000003">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.199951171875" minWidth="10.0" prefWidth="133.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="293.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Tên thuốc">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Loại" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Thành phần" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Công dụng" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Giá nhập" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Nhà sản xuất" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Đối tượng sử dụng" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Agilodin 10g" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Kháng dị ứng" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Agimexpharm Việt Nam" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Người lớn và trẻ từ 12 tuổi trở lên" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="100.000 đ" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Giá bán" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="120.000 đ" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Desloratadin 5 mg, Lactose monohydrat, cellulose vi tinh thể type 102, calci phosphat, tinh bột ngô, talc, magnesi stearat, polyvinyl alcohol, PEG 6000, titan dioxyd, màu xanh số 2." GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Điều trị viêm mũi dị ứng, viêm kết mạc dị ứng, ngứa và mày đay liên quan đến histamin" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                    <ImageView fitHeight="233.0" fitWidth="248.0" layoutX="471.39999999999986" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="160.0">
+                                       <image>
+                                          <Image url="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/products/P20414_1.jpg" />
+                                       </image>
+                                       <viewport>
+                                          <Rectangle2D />
+                                       </viewport>
+                                    </ImageView>
+                                    <Button alignment="BASELINE_CENTER" layoutX="735.0" layoutY="97.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="127.0" stylesheets="@../style/admin-main-view.css" text="Xem chi tiết" textFill="WHITE" AnchorPane.rightAnchor="16.999999999999886">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-blue-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/list.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button alignment="BASELINE_CENTER" layoutX="736.0" layoutY="143.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE" AnchorPane.rightAnchor="16.799999999999955">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-yellow-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/edit-text.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button alignment="BASELINE_CENTER" layoutX="735.1999999999999" layoutY="193.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE" AnchorPane.rightAnchor="17.600000000000023">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-red-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/delete.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Label layoutX="372.0" layoutY="11.0" text="THÔNG TIN THUỐC">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="gray-background" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                              </AnchorPane>
+                              <Button alignment="BASELINE_CENTER" layoutX="758.4" layoutY="5.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="139.0" stylesheets="@../style/admin-main-view.css" text="Thêm thuốc mới" textFill="WHITE" AnchorPane.rightAnchor="14.0">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="linear-green-color" />
+                                    <String fx:value="hover-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/addition.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+<!--                        Storage Tab-->
+                        <AnchorPane fx:id="storageTab" prefHeight="707.2" prefWidth="900.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm kho">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <AnchorPane layoutX="14.0" layoutY="73.0" prefHeight="622.0" prefWidth="427.0" AnchorPane.bottomAnchor="11.800000000000068" AnchorPane.leftAnchor="14.0">
+                                 <children>
+                                    <TableView layoutX="33.0" layoutY="-21.6" prefHeight="644.0" prefWidth="427.0" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-22.0">
+                                       <columns>
+                                          <TableColumn prefWidth="74.39999520778656" resizable="false" text="Mã khu vực" />
+                                          <TableColumn prefWidth="128.79999542236328" resizable="false" text="Tên" />
+                                          <TableColumn prefWidth="119.20005798339844" resizable="false" text="Mô tả" />
+                                          <TableColumn prefWidth="111.199951171875" text="Số lượng thuốc" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="445.0" layoutY="50.0" prefHeight="650.0" prefWidth="454.0" stylesheets="@../style/admin-main-view.css">
+                                 <children>
+                                    <TableView layoutX="4.0" layoutY="280.8" prefHeight="334.0" prefWidth="433.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="281.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="Mã thuốc" />
+                                        <TableColumn prefWidth="81.60003662109375" text="Tên thuốc" />
+                                          <TableColumn prefWidth="74.39996337890625" text="Loại" />
+                                          <TableColumn prefWidth="65.60009765625" text="Số lượng" />
+                                          <TableColumn prefWidth="136.800048828125" text="Ngày sản xuất" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="171.0" layoutY="14.0" text="THÔNG TIN KHO">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField layoutX="8.0" layoutY="241.0" prefHeight="30.0" prefWidth="149.0" promptText="Tìm thuốc trong kho">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="gray-background" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                              </AnchorPane>
+                              <Button layoutX="757.0" layoutY="215.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="linear-red-color" />
+                                    <String fx:value="hover-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="757.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="linear-yellow-color" />
+                                    <String fx:value="hover-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/edit-text.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm kho mới" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="linear-green-color" />
+                                    <String fx:value="hover-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/addition.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <GridPane layoutX="463.0" layoutY="155.0" prefHeight="104.0" prefWidth="275.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.20001220703125" minWidth="10.0" prefWidth="94.999951171875" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.20001220703125" minWidth="10.0" prefWidth="179.800048828125" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Mã khu vực">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Tên" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Mô tả" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Khu vực kho 1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font></Label>
+                                    <Label text="Kho đầu tiên" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font></Label>
+                                    <Label text="KV 1" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font></Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="customerTab" prefHeight="707.2" prefWidth="900.8" visible="false">
+                           <children>
+                              <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm khách hàng">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <AnchorPane layoutX="14.0" layoutY="73.0" prefHeight="622.0" prefWidth="427.0" AnchorPane.bottomAnchor="11.800000000000068" AnchorPane.leftAnchor="14.0">
+                                 <children>
+                                    <TableView layoutX="33.0" layoutY="-21.6" prefHeight="644.0" prefWidth="427.0" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-22.0">
+                                       <columns>
+                                          <TableColumn prefWidth="74.39999520778656" resizable="false" text="Mã KH" />
+                                          <TableColumn prefWidth="69.60004425048828" resizable="false" text="Tên" />
+                                          <TableColumn prefWidth="83.99993896484375" resizable="false" text="Giới tính" />
+                                          <TableColumn prefWidth="71.99998474121094" text="SĐT" />
+                                          <TableColumn prefWidth="125.59999389648436" text="Ngày sinh" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="445.0" layoutY="50.0" prefHeight="650.0" prefWidth="454.0" stylesheets="@../style/admin-main-view.css">
+                                 <children>
+                                    <TableView layoutX="4.0" layoutY="280.8" prefHeight="334.0" prefWidth="433.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="281.0">
+                                       <columns>
+                                          <TableColumn prefWidth="138.4000244140625" text="Mã HĐ" />
+                                          <TableColumn prefWidth="144.79998779296875" text="Ngày lập HĐ" />
+                                          <TableColumn prefWidth="160.800048828125" text="Tổng tiền" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="114.0" layoutY="14.0" text="THÔNG TIN KHÁCH HÀNG">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField layoutX="8.0" layoutY="241.0" prefHeight="30.0" prefWidth="149.0" promptText="Tìm hóa đơn của khách ">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="gray-background" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                              </AnchorPane>
+                              <Button layoutX="757.0" layoutY="215.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="linear-red-color" />
+                                    <String fx:value="hover-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="757.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="linear-yellow-color" />
+                                    <String fx:value="hover-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/edit-text.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm khách hàng" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="linear-green-color" />
+                                    <String fx:value="hover-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/addition.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <GridPane layoutX="463.0" layoutY="117.0" prefHeight="160.0" prefWidth="275.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.20001220703125" minWidth="10.0" prefWidth="94.999951171875" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.20001220703125" minWidth="10.0" prefWidth="179.800048828125" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Mã KH">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Tên" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Ngày sinh" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="0123456789" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="20/12/2001" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="KH1" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="SĐT" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Mai Anh Lớn" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="employeeTab" prefHeight="707.2" prefWidth="900.8">
+                           <children>
+                              <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm nhân viên">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <AnchorPane layoutX="14.0" layoutY="73.0" prefHeight="622.0" prefWidth="427.0" AnchorPane.bottomAnchor="11.800000000000068" AnchorPane.leftAnchor="14.0">
+                                 <children>
+                                    <TableView layoutX="33.0" layoutY="-21.6" prefHeight="644.0" prefWidth="427.0" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-22.0">
+                                       <columns>
+                                          <TableColumn prefWidth="74.39999520778656" resizable="false" text="Mã NV" />
+                                          <TableColumn prefWidth="69.60004425048828" resizable="false" text="Tên" />
+                                          <TableColumn prefWidth="83.99993896484375" resizable="false" text="Giới tính" />
+                                          <TableColumn prefWidth="71.99998474121094" text="SĐT" />
+                                          <TableColumn prefWidth="125.59999389648436" text="Ngày sinh" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="445.0" layoutY="50.0" prefHeight="650.0" prefWidth="454.0" stylesheets="@../style/admin-main-view.css">
+                                 <children>
+                                    <TableView layoutX="4.0" layoutY="280.8" prefHeight="334.0" prefWidth="433.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="281.0">
+                                       <columns>
+                                          <TableColumn prefWidth="112.800048828125" text="Mã HĐ" />
+                                          <TableColumn prefWidth="104.7999267578125" text="Loại HĐ" />
+                                          <TableColumn prefWidth="124.0" text="Ngày tạo HĐ" />
+                                          <TableColumn prefWidth="107.199951171875" text="Tổng tiền" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="124.0" layoutY="14.0" text="THÔNG TIN NHÂN VIÊN">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField layoutX="8.0" layoutY="241.0" prefHeight="30.0" prefWidth="149.0" promptText="Tìm hóa đơn đã tạo">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="gray-background" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                              </AnchorPane>
+                              <Button layoutX="757.0" layoutY="215.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="linear-red-color" />
+                                    <String fx:value="hover-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="757.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="linear-yellow-color" />
+                                    <String fx:value="hover-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/edit-text.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm nhân viên" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="linear-green-color" />
+                                    <String fx:value="hover-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/addition.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <GridPane layoutX="463.0" layoutY="117.0" prefHeight="160.0" prefWidth="275.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.20001220703125" minWidth="10.0" prefWidth="94.999951171875" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.20001220703125" minWidth="10.0" prefWidth="179.800048828125" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Mã NV">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Tên" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Ngày sinh" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="0123456789" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="20/12/2001" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="KH1" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="SĐT" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Mai Anh Lớn" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Chức vụ" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Thu ngân" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

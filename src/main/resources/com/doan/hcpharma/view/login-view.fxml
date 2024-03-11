@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doan.hcpharma.controller.LoginController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="275.0">
+         <children>
+            <AnchorPane prefHeight="500.0" prefWidth="299.0" styleClass="linear-background-color" stylesheets="@../style/admin-main-view.css">
+               <children>
+                  <Text fill="WHITE" layoutX="36.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PHẦN MỀM QUẢN LÝ NHÀ THUỐC HC PHARMA" textAlignment="CENTER" wrappingWidth="226.13670349121094">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="204.0" fitWidth="189.0" layoutX="55.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/logo.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="299.0" layoutY="-1.0" prefHeight="500.0" prefWidth="402.0" styleClass="white-bg" stylesheets="@../style/admin-main-view.css">
+               <children>
+                  <TextField layoutX="78.0" layoutY="237.0" prefHeight="26.0" prefWidth="246.0" promptText="Tên đăng nhập">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="78.0" layoutY="273.0" prefHeight="26.0" prefWidth="246.0" promptText="Mật khẩu">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="78.0" layoutY="314.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="246.0" styleClass="linear-background-color" stylesheets="@../style/admin-main-view.css" text="Đăng nhập" onAction="#switchToAdminView" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="135.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHÀO MỪNG !">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="117.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vui lòng đăng nhập để sử dụng" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
