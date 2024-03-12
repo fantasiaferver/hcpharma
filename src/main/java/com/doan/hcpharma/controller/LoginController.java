@@ -2,9 +2,11 @@ package com.doan.hcpharma.controller;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import java.io.IOException;
 public class LoginController {
@@ -14,6 +16,7 @@ public class LoginController {
         Parent root = loader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
+        stage.setResizable(false);
         stage.setTitle("HCPHARMA");
         stage.show();
 

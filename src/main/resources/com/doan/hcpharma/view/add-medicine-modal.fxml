@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doan.hcpharma.controller.MedicineController">
+   <children>
+      <AnchorPane prefHeight="63.0" prefWidth="600.0" styleClass="linear-green-color" stylesheets="@../style/admin-main-view.css">
+         <children>
+            <Label layoutX="220.0" layoutY="18.0" text="THÊM THUỐC MỚI" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="78.0" prefHeight="403.0" prefWidth="800.0" AnchorPane.bottomAnchor="119.60000000000002" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="78.0">
+         <children>
+            <GridPane layoutX="44.0" prefHeight="409.0" prefWidth="526.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="155.19998779296876" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="12.799984741210949" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.20002441406257" minWidth="10.0" prefWidth="347.2000152587891" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="39.000006103515624" minHeight="10.0" prefHeight="39.000006103515624" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.00000610351562" minHeight="10.0" prefHeight="32.8" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="34.79999389648438" minHeight="10.0" prefHeight="32.80000762939453" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="43.199987792968756" minHeight="10.0" prefHeight="31.199992370605457" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="70.80000915527344" minHeight="10.0" prefHeight="36.800012207031244" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="112.1999816894531" minHeight="10.0" prefHeight="45.199984741210955" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="146.59996337890627" minHeight="10.0" prefHeight="86.59999389648439" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="79.20000610351565" minHeight="5.800036621093739" prefHeight="5.800036621093739" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="79.99996337890627" minHeight="10.0" prefHeight="70.4000244140625" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Mã thuốc" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Tên thuốc" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Thương hiệu" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="95.0" text="Thuốc kê đơn" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Loại thuốc" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Đơn vị tính" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField promptText="VD: idm123" text="VD: T123D" GridPane.columnIndex="2" />
+                  <TextField promptText="VD: Traphaco" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="kindOfMedicineChoiceBox" prefHeight="26.0" prefWidth="151.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField prefHeight="26.0" prefWidth="228.0" promptText="VD: Hộp" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <TextField prefHeight="26.0" prefWidth="352.0" promptText="VD: Traphaco" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <CheckBox mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Đối tượng sử dụng" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Thành phần" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Tác dụng" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Unknow" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Unknow" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <TextField prefHeight="26.0" prefWidth="228.0" promptText="VD: Người lớn và trẻ em" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <Button alignment="BASELINE_CENTER" layoutX="153.0" layoutY="515.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Hoàn thành" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <styleClass>
+            <String fx:value="linear-green-color" />
+            <String fx:value="hover-button" />
+            <String fx:value="radius" />
+         </styleClass>
+      </Button>
+      <Button alignment="BASELINE_CENTER" layoutX="324.0" layoutY="515.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Hủy" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <styleClass>
+            <String fx:value="linear-dark-color" />
+            <String fx:value="hover-button" />
+            <String fx:value="radius" />
+         </styleClass>
+      </Button>
+   </children>
+</AnchorPane>

@@ -28,7 +28,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="white-bg" stylesheets="@../style/admin-main-view.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doan.hcpharma.controller.MainController">
+<StackPane maxHeight="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" styleClass="white-bg" stylesheets="@../style/admin-main-view.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doan.hcpharma.controller.MainController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -46,11 +46,14 @@
                            </children>
                         </AnchorPane>
                         <Circle fill="DODGERBLUE" layoutX="950.0" layoutY="21.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="135.0" />
-                        <Label layoutX="974.0" layoutY="12.0" text="Đang hoạt động" AnchorPane.rightAnchor="38.8" />
-                        <Circle fill="#00c120" layoutX="1072.0" layoutY="21.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="22.0" />
-                        <Label alignment="CENTER_RIGHT" layoutX="768.0" layoutY="12.0" prefHeight="18.0" prefWidth="156.0" text="Phạm Văn Chính" AnchorPane.rightAnchor="176.0">
+                        <Label layoutX="974.0" layoutY="12.0" text="Đang hoạt động" AnchorPane.rightAnchor="38.8">
                            <font>
-                              <Font name="System Bold" size="13.0" />
+                              <Font size="13.0" />
+                           </font></Label>
+                        <Circle fill="#00c120" layoutX="1072.0" layoutY="21.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="22.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="768.0" layoutY="12.0" prefHeight="20.0" prefWidth="147.0" text="Phạm Văn Chính" AnchorPane.rightAnchor="176.0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
                         <Label fx:id="tabLable" layoutX="206.0" layoutY="6.0" styleClass="header-line-admin" stylesheets="@../style/admin-main-view.css" text="Tổng quan" AnchorPane.leftAnchor="206.0">
@@ -58,7 +61,10 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="691.8000000000001" layoutY="13.0" prefWidth="118.0" text="DD/MM/YYYY" textAlignment="RIGHT" AnchorPane.rightAnchor="289.79999999999995" />
+                        <Label fx:id="dateTimeLabel" alignment="CENTER_RIGHT" layoutX="619.0" layoutY="12.0" prefHeight="20.0" prefWidth="154.0" text="DD/MM/YYYY" textAlignment="RIGHT" AnchorPane.rightAnchor="333.0000000000001">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
                      </children>
                      <styleClass>
                         <String fx:value="header-admin" />
@@ -69,37 +75,37 @@
                <left>
                   <AnchorPane prefHeight="710.0" prefWidth="199.0" styleClass="linear-background-color" stylesheets="@../style/admin-main-view.css" BorderPane.alignment="CENTER">
                      <children>
-                        <Button layoutX="5.0" layoutY="249.0" mnemonicParsing="false" onAction="#showMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thuốc" textFill="WHITE">
+                        <Button layoutX="5.0" layoutY="353.0" mnemonicParsing="false" onAction="#showMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thuốc" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="5.0" layoutY="291.0" mnemonicParsing="false" onAction="#showStorageTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Khu vực lưu trữ" textFill="WHITE">
+                        <Button layoutX="6.0" layoutY="398.0" mnemonicParsing="false" onAction="#showStorageTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Khu vực lưu trữ" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="5.0" layoutY="357.0" mnemonicParsing="false" onAction="#showCustomerTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Khách hàng" textFill="WHITE">
+                        <Button layoutX="4.0" layoutY="508.0" mnemonicParsing="false" onAction="#showCustomerTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Khách hàng" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="5.0" layoutY="399.0" mnemonicParsing="false" onAction="#showEmployeeTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Nhân viên" textFill="WHITE">
+                        <Button layoutX="4.0" layoutY="554.0" mnemonicParsing="false" onAction="#showEmployeeTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Nhân viên" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="5.0" layoutY="440.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Nhà cung cấp" textFill="WHITE">
+                        <Button layoutX="4.0" layoutY="462.0" mnemonicParsing="false" onAction="#showSupplierTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Nhà cung cấp" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="6.0" layoutY="506.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Hóa đơn bán hàng" textFill="WHITE">
+                        <Button layoutX="5.0" layoutY="246.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Bán thuốc" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="6.0" layoutY="548.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Hóa đơn nhập thuốc" textFill="WHITE">
+                        <Button layoutX="5.0" layoutY="291.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Nhập thuốc" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -119,7 +125,7 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="6.0" layoutY="183.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thống kê" textFill="WHITE">
+                        <Button layoutX="6.0" layoutY="185.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thống kê" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -182,37 +188,37 @@
                               <Image url="@../image/bar-chart.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/drugs.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="16.0" layoutY="406.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/map.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="14.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/customer.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="14.0" layoutY="562.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/teamwork.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="473.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/parcel.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="16.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/invoice.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="13.0" layoutY="556.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="13.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/invoice%20(1).png" />
                            </image>
@@ -419,9 +425,9 @@
                         </AnchorPane>
 
 <!--                        Medicine Tab-->
-                        <AnchorPane fx:id="medicineTab" layoutX="6.0" layoutY="2.0" prefHeight="703.0" prefWidth="900.0" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="2.0">
+                        <AnchorPane fx:id="medicineTab" layoutX="6.0" layoutY="2.0" prefHeight="703.0" prefWidth="900.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="2.0">
                            <children>
-                              <TableView layoutX="7.0" layoutY="49.0" prefHeight="352.0" prefWidth="886.0" AnchorPane.bottomAnchor="301.4000000000001" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="6.399999999999977" AnchorPane.topAnchor="48.80000000000007">
+                              <TableView layoutX="7.0" layoutY="48.8" prefHeight="352.0" prefWidth="886.0" AnchorPane.bottomAnchor="302.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="49.0">
                                 <columns>
                                   <TableColumn prefWidth="97.60000896453857" text="Mã Thuốc" />
                                   <TableColumn minWidth="0.0" prefWidth="88.80001831054688" text="Tên" />
@@ -444,7 +450,7 @@
                               </TextField>
                               <AnchorPane layoutX="7.0" layoutY="412.0" prefHeight="286.0" prefWidth="879.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="4.000000000000114" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="13.599999999999909">
                                  <children>
-                                    <GridPane layoutX="15.2" layoutY="55.0" prefHeight="226.0" prefWidth="455.0" AnchorPane.leftAnchor="15.2" AnchorPane.rightAnchor="410.40000000000003">
+                                    <GridPane layoutX="15.2" layoutY="55.0" prefHeight="226.0" prefWidth="680.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="410.40000000000003">
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.199951171875" minWidth="10.0" prefWidth="133.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="293.0" />
@@ -462,75 +468,75 @@
                                        <children>
                                           <Label text="Tên thuốc">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label text="Loại" GridPane.rowIndex="1">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label text="Thành phần" GridPane.rowIndex="2">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label text="Công dụng" GridPane.rowIndex="3">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label text="Giá nhập" GridPane.rowIndex="6">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label text="Nhà sản xuất" GridPane.rowIndex="4">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
                                           <Label text="Đối tượng sử dụng" GridPane.rowIndex="5">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
-                                          <Label text="Agilodin 10g" GridPane.columnIndex="1">
+                                          <Label text="unknow" GridPane.columnIndex="1">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font size="14.0" />
                                              </font></Label>
-                                          <Label text="Kháng dị ứng" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font size="14.0" />
                                              </font></Label>
-                                          <Label text="Agimexpharm Việt Nam" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font size="14.0" />
                                              </font></Label>
-                                          <Label text="Người lớn và trẻ từ 12 tuổi trở lên" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font size="14.0" />
                                              </font></Label>
-                                          <Label text="100.000 đ" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font size="14.0" />
                                              </font></Label>
                                           <Label text="Giá bán" GridPane.rowIndex="7">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
-                                          <Label text="120.000 đ" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font size="14.0" />
                                              </font></Label>
-                                          <Label text="Desloratadin 5 mg, Lactose monohydrat, cellulose vi tinh thể type 102, calci phosphat, tinh bột ngô, talc, magnesi stearat, polyvinyl alcohol, PEG 6000, titan dioxyd, màu xanh số 2." GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font size="14.0" />
                                              </font></Label>
-                                          <Label text="Điều trị viêm mũi dị ứng, viêm kết mạc dị ứng, ngứa và mày đay liên quan đến histamin" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                              <font>
-                                                <Font size="13.0" />
+                                                <Font size="14.0" />
                                              </font></Label>
                                        </children>
                                     </GridPane>
@@ -544,7 +550,7 @@
                                     </ImageView>
                                     <Button alignment="BASELINE_CENTER" layoutX="735.0" layoutY="97.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="127.0" stylesheets="@../style/admin-main-view.css" text="Xem chi tiết" textFill="WHITE" AnchorPane.rightAnchor="16.999999999999886">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                        <styleClass>
                                           <String fx:value="linear-blue-color" />
@@ -561,7 +567,7 @@
                                     </Button>
                                     <Button alignment="BASELINE_CENTER" layoutX="736.0" layoutY="143.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE" AnchorPane.rightAnchor="16.799999999999955">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                        <styleClass>
                                           <String fx:value="linear-yellow-color" />
@@ -578,7 +584,7 @@
                                     </Button>
                                     <Button alignment="BASELINE_CENTER" layoutX="735.1999999999999" layoutY="193.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE" AnchorPane.rightAnchor="17.600000000000023">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                        <styleClass>
                                           <String fx:value="linear-red-color" />
@@ -604,9 +610,9 @@
                                     <String fx:value="radius" />
                                  </styleClass>
                               </AnchorPane>
-                              <Button alignment="BASELINE_CENTER" layoutX="758.4" layoutY="5.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="139.0" stylesheets="@../style/admin-main-view.css" text="Thêm thuốc mới" textFill="WHITE" AnchorPane.rightAnchor="14.0">
+                              <Button fx:id="btnAddMedicine" alignment="BASELINE_CENTER" layoutX="758.4" layoutY="5.0" mnemonicParsing="false" onAction="#openAddMedicineModal" prefHeight="36.0" prefWidth="163.0" stylesheets="@../style/admin-main-view.css" text="Thêm thuốc mới" textFill="WHITE" AnchorPane.rightAnchor="14.0">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="linear-green-color" />
@@ -672,7 +678,7 @@
                               </AnchorPane>
                               <Button layoutX="757.0" layoutY="215.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="linear-red-color" />
@@ -689,7 +695,7 @@
                               </Button>
                               <Button layoutX="757.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="linear-yellow-color" />
@@ -706,7 +712,7 @@
                               </Button>
                               <Button alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm kho mới" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="linear-green-color" />
@@ -734,30 +740,30 @@
                                  <children>
                                     <Label text="Mã khu vực">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label text="Tên" GridPane.rowIndex="1">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label text="Mô tả" GridPane.rowIndex="2">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label text="Khu vực kho 1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <font>
-                                          <Font size="13.0" />
+                                          <Font size="14.0" />
                                        </font></Label>
-                                    <Label text="Kho đầu tiên" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <font>
-                                          <Font size="13.0" />
+                                          <Font size="14.0" />
                                        </font></Label>
-                                    <Label text="KV 1" GridPane.columnIndex="1">
+                                    <Label text="unknow" GridPane.columnIndex="1">
                                        <font>
-                                          <Font size="13.0" />
+                                          <Font size="14.0" />
                                        </font></Label>
                                  </children>
                               </GridPane>
@@ -810,7 +816,7 @@
                               </AnchorPane>
                               <Button layoutX="757.0" layoutY="215.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="linear-red-color" />
@@ -827,7 +833,7 @@
                               </Button>
                               <Button layoutX="757.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="linear-yellow-color" />
@@ -844,7 +850,7 @@
                               </Button>
                               <Button alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm khách hàng" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="linear-green-color" />
@@ -873,51 +879,263 @@
                                  <children>
                                     <Label text="Mã KH">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label text="Tên" GridPane.rowIndex="1">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label text="Ngày sinh" GridPane.rowIndex="3">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label text="0123456789" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <font>
-                                          <Font size="13.0" />
+                                          <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label text="20/12/2001" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                        <font>
-                                          <Font size="13.0" />
+                                          <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label text="KH1" GridPane.columnIndex="1">
+                                    <Label text="unknow" GridPane.columnIndex="1">
                                        <font>
-                                          <Font size="13.0" />
+                                          <Font size="14.0" />
                                        </font>
                                     </Label>
                                     <Label text="SĐT" GridPane.rowIndex="2">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label text="Mai Anh Lớn" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <font>
-                                          <Font size="13.0" />
+                                          <Font size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </GridPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="employeeTab" prefHeight="707.2" prefWidth="900.8">
+                        <AnchorPane fx:id="employeeTab" layoutX="6.0" prefHeight="707.2" prefWidth="900.8" visible="false">
                            <children>
                               <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm nhân viên">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <AnchorPane layoutX="368.6" layoutY="48.80000000000007" prefHeight="644.0" prefWidth="522.0" AnchorPane.leftAnchor="368.79999999999995" AnchorPane.rightAnchor="9.600000000000023">
+                                 <children>
+                                    <TableView layoutX="2.2" prefHeight="644.0" prefWidth="522.4" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.3999999999999773" AnchorPane.rightAnchor="1.1368683772161603E-13" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn prefWidth="74.39999520778656" resizable="false" text="Mã NV" />
+                                          <TableColumn prefWidth="69.60004425048828" resizable="false" text="Tên" />
+                                          <TableColumn prefWidth="87.199951171875" resizable="false" text="Chức vụ" />
+                                          <TableColumn prefWidth="97.59996032714844" text="Tài khoản" />
+                                          <TableColumn prefWidth="98.4000244140625" text="CCCD" />
+                                          <TableColumn prefWidth="99.199951171875" text="Email" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="btnAddCustomer" alignment="BASELINE_CENTER" layoutX="722.0" layoutY="8.0" mnemonicParsing="false" onAction="#openAddCustomerModel" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm nhân viên" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="linear-green-color" />
+                                    <String fx:value="hover-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/addition.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <AnchorPane layoutX="8.0" layoutY="50.0" prefHeight="642.0" prefWidth="358.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="14.800000000000068" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="534.4" AnchorPane.topAnchor="49.60000000000002">
+                                 <children>
+                                    <Label layoutX="75.0" layoutY="14.0" text="THÔNG TIN NHÂN VIÊN">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <GridPane layoutX="14.0" layoutY="201.0" prefHeight="283.0" prefWidth="314.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="269.60008850097654" minWidth="10.0" prefWidth="75.79998397827148" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.99995117187507" minWidth="10.0" prefWidth="126.20001602172852" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Mã NV">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Tên" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Email" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="unknow" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="SĐT" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Chức vụ" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="CCCD" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Địa Chỉ" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Giới tính" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Tài khoản" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Ca làm" GridPane.rowIndex="9">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </GridPane>
+                                    <Button fx:id="btnDeleteCustomer" layoutX="186.0" layoutY="552.0" mnemonicParsing="false" onAction="#openDeleteCustomerPopup" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-red-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/delete.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnEditCustomer" layoutX="28.0" layoutY="552.0" mnemonicParsing="false" onAction="#openEditCustomerModel" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-yellow-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/edit-text.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="101.0" layoutY="41.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3BmLWljb240LWppcjIwNjItcG9yLWwtam9iNzg4LnBuZw.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="gray-background" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="supplierTab" prefHeight="707.2" prefWidth="900.8" visible="false">
+                           <children>
+                              <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm nhà cung cấp">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
@@ -926,11 +1144,10 @@
                                  <children>
                                     <TableView layoutX="33.0" layoutY="-21.6" prefHeight="644.0" prefWidth="427.0" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-22.0">
                                        <columns>
-                                          <TableColumn prefWidth="74.39999520778656" resizable="false" text="Mã NV" />
-                                          <TableColumn prefWidth="69.60004425048828" resizable="false" text="Tên" />
-                                          <TableColumn prefWidth="83.99993896484375" resizable="false" text="Giới tính" />
-                                          <TableColumn prefWidth="71.99998474121094" text="SĐT" />
-                                          <TableColumn prefWidth="125.59999389648436" text="Ngày sinh" />
+                                          <TableColumn prefWidth="78.40002572536469" resizable="false" text="Mã NCC" />
+                                          <TableColumn prefWidth="112.00003814697266" resizable="false" text="Tên" />
+                                          <TableColumn prefWidth="97.59992980957031" resizable="false" text="Địa chỉ" />
+                                          <TableColumn prefWidth="141.60006713867188" text="SĐT" />
                                        </columns>
                                     </TableView>
                                  </children>
@@ -939,18 +1156,17 @@
                                  <children>
                                     <TableView layoutX="4.0" layoutY="280.8" prefHeight="334.0" prefWidth="433.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="281.0">
                                        <columns>
-                                          <TableColumn prefWidth="112.800048828125" text="Mã HĐ" />
-                                          <TableColumn prefWidth="104.7999267578125" text="Loại HĐ" />
-                                          <TableColumn prefWidth="124.0" text="Ngày tạo HĐ" />
-                                          <TableColumn prefWidth="107.199951171875" text="Tổng tiền" />
+                                          <TableColumn prefWidth="138.4000244140625" text="Mã HĐ" />
+                                          <TableColumn prefWidth="144.79998779296875" text="Ngày lập HĐ" />
+                                          <TableColumn prefWidth="160.800048828125" text="Tổng tiền" />
                                        </columns>
                                     </TableView>
-                                    <Label layoutX="124.0" layoutY="14.0" text="THÔNG TIN NHÂN VIÊN">
+                                    <Label layoutX="114.0" layoutY="14.0" text="THÔNG TIN NHÀ CUNG CẤP">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="8.0" layoutY="241.0" prefHeight="30.0" prefWidth="149.0" promptText="Tìm hóa đơn đã tạo">
+                                    <TextField layoutX="8.0" layoutY="241.0" prefHeight="30.0" prefWidth="149.0" promptText="TÌm hóa đơn nhập">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
@@ -963,7 +1179,7 @@
                               </AnchorPane>
                               <Button layoutX="757.0" layoutY="215.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="linear-red-color" />
@@ -980,7 +1196,7 @@
                               </Button>
                               <Button layoutX="757.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="linear-yellow-color" />
@@ -995,9 +1211,9 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm nhân viên" textFill="WHITE">
+                              <Button alignment="BASELINE_CENTER" layoutX="703.0" layoutY="7.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="189.0" stylesheets="@../style/admin-main-view.css" text="Thêm nhà cung cấp" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="linear-green-color" />
@@ -1020,59 +1236,48 @@
                                  <rowConstraints>
                                     <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
-                                    <Label text="Mã NV">
+                                    <Label text="Mã NCC">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label text="Tên" GridPane.rowIndex="1">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="Ngày sinh" GridPane.rowIndex="4">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="0123456789" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                       <font>
-                                          <Font size="13.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="20/12/2001" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                       <font>
-                                          <Font size="13.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="KH1" GridPane.columnIndex="1">
-                                       <font>
-                                          <Font size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label text="SĐT" GridPane.rowIndex="3">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label text="Mai Anh Lớn" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <font>
-                                          <Font size="13.0" />
+                                          <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label text="Chức vụ" GridPane.rowIndex="2">
+                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label text="Thu ngân" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <Label text="unknow" GridPane.columnIndex="1">
                                        <font>
-                                          <Font size="13.0" />
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Địa Chỉ" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
