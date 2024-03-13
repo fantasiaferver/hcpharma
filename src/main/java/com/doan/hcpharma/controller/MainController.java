@@ -293,7 +293,7 @@ public class MainController implements Initializable {
             loaiT.setCellValueFactory(new PropertyValueFactory<>("maLoaiThuoc"));
             donVi.setCellValueFactory(new PropertyValueFactory<>("donViTinh"));
             gia.setCellValueFactory(new PropertyValueFactory<>("donGia"));
-            xuatXu.setCellValueFactory(new PropertyValueFactory<>("xuatXu"));
+            xuatXu.setCellValueFactory(new PropertyValueFactory<>("xuatXu") );
             ngaySX.setCellValueFactory(new PropertyValueFactory<>("ngaySx"));
             ngayHH.setCellValueFactory(new PropertyValueFactory<>("ngayHh"));
             kvlt.setCellValueFactory(new PropertyValueFactory<>("maKhuVuc"));
@@ -347,8 +347,8 @@ public class MainController implements Initializable {
     private TableColumn<KhachHangEntity, Date> ngaySinhKH;
 
     // Định nghĩa GridPane và các Label
-    @FXML
-    private GridPane gridPaneKH;
+//    @FXML
+//    private GridPane gridPaneKH;
 
     @FXML
     private Label lblMaKH,lblTenKH,lblSdtKH, lblNgaySinhKH;
@@ -411,17 +411,17 @@ public class MainController implements Initializable {
     @FXML
     private TableView<NhanVienEntity> tvNhanVien;
     @FXML
-    private TableColumn<NhanVienEntity, String> maNV, tenNV,gioiTinhNV, sdtNV, emailNV, taiKhoan;
+    private TableColumn<NhanVienEntity, String> maNV, tenNV,gioiTinhNV, sdtNV, emailNV, taiKhoan, cccd;
 
     @FXML
     private TableColumn<NhanVienEntity, Date> ngaySinhNV;
 
     // Định nghĩa GridPane và các Label
-    @FXML
-    private GridPane gridPaneNV;
+//    @FXML
+//    private GridPane gridPaneNV;
 
     @FXML
-    private Label lblMaNV,lblTenNV,lblSdtNV, lblNgaySinhNV;
+    private Label lblMaNV,lblTenNV,lblSdtNV, lblNgaySinhNV,lblCCCD,lblEmailNV;
 
     NhanVienDAO nhanVienDAO = null;
 
@@ -438,6 +438,7 @@ public class MainController implements Initializable {
             tenNV.setCellValueFactory(new PropertyValueFactory<>("tenNv"));
             gioiTinhNV.setCellValueFactory(new PropertyValueFactory<>("gioiTinh"));
             taiKhoan.setCellValueFactory(new PropertyValueFactory<>("maTaiKhoan"));
+            cccd.setCellValueFactory(new PropertyValueFactory<>("cccd"));
             //sdtNV.setCellValueFactory(new PropertyValueFactory<>("sdtNv"));
            // ngaySinhNV.setCellValueFactory(new PropertyValueFactory<>("ngaySinh"));
             emailNV.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -450,18 +451,20 @@ public class MainController implements Initializable {
                 tvNhanVien.setItems(allNV);
 
 
-//                tvKhachHang.setOnMouseClicked(new EventHandler<MouseEvent>() {
-//                    @Override
-//                    public void handle(MouseEvent event) {
-//                        KhachHangEntity selectedKH = tvKhachHang.getSelectionModel().getSelectedItem();
-//                        if (selectedKH != null) {
-//                            lblMaKH.setText(selectedKH.getMaKh());
-//                            lblTenKH.setText(selectedKH.getTenKh());
-//                            lblSdtKH.setText(selectedKH.getSdtKh());
-//                            lblNgaySinhKH.setText(String.valueOf(selectedKH.getNgaySinh()));
-//                        }
-//                    }
-//                });
+                tvNhanVien.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        NhanVienEntity selectedNV = tvNhanVien.getSelectionModel().getSelectedItem();
+                        if (selectedNV != null) {
+                            lblMaNV.setText(selectedNV.getMaNv());
+                            lblTenNV.setText(selectedNV.getTenNv());
+                            lblSdtNV.setText(selectedNV.getSdtNv());
+                            lblEmailNV.setText(selectedNV.getEmail());
+                            lblCCCD.setText(selectedNV.getCccd());
+                            lblNgaySinhNV.setText(String.valueOf(selectedNV.getNgaySinh()));
+                        }
+                    }
+                });
 
 
             } else {

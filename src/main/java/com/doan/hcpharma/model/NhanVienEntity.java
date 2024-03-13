@@ -11,23 +11,26 @@ public class NhanVienEntity {
     @Column(name = "maNV", nullable = false, length = 255)
     private String maNv;
     @Basic
-    @Column(name = "CCCD", nullable = true, length = 255)
-    private String cccd;
-    @Basic
-    @Column(name = "email", nullable = true, length = 255)
-    private String email;
+    @Column(name = "tenNV", nullable = true, length = 255)
+    private String tenNv;
     @Basic
     @Column(name = "gioiTinh", nullable = false, length = 10)
     private String gioiTinh;
     @Basic
-    @Column(name = "ngaySinh", nullable = true)
-    private Date ngaySinh;
+    @Column(name = "CCCD", nullable = true, length = 255)
+    private String cccd;
     @Basic
     @Column(name = "sdtNV", nullable = true, length = 255)
     private String sdtNv;
     @Basic
-    @Column(name = "tenNV", nullable = true, length = 255)
-    private String tenNv;
+    @Column(name = "email", nullable = true, length = 255)
+    private String email;
+    @Basic
+    @Column(name = "diaChi", nullable = true, length = 255)
+    private String diaChi;
+    @Basic
+    @Column(name = "ngaySinh", nullable = true)
+    private Date ngaySinh;
     @Basic
     @Column(name = "maTaiKhoan", nullable = true, length = 255)
     private String maTaiKhoan;
@@ -40,20 +43,12 @@ public class NhanVienEntity {
         this.maNv = maNv;
     }
 
-    public String getCccd() {
-        return cccd;
+    public String getTenNv() {
+        return tenNv;
     }
 
-    public void setCccd(String cccd) {
-        this.cccd = cccd;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTenNv(String tenNv) {
+        this.tenNv = tenNv;
     }
 
     public String getGioiTinh() {
@@ -64,12 +59,12 @@ public class NhanVienEntity {
         this.gioiTinh = gioiTinh;
     }
 
-    public Date getNgaySinh() {
-        return ngaySinh;
+    public String getCccd() {
+        return cccd;
     }
 
-    public void setNgaySinh(Date ngaySinh) {
-        this.ngaySinh = ngaySinh;
+    public void setCccd(String cccd) {
+        this.cccd = cccd;
     }
 
     public String getSdtNv() {
@@ -80,12 +75,28 @@ public class NhanVienEntity {
         this.sdtNv = sdtNv;
     }
 
-    public String getTenNv() {
-        return tenNv;
+    public String getEmail() {
+        return email;
     }
 
-    public void setTenNv(String tenNv) {
-        this.tenNv = tenNv;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDiaChi() {
+        return diaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
+    }
+
+    public Date getNgaySinh() {
+        return ngaySinh;
+    }
+
+    public void setNgaySinh(Date ngaySinh) {
+        this.ngaySinh = ngaySinh;
     }
 
     public String getMaTaiKhoan() {

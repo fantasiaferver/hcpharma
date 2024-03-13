@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.doan.hcpharma.model.CT_HoaDonEntity" table="ct_hoadon" schema="qlnhathuoc">
+        <id name="soLuong">
+            <column name="soLuong" sql-type="int"/>
+        </id>
+        <property name="maHoaDon">
+            <column name="maHoaDon" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="maThuoc">
+            <column name="maThuoc" sql-type="int" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
