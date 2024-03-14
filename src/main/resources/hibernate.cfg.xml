@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/qlnhathuoc</property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">123456</property>
+
+
+    <!--    <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>-->
+    <mapping class="com.doan.hcpharma.model.KhachHangEntity"></mapping>
+    <mapping resource="KhachHangEntity.hbm.xml"></mapping>
+
+    <mapping class="com.doan.hcpharma.model.TaikhoanEntity"></mapping>
+    <mapping resource="TaikhoanEntity.hbm.xml"></mapping>
+
+    <mapping class="com.doan.hcpharma.model.LoaiThuocEntity"></mapping>
+    <mapping resource="LoaiThuocEntity.hbm.xml"></mapping>
+
+    <mapping class="com.doan.hcpharma.model.KhuVucLuuTruEntity"></mapping>
+    <mapping resource="KhuVucLuuTruEntity.hbm.xml"></mapping>
+
+    <mapping class="com.doan.hcpharma.model.ThuocEntity"></mapping>
+    <mapping resource="ThuocEntity.hbm.xml"></mapping>
+
+    <mapping class="com.doan.hcpharma.model.NhanVienEntity"></mapping>
+    <mapping resource="NhanVienEntity.hbm.xml"></mapping>
+
+    <mapping class="com.doan.hcpharma.model.HoaDonEntity"></mapping>
+    <mapping resource="HoaDonEntity.hbm.xml"></mapping>
+
+
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

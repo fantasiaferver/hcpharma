@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.doan.hcpharma.model.NhanVienEntity" table="nhanvien" schema="qlnhathuoc">
+        <id name="maNv">
+            <column name="maNV" sql-type="varchar(255)"/>
+        </id>
+        <property name="tenNv">
+            <column name="tenNV" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="gioiTinh">
+            <column name="gioiTinh" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="cccd">
+            <column name="CCCD" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="sdtNv">
+            <column name="sdtNV" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="diaChi">
+            <column name="diaChi" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="ngaySinh">
+            <column name="ngaySinh" sql-type="date" not-null="true"/>
+        </property>
+        <property name="maTaiKhoan">
+            <column name="maTaiKhoan" sql-type="varchar(255)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
