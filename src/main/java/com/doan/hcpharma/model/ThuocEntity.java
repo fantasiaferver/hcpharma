@@ -6,7 +6,6 @@ import java.sql.Date;
 @Entity
 @Table(name = "thuoc", schema = "qlnhathuoc", catalog = "")
 public class ThuocEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "maThuoc", nullable = false)
     private int maThuoc;
@@ -41,12 +40,23 @@ public class ThuocEntity {
     @Column(name = "maLoaiThuoc", nullable = true, length = 255)
     private String maLoaiThuoc;
 
-    public int getMaThuoc() {
-        return maThuoc;
-    }
-
     public void setMaThuoc(int maThuoc) {
         this.maThuoc = maThuoc;
+    }
+
+
+    public ThuocEntity() {
+    }
+
+    public ThuocEntity(int maTi, String tenT, String dvt, String congdung) {
+        this.maThuoc=maTi;
+        this.tenThuoc=tenT;
+        this.donViTinh=dvt;
+        this.moTa=congdung;
+    }
+
+    public int getMaThuoc() {
+        return maThuoc;
     }
 
     public double getDonGia() {

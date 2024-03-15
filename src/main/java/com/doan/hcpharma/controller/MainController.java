@@ -14,12 +14,10 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -165,7 +163,7 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void showCustomerTab() {
+    public void showCustomerTab() {
         showTab(customerTab, "KHÁCH HÀNG");
         showKH();
     }
@@ -210,9 +208,17 @@ public class MainController implements Initializable {
         openModal("/com/doan/hcpharma/view/delete-employee-popup.fxml", "XÓA NHÂN VIÊN");
     }
 
+
+    @FXML
+    private ChoiceBox<String> sexChoiceBox;
+    @FXML
+    private TextField tfMaKH,tfTenKH,tfSdtKH;
+    @FXML
+    private DatePicker datePickerKH;
     @FXML
     private void openAddMedicineModal(ActionEvent event) {
         openModal("/com/doan/hcpharma/view/add-medicine-modal.fxml", "THÊM THUỐC MỚI");
+
     }
 
     @FXML
@@ -437,7 +443,41 @@ public class MainController implements Initializable {
         }
 
     }
+    //Xóa Khách hàng
+    public void deleteKH() {
+        // Lấy khách hàng được chọn từ TableView
+        KhachHangEntity selected = tvKhachHang.getSelectionModel().getSelectedItem();
 
+        // Kiểm tra xem người dùng đã chọn khách hàng để xóa chưa
+        if (selected == null) {
+            // Hiển thị thông báo lỗi nếu không có khách hàng nào được chọn
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText(null);
+            alert.setContentText("Vui lòng chọn một khách hàng để xóa.");
+            alert.showAndWait();
+            return;
+        }
+
+        // Hiển thị hộp thoại xác nhận xóa
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Xác nhận xóa");
+        confirmAlert.setHeaderText(null);
+        confirmAlert.setContentText("Bạn có chắc chắn muốn xóa khách hàng này?");
+
+        // Kiểm tra xem người dùng đã chọn đồng ý hoặc hủy bỏ
+        ButtonType result = confirmAlert.showAndWait().orElse(ButtonType.CANCEL);
+        if (result == ButtonType.OK) {
+            // Nếu người dùng đồng ý, tiến hành xóa khách hàng
+            khachHangDAO = new KhachHangDAO();
+            khachHangDAO.removeData(selected);
+
+            // Cập nhật TableView sau khi xóa
+            showKH();
+        }
+    }
+
+    //Sửa khách hàng
 // Show nhân viên lên bảng
 
 
@@ -454,7 +494,9 @@ public class MainController implements Initializable {
 //    private GridPane gridPaneNV;
 
     @FXML
-    private Label lblMaNV,lblTenNV,lblSdtNV, lblNgaySinhNV,lblCCCD,lblEmailNV;
+    private Label lblMaNV,lblTenNV,lblSdtNV,
+            lblNgaySinhNV,lblCCCD,lblEmailNV,
+            lblGioiTinhNV,lblChucVu,lblDiaChi,lblTaiKhoan;
 
     NhanVienDAO nhanVienDAO = null;
 
@@ -491,10 +533,14 @@ public class MainController implements Initializable {
                         if (selectedNV != null) {
                             lblMaNV.setText(selectedNV.getMaNv());
                             lblTenNV.setText(selectedNV.getTenNv());
+                            lblGioiTinhNV.setText(selectedNV.getGioiTinh());
+                            lblChucVu.setText(selectedNV.getChucVu());
                             lblSdtNV.setText(selectedNV.getSdtNv());
                             lblEmailNV.setText(selectedNV.getEmail());
                             lblCCCD.setText(selectedNV.getCccd());
+                            lblDiaChi.setText(selectedNV.getDiaChi());
                             lblNgaySinhNV.setText(String.valueOf(selectedNV.getNgaySinh()));
+                            lblTaiKhoan.setText(selectedNV.getMaTaiKhoan());
                         }
                     }
                 });
@@ -512,5 +558,48 @@ public class MainController implements Initializable {
         }
 
     }
+    //Xóa Nhân viên
+    public void deleteNV() {
+        // Lấy khách hàng được chọn từ TableView
+        NhanVienEntity selected = tvNhanVien.getSelectionModel().getSelectedItem();
+
+        // Kiểm tra xem người dùng đã chọn khách hàng để xóa chưa
+        if (selected == null) {
+            // Hiển thị thông báo lỗi nếu không có khách hàng nào được chọn
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText(null);
+            alert.setContentText("Vui lòng chọn một nhân viên để xóa.");
+            alert.showAndWait();
+            return;
+        }
+
+        // Hiển thị hộp thoại xác nhận xóa
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Xác nhận xóa");
+        confirmAlert.setHeaderText(null);
+        confirmAlert.setContentText("Bạn có chắc chắn muốn xóa nhân viên này?");
+
+        // Kiểm tra xem người dùng đã chọn đồng ý hoặc hủy bỏ
+        ButtonType result = confirmAlert.showAndWait().orElse(ButtonType.CANCEL);
+        if (result == ButtonType.OK) {
+            // Nếu người dùng đồng ý, tiến hành xóa khách hàng
+            nhanVienDAO = new NhanVienDAO();
+            nhanVienDAO.removeData(selected);
+
+            // Cập nhật TableView sau khi xóa
+            showNV();
+        }
+    }
+
+//    public void refeshTableView() {
+//        khachHangDAO = new KhachHangDAO();
+//        List<KhachHangEntity> li = khachHangDAO.getAll();
+//
+//        if (li != null && !li.isEmpty()) {
+//            ObservableList<KhachHangEntity> allKH = FXCollections.observableList(li);
+//            tvKhachHang.setItems(allKH);
+//        }
+//    }
 }
 

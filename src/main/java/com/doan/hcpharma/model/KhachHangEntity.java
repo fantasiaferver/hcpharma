@@ -23,6 +23,17 @@ public class KhachHangEntity {
     @Column(name = "sdtKH", nullable = true, length = 255)
     private String sdtKh;
 
+    public KhachHangEntity() {
+    }
+
+    public KhachHangEntity(String maKh, String tenKh, String gioiTinh, Date ngaySinh, String sdtKh) {
+        this.maKh = maKh;
+        this.tenKh = tenKh;
+        this.gioiTinh = gioiTinh;
+        this.ngaySinh = ngaySinh;
+        this.sdtKh = sdtKh;
+    }
+
     public String getMaKh() {
         return maKh;
     }

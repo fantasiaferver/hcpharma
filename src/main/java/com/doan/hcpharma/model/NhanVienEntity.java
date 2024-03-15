@@ -19,6 +19,10 @@ public class NhanVienEntity {
     @Basic
     @Column(name = "CCCD", nullable = true, length = 255)
     private String cccd;
+
+    @Basic
+    @Column(name = "chucVu", nullable = true)
+    private String chucVu;
     @Basic
     @Column(name = "sdtNV", nullable = true, length = 255)
     private String sdtNv;
@@ -34,6 +38,25 @@ public class NhanVienEntity {
     @Basic
     @Column(name = "maTaiKhoan", nullable = true, length = 255)
     private String maTaiKhoan;
+
+    public NhanVienEntity() {
+    }
+
+    public NhanVienEntity(String maNv, String tenNv, String gioiTinh,
+                          String cccd, String chucVu, String sdtNv,
+                          String email, String diaChi, Date ngaySinh,
+                          String maTaiKhoan) {
+        this.maNv = maNv;
+        this.tenNv = tenNv;
+        this.gioiTinh = gioiTinh;
+        this.cccd = cccd;
+        this.chucVu = chucVu;
+        this.sdtNv = sdtNv;
+        this.email = email;
+        this.diaChi = diaChi;
+        this.ngaySinh = ngaySinh;
+        this.maTaiKhoan = maTaiKhoan;
+    }
 
     public String getMaNv() {
         return maNv;
@@ -65,6 +88,14 @@ public class NhanVienEntity {
 
     public void setCccd(String cccd) {
         this.cccd = cccd;
+    }
+
+    public String getChucVu() {
+        return chucVu;
+    }
+
+    public void setChucVu(String chucVu) {
+        this.chucVu = chucVu;
     }
 
     public String getSdtNv() {

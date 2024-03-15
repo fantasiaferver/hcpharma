@@ -58,11 +58,11 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField GridPane.columnIndex="2" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <Label text="Tên " GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                  <TextField fx:id="maKHtf" GridPane.columnIndex="2" />
+                  <TextField fx:id="tenKHtf" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="ngaySinhKHtf" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="sdtKHtf" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label text="Giới tính" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
