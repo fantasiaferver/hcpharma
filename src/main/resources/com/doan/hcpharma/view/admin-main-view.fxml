@@ -549,7 +549,7 @@
                                           <Rectangle2D />
                                        </viewport>
                                     </ImageView>
-                                    <Button alignment="BASELINE_CENTER" layoutX="735.0" layoutY="97.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="127.0" stylesheets="@../style/admin-main-view.css" text="Xem chi tiết" textFill="WHITE" AnchorPane.rightAnchor="16.999999999999886">
+                                    <Button fx:id="btnDeltailMedicine" alignment="BASELINE_CENTER" layoutX="735.0" layoutY="97.0" mnemonicParsing="false" onAction="#openDetailMedicineModal" prefHeight="36.0" prefWidth="127.0" stylesheets="@../style/admin-main-view.css" text="Xem chi tiết" textFill="WHITE" AnchorPane.rightAnchor="16.999999999999886">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -566,7 +566,7 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button alignment="BASELINE_CENTER" layoutX="736.0" layoutY="143.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE" AnchorPane.rightAnchor="16.799999999999955">
+                                    <Button fx:id="btnEditMedicine" alignment="BASELINE_CENTER" layoutX="736.0" layoutY="143.0" mnemonicParsing="false" onAction="#openEditMedicineModal" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE" AnchorPane.rightAnchor="16.799999999999955">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -583,7 +583,7 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button alignment="BASELINE_CENTER" layoutX="735.1999999999999" layoutY="193.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE" AnchorPane.rightAnchor="17.600000000000023">
+                                    <Button fx:id="btnDeltailMedicine" alignment="BASELINE_CENTER" layoutX="735.1999999999999" layoutY="193.0" mnemonicParsing="false" onAction="#openDeleteMedicinePopup" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE" AnchorPane.rightAnchor="17.600000000000023">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -661,7 +661,7 @@
                                           <TableColumn prefWidth="136.800048828125" text="Ngày sản xuất" />
                                       </columns>
                                     </TableView>
-                                    <Label layoutX="171.0" layoutY="14.0" text="THÔNG TIN KHO">
+                                    <Label layoutX="116.0" layoutY="14.0" text="THÔNG TIN NƠI LƯU TRỮ">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
@@ -677,7 +677,7 @@
                                     <String fx:value="radius" />
                                  </styleClass>
                               </AnchorPane>
-                              <Button layoutX="757.0" layoutY="215.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                              <Button fx:id="btnDeleteStorage" layoutX="757.0" layoutY="215.0" mnemonicParsing="false" onAction="#openDeleteStoragePopup" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
@@ -694,7 +694,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button layoutX="757.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                              <Button fx:id="btnEditStorage" layoutX="757.0" layoutY="171.0" mnemonicParsing="false" onAction="#openEditStorageModel" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
@@ -711,7 +711,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm kho mới" textFill="WHITE">
+                              <Button fx:id="btnAddStorage" alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" onAction="#openAddStorageModel" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm kho mới" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
@@ -815,7 +815,7 @@
                                     <String fx:value="radius" />
                                  </styleClass>
                               </AnchorPane>
-                              <Button layoutX="757.0" layoutY="215.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                              <Button fx:id="btnDeleteCustomer" layoutX="757.0" layoutY="215.0" mnemonicParsing="false" onAction="#openDeleteCustomerPopup" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
@@ -832,7 +832,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button layoutX="757.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                              <Button fx:id="btnEditCustomer" layoutX="757.0" layoutY="171.0" mnemonicParsing="false" onAction="#openEditCustomerModel" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
@@ -849,7 +849,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm khách hàng" textFill="WHITE">
+                              <Button fx:id="btnAddCustomer" alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" onAction="#openAddCustomerModel" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm khách hàng" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
@@ -922,7 +922,7 @@
                               </GridPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="employeeTab" layoutX="6.0" prefHeight="707.2" prefWidth="900.8">
+                        <AnchorPane fx:id="employeeTab" layoutX="6.0" prefHeight="707.2" prefWidth="900.8" visible="false">
                            <children>
                               <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm nhân viên">
                                  <font>
@@ -943,7 +943,7 @@
                                     </TableView>
                                  </children>
                               </AnchorPane>
-                              <Button fx:id="btnAddCustomer" alignment="BASELINE_CENTER" layoutX="722.0" layoutY="8.0" mnemonicParsing="false" onAction="#openAddCustomerModel" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm nhân viên" textFill="WHITE">
+                              <Button fx:id="btnAddEmployee" alignment="BASELINE_CENTER" layoutX="722.0" layoutY="8.0" mnemonicParsing="false" onAction="#openAddEmployeeModel" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm nhân viên" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="13.0" />
                                  </font>
@@ -1087,7 +1087,7 @@
                                           </Label>
                                        </children>
                                     </GridPane>
-                                    <Button fx:id="btnDeleteCustomer" layoutX="186.0" layoutY="552.0" mnemonicParsing="false" onAction="#openDeleteCustomerPopup" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                    <Button fx:id="btnDeleteEmployee" layoutX="186.0" layoutY="552.0" mnemonicParsing="false" onAction="#openDeleteEmployeePopup" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -1104,7 +1104,7 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button fx:id="btnEditCustomer" layoutX="28.0" layoutY="552.0" mnemonicParsing="false" onAction="#openEditCustomerModel" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                    <Button fx:id="btnEditEmployee" layoutX="28.0" layoutY="552.0" mnemonicParsing="false" onAction="#openEditEmployeeModel" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -1134,7 +1134,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="supplierTab" prefHeight="707.2" prefWidth="900.8" visible="false">
+                        <AnchorPane fx:id="supplierTab" prefHeight="707.2" prefWidth="900.8">
                            <children>
                               <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm nhà cung cấp">
                                  <font>
@@ -1178,7 +1178,7 @@
                                     <String fx:value="radius" />
                                  </styleClass>
                               </AnchorPane>
-                              <Button layoutX="757.0" layoutY="215.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                              <Button fx:id="btnDeleteSupplier" layoutX="757.0" layoutY="215.0" mnemonicParsing="false" onAction="#openDeleteSupplierPopup" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
@@ -1195,7 +1195,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button layoutX="757.0" layoutY="171.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                              <Button fx:id="btnEditSupplier" layoutX="757.0" layoutY="171.0" mnemonicParsing="false" onAction="#openEditSupplierModel" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
@@ -1212,7 +1212,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button alignment="BASELINE_CENTER" layoutX="703.0" layoutY="7.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="189.0" stylesheets="@../style/admin-main-view.css" text="Thêm nhà cung cấp" textFill="WHITE">
+                              <Button fx:id="btnAddSupplier" alignment="BASELINE_CENTER" layoutX="703.0" layoutY="7.0" mnemonicParsing="false" onAction="#openAddSupplierModel" prefHeight="36.0" prefWidth="189.0" stylesheets="@../style/admin-main-view.css" text="Thêm nhà cung cấp" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="417.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="63.0" prefWidth="448.0" styleClass="linear-green-color" stylesheets="@../style/admin-main-view.css">
+         <children>
+            <Label layoutX="93.0" layoutY="18.0" text="THÊM MỚI KHU VỰC LƯU TRỮ" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="112.0" prefHeight="171.0" prefWidth="447.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="111.0">
+         <children>
+            <GridPane layoutX="-37.0" prefHeight="234.60000000000002" prefWidth="387.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-37.0" AnchorPane.rightAnchor="38.599999999999966" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="239.4000244140625" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="21.79997558593749" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.99998474121094" minWidth="10.0" prefWidth="364.60001220703117" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="46.60001220703125" minHeight="10.0" prefHeight="29.80002632141113" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="144.00001373291016" minHeight="0.0" prefHeight="95.20001831054688" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="221.39998779296874" minHeight="10.0" prefHeight="124.99998168945315" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Mã KVLT" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Tên" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Mô tả" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField GridPane.columnIndex="2" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextArea prefHeight="180.0" prefWidth="251.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <Button alignment="BASELINE_CENTER" layoutX="72.0" layoutY="322.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Hoàn thành" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <styleClass>
+            <String fx:value="linear-green-color" />
+            <String fx:value="hover-button" />
+            <String fx:value="radius" />
+         </styleClass>
+      </Button>
+      <Button alignment="BASELINE_CENTER" layoutX="258.0" layoutY="322.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Hủy" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <styleClass>
+            <String fx:value="linear-dark-color" />
+            <String fx:value="hover-button" />
+            <String fx:value="radius" />
+         </styleClass>
+      </Button>
+   </children>
+</AnchorPane>

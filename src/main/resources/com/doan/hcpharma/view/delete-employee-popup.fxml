@@ -6,16 +6,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="150.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="150.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <AnchorPane layoutX="61.0" layoutY="62.4" prefHeight="156.0" prefWidth="401.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text layoutX="115.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Xóa khách hàng" textAlignment="CENTER" wrappingWidth="170.4000244140625">
+            <Text layoutX="115.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Xóa nhân viên" textAlignment="CENTER" wrappingWidth="170.4000244140625">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text layoutX="20.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bạn đã chắc chắc muốn xóa khách hàng abcxyz ?" textAlignment="CENTER" wrappingWidth="360.59192276000977">
+            <Text layoutX="20.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bạn đã chắc chắc muốn xóa nhân viên abcxz ?" textAlignment="CENTER" wrappingWidth="360.59192276000977">
                <font>
                   <Font size="14.0" />
                </font>

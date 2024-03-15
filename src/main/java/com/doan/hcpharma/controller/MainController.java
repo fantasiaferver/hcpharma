@@ -60,13 +60,13 @@ public class MainController implements Initializable {
     private AnchorPane supplierTab;
 
     @FXML
-    private Button btnAddCustomer;
+    private Button btnAddEmployee;
 
     @FXML
-    private Button btnEditCustomer;
+    private Button btnEditEmployee;
 
     @FXML
-    private Button btnDeleteCustomer;
+    private Button btnDeleteEmployee;
 
     @FXML
     private Button btnAddMedicine;
@@ -79,6 +79,34 @@ public class MainController implements Initializable {
 
     @FXML
     private Button btnDeltailMedicine;
+
+    @FXML
+    private Button btnAddStorage;
+
+    @FXML
+    private Button btnEditStorage;
+
+    @FXML
+    private Button btnDeleteStorage;
+
+    @FXML
+    private Button btnAddCustomer;
+
+    @FXML
+    private Button btnEditCustomer;
+
+    @FXML
+    private Button btnDeleteCustomer;
+
+    @FXML
+    private Button btnAddSupplier;
+
+    @FXML
+    private Button btnEditSupplier;
+
+    @FXML
+    private Button btnDeleteSupplier;
+
 
 
     @FXML
@@ -153,29 +181,13 @@ public class MainController implements Initializable {
         showTab(supplierTab, "NHÀ CUNG CẤP");
     }
 
-    @FXML
-    private void openAddCustomerModel(ActionEvent event) {
+    private void openModal(String fxmlPath, String title) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/doan/hcpharma/view/add-customer-modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
-            stage.setTitle("THÊM NHÂN VIÊN");
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        }
-
-    @FXML
-    private void openEditCustomerModel(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/doan/hcpharma/view/edit-customer-modal.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("CẬP NHẬT NHÂN VIÊN");
+            stage.setTitle(title);
             stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
@@ -184,64 +196,85 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void openDeleteCustomerPopup(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/doan/hcpharma/view/delete-customer-popup.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("XÓA NHÂN VIÊN");
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void openAddEmployeeModel(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/add-employee-modal.fxml", "THÊM NHÂN VIÊN");
+    }
+
+    @FXML
+    private void openEditEmployeeModel(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/edit-employee-modal.fxml", "CẬP NHẬT NHÂN VIÊN");
+    }
+
+    @FXML
+    private void openDeleteEmployeePopup(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/delete-employee-popup.fxml", "XÓA NHÂN VIÊN");
     }
 
     @FXML
     private void openAddMedicineModal(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/doan/hcpharma/view/add-medicine-modal.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("THÊM THUỐC MỚI");
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        openModal("/com/doan/hcpharma/view/add-medicine-modal.fxml", "THÊM THUỐC MỚI");
     }
 
-//    @FXML
-//    private void openDetailMedicineModal(ActionEvent event) {
-//        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/doan/hcpharma/view/detail-medicine-modal.fxml"));
-//            Parent root = loader.load();
-//            Stage stage = new Stage();
-//            stage.setScene(new Scene(root));
-//            stage.setTitle("THÔNG TIN CHI TIẾT THUỐC");
-//            stage.setResizable(false);
-//            stage.show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    @FXML
+    private void openDetailMedicineModal(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/detail-medicine-modal.fxml", "THÔNG TIN CHI TIẾT THUỐC");
+    }
 
-    //    @FXML
-//    private void openEditMedicineModal(ActionEvent event) {
-//        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/doan/hcpharma/view/edit-medicine-modal.fxml"));
-//            Parent root = loader.load();
-//            Stage stage = new Stage();
-//            stage.setScene(new Scene(root));
-//            stage.setTitle("SỬA THÔNG TIN THUỐC");
-//            stage.setResizable(false);
-//            stage.show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    @FXML
+    private void openEditMedicineModal(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/edit-medicine-modal.fxml", "SỬA THÔNG TIN THUỐC");
+    }
+
+    @FXML
+    private void openDeleteMedicinePopup(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/delete-medicine-popup.fxml", "XÓA THUỐC");
+    }
+
+    @FXML
+    private void openAddStorageModel(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/add-storage-modal.fxml", "THÊM KHU VỰC LƯU TRỮ");
+    }
+
+    @FXML
+    private void openEditStorageModel(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/edit-storage-modal.fxml", "SỬA KHU VỰC LƯU TRỮ");
+    }
+
+    @FXML
+    private void openDeleteStoragePopup(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/delete-storage-popup.fxml", "XÓA KHU VỰC LƯU TRỮ");
+    }
+
+    @FXML
+    private void openAddCustomerModel(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/add-customer-modal.fxml", "THÊM KHÁCH HÀNG");
+    }
+
+    @FXML
+    private void openEditCustomerModel(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/edit-customer-modal.fxml", "SỬA KHÁCH HÀNG");
+    }
+
+    @FXML
+    private void openDeleteCustomerPopup(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/delete-customer-popup.fxml", "XÓA KHÁCH HÀNG");
+    }
+
+    @FXML
+    private void openAddSupplierModel(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/add-customer-modal.fxml", "THÊM NHÀ CUNG CẤP");
+    }
+
+    @FXML
+    private void openEditSupplierModel(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/edit-customer-modal.fxml", "SỬA NHÀ CUNG CẤP");
+    }
+
+    @FXML
+    private void openDeleteSupplierPopup(ActionEvent event) {
+        openModal("/com/doan/hcpharma/view/delete-customer-popup.fxml", "XÓA NHÀ CUNG CẤP");
+    }
+
 
 
     @Override
