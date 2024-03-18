@@ -62,8 +62,4 @@ public class CustomerController implements Initializable {
     public void setMainController(MainController mainController) {
         this.mainController = mainController;
     }
-
-
-
-
 }

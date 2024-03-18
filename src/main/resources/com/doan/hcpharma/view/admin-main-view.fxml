@@ -7,10 +7,14 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -28,7 +32,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" styleClass="white-bg" stylesheets="@../style/admin-main-view.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doan.hcpharma.controller.MainController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1500.0" styleClass="white-bg" stylesheets="@../style/admin-main-view.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doan.hcpharma.controller.MainController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -56,7 +60,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="tabLable" layoutX="206.0" layoutY="6.0" styleClass="header-line-admin" stylesheets="@../style/admin-main-view.css" text="Tổng quan" AnchorPane.leftAnchor="206.0">
+                        <Label fx:id="tabLable" layoutX="206.0" layoutY="6.0" styleClass="header-line-admin" stylesheets="@../style/admin-main-view.css" text="XIN CHÀO !" AnchorPane.leftAnchor="206.0">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
@@ -362,20 +366,20 @@
                                     <String fx:value="white-bg" />
                                  </styleClass>
                                  <children>
-                                    <AnchorPane layoutX="14.0" layoutY="14.4" prefHeight="450.0" prefWidth="471.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="13.200000000000045" AnchorPane.topAnchor="14.0">
+                                    <AnchorPane layoutX="14.0" layoutY="15.2" prefHeight="446.0" prefWidth="606.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="14.0" AnchorPane.topAnchor="15.0">
                                        <styleClass>
                                           <String fx:value="shadow" />
                                           <String fx:value="white-bg" />
                                           <String fx:value="radius" />
                                        </styleClass>
                                        <children>
-                                          <TableView layoutX="120.0" layoutY="32.0" prefHeight="418.0" prefWidth="474.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+                                          <TableView layoutX="120.0" layoutY="32.0" prefHeight="418.0" prefWidth="471.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
                                             <columns>
                                               <TableColumn prefWidth="81.59999752044678" text="Mã HĐ" />
-                                              <TableColumn prefWidth="76.00003051757812" text="Mã KH" />
-                                                <TableColumn prefWidth="111.199951171875" text="Mã NV" />
-                                                <TableColumn prefWidth="106.4000244140625" text="Ngày lập HĐ" />
-                                                <TableColumn prefWidth="94.40001220703124" text="Tổng tiền" />
+                                              <TableColumn prefWidth="99.19998168945312" text="Mã KH" />
+                                                <TableColumn prefWidth="114.39999389648438" text="Mã NV" />
+                                                <TableColumn prefWidth="144.800048828125" text="Ngày lập HĐ" />
+                                                <TableColumn minWidth="6.4000244140625" prefWidth="166.39996337890625" text="Tổng tiền" />
                                             </columns>
                                           </TableView>
                                           <Label layoutX="5.0" layoutY="6.0" styleClass="header-line-admin" stylesheets="@../style/admin-main-view.css" text="Hóa đơn đã tạo">
@@ -385,14 +389,14 @@
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="494.0" layoutY="12.0" prefHeight="210.0" prefWidth="370.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="251.99999999999997" AnchorPane.leftAnchor="494.4" AnchorPane.rightAnchor="13.199999999999932" AnchorPane.topAnchor="11.999999999999972">
+                                    <AnchorPane layoutX="628.0" layoutY="12.0" prefHeight="211.0" prefWidth="637.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="252.0" AnchorPane.leftAnchor="628.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="12.0">
                                        <styleClass>
                                           <String fx:value="shadow" />
                                           <String fx:value="white-bg" />
                                           <String fx:value="radius" />
                                        </styleClass>
                                        <children>
-                                          <AreaChart prefHeight="288.0" prefWidth="435.2" title="Doanh số theo ngày" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <AreaChart layoutX="179.2" prefHeight="211.0" prefWidth="591.0" title="Chi phí nhập hàng" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <xAxis>
                                               <CategoryAxis side="BOTTOM" />
                                             </xAxis>
@@ -402,14 +406,14 @@
                                           </AreaChart>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="494.4" layoutY="230.6" prefHeight="233.0" prefWidth="370.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="10.199999999999989" AnchorPane.leftAnchor="494.4" AnchorPane.rightAnchor="12.799999999999955">
+                                    <AnchorPane layoutX="630.4" layoutY="230.6" prefHeight="234.0" prefWidth="635.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="630.0" AnchorPane.rightAnchor="13.0">
                                        <styleClass>
                                           <String fx:value="shadow" />
                                           <String fx:value="white-bg" />
                                           <String fx:value="radius" />
                                        </styleClass>
                                        <children>
-                                          <BarChart layoutX="-65.0" layoutY="-83.0" prefHeight="317.6" prefWidth="435.2" title="Doanh số theo ngày" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <BarChart layoutX="235.2" layoutY="-83.0" prefHeight="234.0" prefWidth="535.0" title="Doanh thu" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <xAxis>
                                               <CategoryAxis side="BOTTOM" />
                                             </xAxis>
@@ -427,20 +431,18 @@
 <!--                        Medicine Tab-->
                         <AnchorPane fx:id="medicineTab" layoutX="6.0" layoutY="2.0" prefHeight="703.0" prefWidth="900.0" visible="false" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="2.0">
                            <children>
-                              <TableView fx:id="tvThuoc" layoutX="7.0" layoutY="48.8" prefHeight="352.0" prefWidth="886.0" AnchorPane.bottomAnchor="302.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="49.0">
+                              <TableView fx:id="tvThuoc" layoutX="7.0" layoutY="48.8" prefHeight="326.0" prefWidth="1280.0" AnchorPane.bottomAnchor="328.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="49.0">
                                 <columns>
                                   <TableColumn fx:id="maT" prefWidth="97.60000896453857" text="Mã Thuốc" />
-                                  <TableColumn fx:id="tenT" minWidth="0.0" prefWidth="88.80001831054688" text="Tên" />
-                                    <TableColumn fx:id="loaiT" prefWidth="89.59996032714844" text="Loại" />
-                                    <TableColumn fx:id="donVi" prefWidth="67.20001220703125" text="Đơn vị" />
-                                    <TableColumn fx:id="gia" text="Giá" />
-                                    <TableColumn prefWidth="108.800048828125" text="Nhà cung cấp" fx:id="xuatXu" />
-                                    <TableColumn fx:id="ngaySX" prefWidth="103.199951171875" text="Ngày sản xuất" />
-                                    <TableColumn fx:id="ngayHH" prefWidth="119.99993896484375" text="Ngày hết hạn" />
-                                    <TableColumn fx:id="kvlt" minWidth="0.0" prefWidth="141.60015869140625" text="Khu vực lưu trữ" />
-                                    <TableColumn fx:id="moTa" prefWidth="119.99993896484375" text="Mô tả" />
-                                    <TableColumn minWidth="0.0" prefWidth="141.60015869140625" text="Giá nhập" />
-                                    <TableColumn minWidth="0.0" prefWidth="141.60015869140625" text="Ghi chú" />
+                                  <TableColumn fx:id="tenT" minWidth="0.0" prefWidth="121.60001373291016" text="Tên" />
+                                    <TableColumn fx:id="loaiT" prefWidth="63.999969482421875" text="Loại" />
+                                    <TableColumn fx:id="donVi" prefWidth="77.60000610351562" text="Đơn vị" />
+                                    <TableColumn fx:id="gia" prefWidth="129.5999755859375" text="Giá bán" />
+                                    <TableColumn prefWidth="186.39999389648438" text="Nhà cung cấp" fx:id="xuatXu" />
+                                    <TableColumn fx:id="ngaySX" prefWidth="173.60009765625" text="Ngày sản xuất" />
+                                    <TableColumn fx:id="ngayHH" prefWidth="147.99993896484375" text="Ngày hết hạn" />
+                                    <TableColumn fx:id="kvlt" minWidth="0.0" prefWidth="135.2001953125" text="Khu vực lưu trữ" />
+                                    <TableColumn fx:id="gia1" prefWidth="147.2000732421875" text="Giá nhập" />
                                 </columns>
                               </TableView>
                               <TextField layoutX="7.0" layoutY="14.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm thuốc">
@@ -448,100 +450,9 @@
                                     <Font size="13.0" />
                                  </font>
                               </TextField>
-                              <AnchorPane layoutX="7.0" layoutY="412.0" prefHeight="286.0" prefWidth="879.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="4.000000000000114" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="13.599999999999909">
+                              <AnchorPane layoutX="7.0" layoutY="412.0" prefHeight="321.0" prefWidth="1279.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="14.0">
                                  <children>
-                                    <GridPane fx:id="gridPane" layoutX="14.0" layoutY="52.0" prefHeight="226.0" prefWidth="680.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="411.0">
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.199951171875" minWidth="10.0" prefWidth="133.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="293.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <Label text="Tên thuốc">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Loại" GridPane.rowIndex="1">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Thành phần" GridPane.rowIndex="3">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Công dụng" GridPane.rowIndex="4">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Đơn vị tính" GridPane.rowIndex="2">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Nhà sản xuất" GridPane.rowIndex="5">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Đối tượng sử dụng" GridPane.rowIndex="6">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblTenT" text="unknow" GridPane.columnIndex="1">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></Label>
-                                          <Label fx:id="lblLoaiT" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></Label>
-                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></Label>
-                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></Label>
-                                          <Label text="Giá bán" GridPane.rowIndex="7">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblGia" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="7">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></Label>
-                                          <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></Label>
-                                          <Label fx:id="lblCongDung" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></Label>
-                                          <Label fx:id="lblDVT" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </GridPane>
-                                    <ImageView fitHeight="233.0" fitWidth="248.0" layoutX="471.39999999999986" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="160.0">
+                                    <ImageView fitHeight="195.0" fitWidth="248.0" layoutX="870.3999999999996" layoutY="59.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="160.0">
                                        <image>
                                           <Image url="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/products/P20414_1.jpg" />
                                        </image>
@@ -549,7 +460,7 @@
                                           <Rectangle2D />
                                        </viewport>
                                     </ImageView>
-                                    <Button fx:id="btnDeltailMedicine" alignment="BASELINE_CENTER" layoutX="735.0" layoutY="97.0" mnemonicParsing="false" onAction="#openDetailMedicineModal" prefHeight="36.0" prefWidth="127.0" stylesheets="@../style/admin-main-view.css" text="Xem chi tiết" textFill="WHITE" AnchorPane.rightAnchor="16.999999999999886">
+                                    <Button fx:id="btnClearMedicine" alignment="BASELINE_CENTER" layoutX="1132.0" layoutY="198.0" mnemonicParsing="false" onAction="#clearTextFieldMedicine" prefHeight="36.0" prefWidth="127.0" stylesheets="@../style/admin-main-view.css" text="Xóa trắng" textFill="WHITE" AnchorPane.rightAnchor="19.19999999999959">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -566,7 +477,7 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button fx:id="btnEditMedicine" alignment="BASELINE_CENTER" layoutX="736.0" layoutY="143.0" mnemonicParsing="false" onAction="#openEditMedicineModal" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE" AnchorPane.rightAnchor="16.799999999999955">
+                                    <Button fx:id="btnEditMedicine" alignment="BASELINE_CENTER" layoutX="1135.0" layoutY="101.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Cập nhật" textFill="WHITE" AnchorPane.rightAnchor="16.999999999999545">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -583,7 +494,7 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button fx:id="btnDeltailMedicine" alignment="BASELINE_CENTER" layoutX="735.1999999999999" layoutY="193.0" mnemonicParsing="false" onAction="#openDeleteMedicinePopup" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE" AnchorPane.rightAnchor="17.600000000000023">
+                                    <Button fx:id="btnDeltailMedicine" alignment="BASELINE_CENTER" layoutX="1134.0" layoutY="151.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE" AnchorPane.rightAnchor="17.999999999999545">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -600,34 +511,166 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Label layoutX="372.0" layoutY="11.0" text="THÔNG TIN THUỐC">
+                                    <Label layoutX="555.0" layoutY="8.0" text="THÔNG TIN THUỐC">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
+                                    <Button fx:id="btnAddMedicine" alignment="BASELINE_CENTER" layoutX="1098.0" layoutY="52.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="126.0" stylesheets="@../style/admin-main-view.css" text="Thêm" textFill="WHITE" AnchorPane.rightAnchor="18.0">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <GridPane layoutY="36.0" prefHeight="279.0" prefWidth="436.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="155.19998779296876" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="12.799984741210949" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.20002441406257" minWidth="10.0" prefWidth="347.2000152587891" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="39.000006103515624" minHeight="10.0" prefHeight="39.000006103515624" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.00000610351562" minHeight="10.0" prefHeight="32.8" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="34.79999389648438" minHeight="10.0" prefHeight="32.80000762939453" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="43.199987792968756" minHeight="10.0" prefHeight="31.199992370605457" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="70.80000915527344" minHeight="10.0" prefHeight="36.800012207031244" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="112.1999816894531" minHeight="10.0" prefHeight="54.800024414062506" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="146.59996337890627" minHeight="10.0" prefHeight="61.99997558593748" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Mã thuốc" GridPane.halignment="RIGHT">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Tên thuốc" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Thương hiệu" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="20.0" prefWidth="95.0" text="Thuốc kê đơn" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Loại thuốc" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Đơn vị tính" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtMaThuoc" GridPane.columnIndex="2" />
+                                          <TextField fx:id="txtTenThuoc" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <ChoiceBox fx:id="kindOfMedicineChoiceBox" prefHeight="26.0" prefWidth="151.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <TextField fx:id="txtDonViTInh" prefHeight="26.0" prefWidth="228.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <TextField fx:id="txtThuongHieu" prefHeight="26.0" prefWidth="352.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <CheckBox fx:id="checkBoxKeDon" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Đối tương SD" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Thành phần" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="txtThanhPhan" prefHeight="51.0" prefWidth="310.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                          <TextField fx:id="txtDoiTuongSD" prefHeight="26.0" prefWidth="228.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane layoutX="443.0" layoutY="51.0" prefHeight="254.0" prefWidth="417.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="155.19998779296876" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="12.799984741210949" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.20002441406257" minWidth="10.0" prefWidth="347.2000152587891" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="39.000006103515624" minHeight="10.0" prefHeight="39.000006103515624" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="39.000006103515624" minHeight="10.0" prefHeight="39.000006103515624" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.00000610351562" minHeight="10.0" prefHeight="32.8" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="34.79999389648438" minHeight="10.0" prefHeight="32.80000762939453" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="43.199987792968756" minHeight="10.0" prefHeight="31.199992370605457" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Giá nhập" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Giá bán" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="20.0" prefWidth="95.0" text="Ngày hết hạn" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Ngày sản xuất" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Khu vực lưu trữ" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtGiaNhap" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txtGiaBan" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <TextField fx:id="txtKVLT" prefHeight="26.0" prefWidth="228.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                          <Label text="Tác dụng" GridPane.halignment="RIGHT">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="txtTacDung" prefHeight="58.0" prefWidth="310.0" GridPane.columnIndex="2" />
+                                          <Label text="Số lượng" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtSoLuongThuoc" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <DatePicker fx:id="dateNSX" prefHeight="26.0" prefWidth="298.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <DatePicker fx:id="dateNHH" prefHeight="26.0" prefWidth="310.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
                                  </children>
                                  <styleClass>
                                     <String fx:value="gray-background" />
                                     <String fx:value="radius" />
                                  </styleClass>
                               </AnchorPane>
-                              <Button fx:id="btnAddMedicine" alignment="BASELINE_CENTER" layoutX="758.4" layoutY="5.0" mnemonicParsing="false" onAction="#openAddMedicineModal" prefHeight="36.0" prefWidth="163.0" stylesheets="@../style/admin-main-view.css" text="Thêm thuốc mới" textFill="WHITE" AnchorPane.rightAnchor="14.0">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="linear-green-color" />
-                                    <String fx:value="hover-button" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView>
-                                       <image>
-                                          <Image url="@../image/addition.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
                            </children>
                         </AnchorPane>
 <!--                        Storage Tab-->
@@ -638,168 +681,190 @@
                                     <Font size="13.0" />
                                  </font>
                               </TextField>
-                              <AnchorPane layoutX="14.0" layoutY="73.0" prefHeight="622.0" prefWidth="427.0" AnchorPane.bottomAnchor="11.800000000000068" AnchorPane.leftAnchor="14.0">
+                              <AnchorPane layoutX="15.2" layoutY="73.0" prefHeight="643.0" prefWidth="535.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="15.0">
                                  <children>
-                                    <TableView layoutX="33.0" layoutY="-21.6" prefHeight="644.0" prefWidth="427.0" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-22.0">
+                                    <TableView layoutX="33.0" layoutY="0.8" prefHeight="622.4" prefWidth="427.2" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <columns>
-                                          <TableColumn prefWidth="74.39999520778656" resizable="false" text="Mã khu vực" />
-                                          <TableColumn prefWidth="128.79999542236328" resizable="false" text="Tên" />
-                                          <TableColumn prefWidth="119.20005798339844" resizable="false" text="Mô tả" />
-                                          <TableColumn prefWidth="111.199951171875" text="Số lượng thuốc" />
+                                          <TableColumn prefWidth="83.99997079372406" resizable="false" text="Mã khu vực" />
+                                          <TableColumn prefWidth="138.40003204345703" resizable="false" text="Tên" />
+                                          <TableColumn prefWidth="101.59996032714844" resizable="false" text="Số lượng thuốc" />
+                                          <TableColumn prefWidth="211.20003051757817" text="Mô tả" />
                                        </columns>
                                     </TableView>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="445.0" layoutY="50.0" prefHeight="650.0" prefWidth="454.0" stylesheets="@../style/admin-main-view.css">
+                              <AnchorPane layoutX="557.0" layoutY="56.0" prefHeight="641.0" prefWidth="739.0" stylesheets="@../style/admin-main-view.css">
                                  <children>
                                     <TableView layoutX="4.0" layoutY="280.8" prefHeight="334.0" prefWidth="433.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="281.0">
                                       <columns>
                                         <TableColumn prefWidth="75.0" text="Mã thuốc" />
-                                        <TableColumn prefWidth="81.60003662109375" text="Tên thuốc" />
-                                          <TableColumn prefWidth="74.39996337890625" text="Loại" />
-                                          <TableColumn prefWidth="65.60009765625" text="Số lượng" />
-                                          <TableColumn prefWidth="136.800048828125" text="Ngày sản xuất" />
+                                        <TableColumn prefWidth="110.39996337890625" text="Tên thuốc" />
+                                          <TableColumn prefWidth="84.0" text="Loại" />
+                                          <TableColumn prefWidth="87.2000732421875" text="Số lượng" />
+                                          <TableColumn prefWidth="179.20001220703125" text="Ngày sản xuất" />
+                                          <TableColumn prefWidth="200.0" text="Ngày hết hạn" />
                                       </columns>
                                     </TableView>
-                                    <Label layoutX="116.0" layoutY="14.0" text="THÔNG TIN NƠI LƯU TRỮ">
+                                    <Label layoutX="258.0" layoutY="14.0" text="THÔNG TIN NƠI LƯU TRỮ">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="8.0" layoutY="241.0" prefHeight="30.0" prefWidth="149.0" promptText="Tìm thuốc trong kho">
+                                    <TextField layoutX="8.0" layoutY="241.0" prefHeight="30.0" prefWidth="183.0" promptText="Tìm thuốc trong kho">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
                                     </TextField>
+                                    <Button fx:id="btnDeleteStorage" layoutX="558.0" layoutY="147.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-red-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/delete.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnEditStorage" layoutX="558.0" layoutY="96.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-yellow-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/edit-text.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <GridPane layoutX="100.0" layoutY="69.0" prefHeight="138.0" prefWidth="374.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="143.5999755859375" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.20001220703125" minWidth="7.0" prefWidth="13.4000244140625" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.20001220703125" minWidth="10.0" prefWidth="179.800048828125" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Mã khu vực" GridPane.halignment="RIGHT">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Tên" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Mô tả" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtMaKV" GridPane.columnIndex="2">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtTenKV" prefWidth="221.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextArea fx:id="txtMoTaKV" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextArea>
+                                       </children>
+                                    </GridPane>
+                                    <Button fx:id="btnAddStorage" alignment="BASELINE_CENTER" layoutX="558.0" layoutY="51.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Thêm" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnClearStorage" alignment="BASELINE_CENTER" layoutX="558.0" layoutY="197.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="121.0" stylesheets="@../style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-blue-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/list.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
                                  </children>
                                  <styleClass>
                                     <String fx:value="gray-background" />
                                     <String fx:value="radius" />
                                  </styleClass>
                               </AnchorPane>
-                              <Button fx:id="btnDeleteStorage" layoutX="757.0" layoutY="215.0" mnemonicParsing="false" onAction="#openDeleteStoragePopup" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="linear-red-color" />
-                                    <String fx:value="hover-button" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView>
-                                       <image>
-                                          <Image url="@../image/delete.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button fx:id="btnEditStorage" layoutX="757.0" layoutY="171.0" mnemonicParsing="false" onAction="#openEditStorageModel" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="linear-yellow-color" />
-                                    <String fx:value="hover-button" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView>
-                                       <image>
-                                          <Image url="@../image/edit-text.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button fx:id="btnAddStorage" alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" onAction="#openAddStorageModel" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm kho mới" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="linear-green-color" />
-                                    <String fx:value="hover-button" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView>
-                                       <image>
-                                          <Image url="@../image/addition.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <GridPane layoutX="463.0" layoutY="155.0" prefHeight="104.0" prefWidth="275.0">
-                                <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.20001220703125" minWidth="10.0" prefWidth="94.999951171875" />
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.20001220703125" minWidth="10.0" prefWidth="179.800048828125" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
-                                </rowConstraints>
-                                 <children>
-                                    <Label text="Mã khu vực">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="Tên" GridPane.rowIndex="1">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="Mô tả" GridPane.rowIndex="2">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font></Label>
-                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font></Label>
-                                    <Label text="unknow" GridPane.columnIndex="1">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font></Label>
-                                 </children>
-                              </GridPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="customerTab" prefHeight="707.2" prefWidth="900.8">
+                        <AnchorPane fx:id="customerTab" prefHeight="707.0" prefWidth="1297.0" visible="false">
                            <children>
                               <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm khách hàng">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
                               </TextField>
-                              <AnchorPane layoutX="14.0" layoutY="73.0" prefHeight="622.0" prefWidth="427.0" AnchorPane.bottomAnchor="11.800000000000068" AnchorPane.leftAnchor="14.0">
+                              <AnchorPane layoutX="15.2" layoutY="73.0" prefHeight="644.0" prefWidth="615.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="15.0">
                                  <children>
-                                    <TableView fx:id="tvKhachHang" layoutX="33.0" layoutY="-21.6" prefHeight="644.0" prefWidth="427.0" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-22.0">
+                                    <TableView fx:id="tvKhachHang" layoutX="33.0" layoutY="-21.6" prefHeight="622.4" prefWidth="615.0" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <columns>
-                                          <TableColumn fx:id="maKH" prefWidth="74.39999520778656" resizable="false" text="Mã KH" />
-                                          <TableColumn fx:id="tenKH" prefWidth="69.60004425048828" resizable="false" text="Tên" />
-                                          <TableColumn fx:id="gioiTinhKH" prefWidth="83.99993896484375" resizable="false" text="Giới tính" />
-                                          <TableColumn fx:id="sdtKH" prefWidth="71.99998474121094" text="SĐT" />
-                                          <TableColumn fx:id="ngaySinhKH" prefWidth="125.59999389648436" text="Ngày sinh" />
+                                          <TableColumn fx:id="maKH" prefWidth="69.59997689723969" resizable="false" text="Mã KH" />
+                                          <TableColumn fx:id="tenKH" prefWidth="153.60004425048828" resizable="false" text="Tên" />
+                                          <TableColumn fx:id="gioiTinhKH" minWidth="0.0" prefWidth="64.79997253417969" resizable="false" text="Giới tính" />
+                                          <TableColumn fx:id="sdtKH" prefWidth="171.19998168945312" text="SĐT" />
+                                          <TableColumn fx:id="ngaySinhKH" prefWidth="160.00003051757812" text="Ngày sinh" />
                                        </columns>
                                     </TableView>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="445.0" layoutY="50.0" prefHeight="650.0" prefWidth="454.0" stylesheets="@../style/admin-main-view.css">
+                              <AnchorPane layoutX="634.0" layoutY="54.0" prefHeight="646.0" prefWidth="659.0" stylesheets="@../style/admin-main-view.css">
                                  <children>
                                     <TableView layoutX="4.0" layoutY="280.8" prefHeight="334.0" prefWidth="433.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="281.0">
                                        <columns>
-                                          <TableColumn prefWidth="138.4000244140625" text="Mã HĐ" />
-                                          <TableColumn prefWidth="144.79998779296875" text="Ngày lập HĐ" />
-                                          <TableColumn prefWidth="160.800048828125" text="Tổng tiền" />
+                                          <TableColumn prefWidth="212.7999267578125" text="Mã HĐ" />
+                                          <TableColumn prefWidth="203.20013427734375" text="Ngày lập HĐ" />
+                                          <TableColumn prefWidth="240.800048828125" text="Tổng tiền" />
                                        </columns>
                                     </TableView>
-                                    <Label layoutX="114.0" layoutY="14.0" text="THÔNG TIN KHÁCH HÀNG">
+                                    <Label layoutX="216.0" layoutY="14.0" text="THÔNG TIN KHÁCH HÀNG">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
@@ -809,285 +874,163 @@
                                           <Font size="13.0" />
                                        </font>
                                     </TextField>
+                                    <Button fx:id="btnDeleteCustomer" layoutX="488.0" layoutY="148.0" mnemonicParsing="false" onAction="#deleteKH" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-red-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/delete.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnEditCustomer" layoutX="488.0" layoutY="104.0" mnemonicParsing="false" onAction="#openEditCustomerModel" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-yellow-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/edit-text.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <GridPane layoutX="158.0" layoutY="59.0" prefHeight="160.0" prefWidth="275.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.20001220703125" minWidth="10.0" prefWidth="94.999951171875" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.20001220703125" minWidth="10.0" prefWidth="179.800048828125" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Mã KH">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Tên" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Ngày sinh" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="SĐT" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtMaKH" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtTenKH" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtSdtKH" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <DatePicker fx:id="dateNgaySinhKH" prefHeight="26.0" prefWidth="184.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                       </children>
+                                    </GridPane>
+                                    <Button fx:id="btnClearMedicine1" alignment="BASELINE_CENTER" layoutX="488.0" layoutY="192.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="124.0" stylesheets="@../style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-blue-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/list.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnAddCustomer" alignment="BASELINE_CENTER" layoutX="488.0" layoutY="57.0" mnemonicParsing="false" onAction="#openAddCustomerModel" prefHeight="36.0" prefWidth="123.0" stylesheets="@../style/admin-main-view.css" text="Thêm" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
                                  </children>
                                  <styleClass>
                                     <String fx:value="gray-background" />
                                     <String fx:value="radius" />
                                  </styleClass>
                               </AnchorPane>
-                              <Button fx:id="btnDeleteCustomer" layoutX="757.0" layoutY="215.0" mnemonicParsing="false" onAction="#deleteKH" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="linear-red-color" />
-                                    <String fx:value="hover-button" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView>
-                                       <image>
-                                          <Image url="@../image/delete.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button fx:id="btnEditCustomer" layoutX="757.0" layoutY="171.0" mnemonicParsing="false" onAction="#openEditCustomerModel" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="linear-yellow-color" />
-                                    <String fx:value="hover-button" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView>
-                                       <image>
-                                          <Image url="@../image/edit-text.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button fx:id="btnAddCustomer" alignment="BASELINE_CENTER" layoutX="730.0" layoutY="7.0" mnemonicParsing="false" onAction="#openAddCustomerModel" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm khách hàng" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="linear-green-color" />
-                                    <String fx:value="hover-button" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView>
-                                       <image>
-                                          <Image url="@../image/addition.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <GridPane layoutX="463.0" layoutY="117.0" prefHeight="160.0" prefWidth="275.0">
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.20001220703125" minWidth="10.0" prefWidth="94.999951171875" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.20001220703125" minWidth="10.0" prefWidth="179.800048828125" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                    <Label text="Mã KH">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="Tên" GridPane.rowIndex="1">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="Ngày sinh" GridPane.rowIndex="3">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="lblSdtKH" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="lblNgaySinhKH" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="lblMaKH" text="unknow" GridPane.columnIndex="1">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="SĐT" GridPane.rowIndex="2">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="lblTenKH" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </GridPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="employeeTab" layoutX="6.0" prefHeight="707.2" prefWidth="900.8">
+                        <AnchorPane fx:id="employeeTab" layoutX="6.0" prefHeight="707.0" prefWidth="1294.0" visible="false">
                            <children>
                               <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm nhân viên">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
                               </TextField>
-                              <AnchorPane layoutX="368.6" layoutY="48.80000000000007" prefHeight="644.0" prefWidth="522.0" AnchorPane.leftAnchor="368.79999999999995" AnchorPane.rightAnchor="9.600000000000023">
+                              <AnchorPane layoutX="368.8" layoutY="59.0" prefHeight="634.0" prefWidth="916.0" AnchorPane.leftAnchor="369.0" AnchorPane.rightAnchor="10.0">
                                  <children>
                                     <TableView fx:id="tvNhanVien" layoutX="2.2" prefHeight="644.0" prefWidth="522.4" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.3999999999999773" AnchorPane.rightAnchor="1.1368683772161603E-13" AnchorPane.topAnchor="0.0">
                                        <columns>
-                                          <TableColumn fx:id="maNV" prefWidth="74.39999520778656" resizable="false" text="Mã NV" />
-                                          <TableColumn fx:id="tenNV" prefWidth="69.60004425048828" resizable="false" text="Tên" />
-                                          <TableColumn fx:id="gioiTinhNV" prefWidth="87.199951171875" resizable="false" text="Giới tính" />
-                                          <TableColumn fx:id="taiKhoan" prefWidth="97.59996032714844" text="Tài khoản" />
-                                          <TableColumn fx:id="cccd" prefWidth="98.4000244140625" text="CCCD" />
-                                          <TableColumn fx:id="emailNV" prefWidth="99.199951171875" text="Email" />
+                                          <TableColumn fx:id="maNV" prefWidth="67.20000755786896" resizable="false" text="Mã NV" />
+                                          <TableColumn fx:id="tenNV" prefWidth="172.00000762939453" resizable="false" text="Tên" />
+                                          <TableColumn fx:id="gioiTinhNV" prefWidth="80.80000305175781" resizable="false" text="Giới tính" />
+                                          <TableColumn fx:id="taiKhoan" prefWidth="97.5999755859375" text="Tài khoản" />
+                                          <TableColumn fx:id="emailNV" prefWidth="95.99990844726562" text="Email" />
+                                          <TableColumn fx:id="cccd" prefWidth="120.0" text="CCCD" />
+                                          <TableColumn fx:id="cccd1" prefWidth="144.79998779296875" text="SĐT" />
+                                          <TableColumn fx:id="cccd11" prefWidth="131.2000732421875" text="Ngày sinh" />
                                        </columns>
                                     </TableView>
                                  </children>
                               </AnchorPane>
-                              <Button fx:id="btnAddEmployee" alignment="BASELINE_CENTER" layoutX="722.0" layoutY="8.0" mnemonicParsing="false" onAction="#openAddEmployeeModel" prefHeight="36.0" prefWidth="162.0" stylesheets="@../style/admin-main-view.css" text="Thêm nhân viên" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="linear-green-color" />
-                                    <String fx:value="hover-button" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView>
-                                       <image>
-                                          <Image url="@../image/addition.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <AnchorPane layoutX="8.0" layoutY="50.0" prefHeight="643.0" prefWidth="328.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="14.800000000000068" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="534.4" AnchorPane.topAnchor="50.0">
+                              <AnchorPane layoutX="8.0" layoutY="56.8" prefHeight="635.0" prefWidth="358.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="929.0" AnchorPane.topAnchor="57.0">
                                  <children>
                                     <Label layoutX="75.0" layoutY="14.0" text="THÔNG TIN NHÂN VIÊN">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <GridPane layoutX="14.0" layoutY="201.0" prefHeight="283.0" prefWidth="314.0">
-                                       <columnConstraints>
-                                          <ColumnConstraints fx:id="gridPaneNV" hgrow="SOMETIMES" maxWidth="269.60008850097654" minWidth="10.0" prefWidth="75.79998397827148" />
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.99995117187507" minWidth="10.0" prefWidth="126.20001602172852" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <Label text="Mã NV">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Tên" GridPane.rowIndex="1">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Email" GridPane.rowIndex="5">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblSdtNV" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="7">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblEmailNV" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblMaNV" text="unknow" GridPane.columnIndex="1">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="SĐT" GridPane.rowIndex="7">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblTenNV" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Chức vụ" GridPane.rowIndex="3">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblChucVu" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="CCCD" GridPane.rowIndex="6">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblCCCD" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Địa Chỉ" GridPane.rowIndex="8">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblDiaChi" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="8">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Giới tính" GridPane.rowIndex="2">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblGioiTinhNV" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Tài khoản" GridPane.rowIndex="4">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblTaiKhoan" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Ngày sinh" GridPane.rowIndex="9">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lblNgaySinhNV" text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="9">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </GridPane>
-                                    <Button fx:id="btnDeleteEmployee" layoutX="186.0" layoutY="552.0" mnemonicParsing="false" onAction="#deleteNV" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                    <Button fx:id="btnDeleteEmployee" layoutX="39.0" layoutY="544.0" mnemonicParsing="false" onAction="#deleteNV" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -1104,7 +1047,7 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button fx:id="btnEditEmployee" layoutX="28.0" layoutY="552.0" mnemonicParsing="false" onAction="#openEditEmployeeModel" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                    <Button fx:id="btnEditEmployee" layoutX="186.0" layoutY="494.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -1121,11 +1064,150 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="101.0" layoutY="41.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3BmLWljb240LWppcjIwNjItcG9yLWwtam9iNzg4LnBuZw.png" />
-                                       </image>
-                                    </ImageView>
+                                    <GridPane layoutY="66.0" prefHeight="387.0" prefWidth="346.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="239.4000244140625" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="21.79997558593749" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.99998474121094" minWidth="10.0" prefWidth="364.60001220703117" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Mã Nhân viên" GridPane.halignment="RIGHT">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Tên" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Email" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Chức vụ" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Giới tính" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Tên tài khoản" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="CCCD" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Địa chỉ" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="textMaNV" GridPane.columnIndex="2">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtTenNV" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <ChoiceBox fx:id="sexEmployeeChoiceBox" prefHeight="26.0" prefWidth="115.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <ChoiceBox fx:id="roleEmployeeChoiceBox" prefHeight="26.0" prefWidth="115.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <TextField fx:id="txtTenTkNV" prefHeight="26.0" prefWidth="228.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtEmailNV" prefHeight="26.0" prefWidth="116.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField prefHeight="26.0" prefWidth="116.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                          <TextField fx:id="txtCccdNV" prefHeight="26.0" prefWidth="116.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtDiaChiNV" prefHeight="26.0" prefWidth="116.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label text="Ngày sinh" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <DatePicker fx:id="dateNgaySinhNV" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label text="SĐT" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtSdtNV" prefHeight="26.0" prefWidth="228.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </GridPane>
+                                    <Button fx:id="btnAddEmployee" alignment="BASELINE_CENTER" layoutX="39.0" layoutY="494.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Thêm" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnClearEmployee" alignment="BASELINE_CENTER" layoutX="189.0" layoutY="544.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" stylesheets="@../style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-blue-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/list.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
                                  </children>
                                  <styleClass>
                                     <String fx:value="gray-background" />
@@ -1141,28 +1223,28 @@
                                     <Font size="13.0" />
                                  </font>
                               </TextField>
-                              <AnchorPane layoutX="14.0" layoutY="73.0" prefHeight="622.0" prefWidth="427.0" AnchorPane.bottomAnchor="11.800000000000068" AnchorPane.leftAnchor="14.0">
+                              <AnchorPane layoutX="15.2" layoutY="73.0" prefHeight="644.0" prefWidth="691.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="15.0">
                                  <children>
-                                    <TableView layoutX="33.0" layoutY="-21.6" prefHeight="644.0" prefWidth="427.0" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-22.0">
+                                    <TableView layoutX="33.0" layoutY="-21.6" prefHeight="622.4" prefWidth="691.2" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <columns>
-                                          <TableColumn prefWidth="78.40002572536469" resizable="false" text="Mã NCC" />
-                                          <TableColumn prefWidth="112.00003814697266" resizable="false" text="Tên" />
-                                          <TableColumn prefWidth="97.59992980957031" resizable="false" text="Địa chỉ" />
-                                          <TableColumn prefWidth="141.60006713867188" text="SĐT" />
+                                          <TableColumn prefWidth="105.59998148679733" resizable="false" text="Mã NCC" />
+                                          <TableColumn prefWidth="162.39999389648438" resizable="false" text="Tên" />
+                                          <TableColumn prefWidth="236.80001831054688" resizable="false" text="Địa chỉ" />
+                                          <TableColumn prefWidth="188.0" text="SĐT" />
                                        </columns>
                                     </TableView>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="445.0" layoutY="50.0" prefHeight="650.0" prefWidth="454.0" stylesheets="@../style/admin-main-view.css">
+                              <AnchorPane layoutX="709.0" layoutY="53.0" prefHeight="647.0" prefWidth="586.0" stylesheets="@../style/admin-main-view.css">
                                  <children>
                                     <TableView layoutX="4.0" layoutY="280.8" prefHeight="334.0" prefWidth="433.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="281.0">
                                        <columns>
-                                          <TableColumn prefWidth="138.4000244140625" text="Mã HĐ" />
-                                          <TableColumn prefWidth="144.79998779296875" text="Ngày lập HĐ" />
-                                          <TableColumn prefWidth="160.800048828125" text="Tổng tiền" />
+                                          <TableColumn prefWidth="158.4000244140625" text="Mã HĐ" />
+                                          <TableColumn prefWidth="204.00006103515625" text="Ngày lập HĐ" />
+                                          <TableColumn prefWidth="218.4000244140625" text="Tổng tiền" />
                                        </columns>
                                     </TableView>
-                                    <Label layoutX="114.0" layoutY="14.0" text="THÔNG TIN NHÀ CUNG CẤP">
+                                    <Label layoutX="172.0" layoutY="14.0" text="THÔNG TIN NHÀ CUNG CẤP">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
@@ -1172,117 +1254,177 @@
                                           <Font size="13.0" />
                                        </font>
                                     </TextField>
+                                    <Button fx:id="btnDeleteSupplier" layoutX="418.0" layoutY="160.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-red-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/delete.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnEditSupplier" layoutX="418.0" layoutY="116.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-yellow-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/edit-text.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <GridPane layoutX="100.0" layoutY="72.0" prefHeight="160.0" prefWidth="275.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.20001220703125" minWidth="10.0" prefWidth="94.999951171875" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.20001220703125" minWidth="10.0" prefWidth="179.800048828125" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Mã NCC">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Tên" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="SĐT" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Địa Chỉ" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtMaNCC" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtTenNCC" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtDiaChiNCC" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtSdtNCC" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </GridPane>
+                                    <Button fx:id="btnAddSupplier" alignment="BASELINE_CENTER" layoutX="417.0" layoutY="72.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Thêm" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnClearSupplier" alignment="BASELINE_CENTER" layoutX="418.0" layoutY="204.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-blue-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/list.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
                                  </children>
                                  <styleClass>
                                     <String fx:value="gray-background" />
                                     <String fx:value="radius" />
                                  </styleClass>
                               </AnchorPane>
-                              <Button fx:id="btnDeleteSupplier" layoutX="757.0" layoutY="215.0" mnemonicParsing="false" onAction="#openDeleteSupplierPopup" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="linear-red-color" />
-                                    <String fx:value="hover-button" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView>
-                                       <image>
-                                          <Image url="@../image/delete.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button fx:id="btnEditSupplier" layoutX="757.0" layoutY="171.0" mnemonicParsing="false" onAction="#openEditSupplierModel" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="linear-yellow-color" />
-                                    <String fx:value="hover-button" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView>
-                                       <image>
-                                          <Image url="@../image/edit-text.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button fx:id="btnAddSupplier" alignment="BASELINE_CENTER" layoutX="703.0" layoutY="7.0" mnemonicParsing="false" onAction="#openAddSupplierModel" prefHeight="36.0" prefWidth="189.0" stylesheets="@../style/admin-main-view.css" text="Thêm nhà cung cấp" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="linear-green-color" />
-                                    <String fx:value="hover-button" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView>
-                                       <image>
-                                          <Image url="@../image/addition.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <GridPane layoutX="463.0" layoutY="117.0" prefHeight="160.0" prefWidth="275.0">
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.20001220703125" minWidth="10.0" prefWidth="94.999951171875" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.20001220703125" minWidth="10.0" prefWidth="179.800048828125" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints maxHeight="43.20000305175781" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="117.99996032714844" minHeight="10.0" prefHeight="28.200000000000003" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="63.600012207031256" minHeight="10.0" prefHeight="24.999999999999993" vgrow="SOMETIMES" />
-                                 </rowConstraints>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="241.0" layoutY="133.0" prefHeight="707.2" prefWidth="1300.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="85.0" layoutY="32.0" prefHeight="49.0" prefWidth="1301.0" AnchorPane.bottomAnchor="658.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label text="Mã NCC">
+                                    <Button fx:id="btnAddSupplier1" alignment="BASELINE_CENTER" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="203.0" stylesheets="@../style/admin-main-view.css" text="Bán thuốc không kê đơn" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
-                                    </Label>
-                                    <Label text="Tên" GridPane.rowIndex="1">
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnAddSupplier11" alignment="BASELINE_CENTER" layoutX="227.0" layoutY="6.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="203.0" stylesheets="@../style/admin-main-view.css" text="Bán thuốc kê đơn" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
-                                    </Label>
-                                    <Label text="SĐT" GridPane.rowIndex="3">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="unknow" GridPane.columnIndex="1">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="Địa Chỉ" GridPane.rowIndex="2">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="unknow" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </Label>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
                                  </children>
-                              </GridPane>
+                              </AnchorPane>
+                              <AnchorPane layoutX="159.0" layoutY="52.0" prefHeight="655.0" prefWidth="1301.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0" />
                            </children>
                         </AnchorPane>
                      </children>

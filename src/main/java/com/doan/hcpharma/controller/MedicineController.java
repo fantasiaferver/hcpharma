@@ -53,9 +53,5 @@ public class MedicineController implements Initializable {
 
         thuocDAO=new ThuocDAO();
         thuocDAO.addData(new ThuocEntity(maTi,tenT,dvt,congdung));
-
-
-
-
     }
 }

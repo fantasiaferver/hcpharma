@@ -67,6 +67,9 @@ public class MainController implements Initializable {
     private Button btnDeleteEmployee;
 
     @FXML
+    private Button btnClearEmployee;
+
+    @FXML
     private Button btnAddMedicine;
 
     @FXML
@@ -76,7 +79,10 @@ public class MainController implements Initializable {
     private Button btnDeleteMedicine;
 
     @FXML
-    private Button btnDeltailMedicine;
+    private Button btnDetailMedicine;
+
+    @FXML
+    private Button btnClearMedicine;
 
     @FXML
     private Button btnAddStorage;
@@ -88,6 +94,9 @@ public class MainController implements Initializable {
     private Button btnDeleteStorage;
 
     @FXML
+    private Button btnClearStorage;
+
+    @FXML
     private Button btnAddCustomer;
 
     @FXML
@@ -95,6 +104,9 @@ public class MainController implements Initializable {
 
     @FXML
     private Button btnDeleteCustomer;
+
+    @FXML
+    private Button btnClearCustomer;
 
     @FXML
     private Button btnAddSupplier;
@@ -105,11 +117,20 @@ public class MainController implements Initializable {
     @FXML
     private Button btnDeleteSupplier;
 
-
+    @FXML
+    private Button btnClearSupplier;
 
     @FXML
     private Label dateTimeLabel;
 
+    @FXML
+    private ChoiceBox<String> kindOfMedicineChoiceBox;
+
+    @FXML
+    private ChoiceBox<String> sexEmployeeChoiceBox;
+
+    @FXML
+    private ChoiceBox<String> roleEmployeeChoiceBox;
 
 
 
@@ -153,7 +174,20 @@ public class MainController implements Initializable {
 
     @FXML
     private void showMedicineTab() {
-        showTab(medicineTab, "THUỐC");
+        kindOfMedicineChoiceBox.getItems().addAll("Kháng dị ứng"
+                ,"Kháng viêm"
+                ,"Ngừa thai"
+                ,"Cảm lạnh"
+                ,"Da liễu"
+                ,"Giảm cân"
+                ,"Mắt tai mũi"
+                ,"Tiêu hóa"
+                ,"Giảm đau hạ sốt"
+                ,"Thuốc cho Nam"
+                ,"Thuốc cho Nữ"
+                ,"Thuốc thần kinh"
+                ,"Thuốc xương khớp"
+                ,"Vitamin và khoáng chất");
         showThuoc();
     }
 
@@ -171,6 +205,8 @@ public class MainController implements Initializable {
     @FXML
     private void showEmployeeTab() {
         showTab(employeeTab, "NHÂN VIÊN");
+        sexEmployeeChoiceBox.getItems().addAll("Nam", "Nữ");
+        roleEmployeeChoiceBox.getItems().addAll("Nhân viên", "Quản lý");
         showNV();
     }
 
@@ -282,6 +318,57 @@ public class MainController implements Initializable {
     }
 
 
+    // Xử lý button xóa rỗng
+    @FXML
+    private TextField txtDonViTInh;
+
+    @FXML
+    private TextField txtGiaBan;
+
+    @FXML
+    private TextField txtGiaNhap;
+
+    @FXML
+    private TextField txtKVLT;
+
+    @FXML
+    private TextField txtMaThuoc;
+
+    @FXML
+    private TextField txtSoLuongThuoc;
+
+    @FXML
+    private TextArea txtTacDung;
+
+    @FXML
+    private TextField txtTenThuoc;
+
+    @FXML
+    private TextArea txtThanhPhan;
+
+    @FXML
+    private TextField txtThuongHieu;
+
+    @FXML
+    private TextField txtDoiTuongSD;
+
+
+    @FXML
+    private void clearTextFieldMedicine() {
+        txtThanhPhan.setText("");
+        txtThuongHieu.setText("");
+        txtTenThuoc.setText("");
+        txtTacDung.setText("");
+        txtSoLuongThuoc.setText("");
+        txtMaThuoc.setText("");
+        txtKVLT.setText("");
+        txtGiaNhap.setText("");
+        txtGiaBan.setText("");
+        txtDonViTInh.setText("");
+        txtDoiTuongSD.setText("");
+    }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -313,9 +400,6 @@ public class MainController implements Initializable {
     @FXML
     private GridPane gridPane;
 
-    @FXML
-    private Label lblTenT,lblLoaiT,lblDVT,lblCongDung,lblXuatXu,lblGia;
-
     ThuocDAO thuocDAO = null;
 
     @FXML
@@ -336,7 +420,7 @@ public class MainController implements Initializable {
             ngaySX.setCellValueFactory(new PropertyValueFactory<>("ngaySx"));
             ngayHH.setCellValueFactory(new PropertyValueFactory<>("ngayHh"));
             kvlt.setCellValueFactory(new PropertyValueFactory<>("maKhuVuc"));
-            moTa.setCellValueFactory(new PropertyValueFactory<>("moTa"));
+
 
             thuocDAO = new ThuocDAO();
             List<ThuocEntity> li = thuocDAO.getAll();
@@ -351,12 +435,11 @@ public class MainController implements Initializable {
                     public void handle(MouseEvent event) {
                         ThuocEntity selectedThuoc = tvThuoc.getSelectionModel().getSelectedItem();
                         if (selectedThuoc != null) {
-                            lblTenT.setText(selectedThuoc.getTenThuoc());
-                            lblLoaiT.setText(selectedThuoc.getMaLoaiThuoc());
-                            lblDVT.setText(selectedThuoc.getDonViTinh());
-                            lblCongDung.setText(selectedThuoc.getMoTa());
-                          //  lblXuatXu.setText(selectedThuoc.getXuatXu());
-                            lblGia.setText(String.valueOf(selectedThuoc.getDonGia()));
+                            txtTenThuoc.setText(selectedThuoc.getTenThuoc());
+                            kindOfMedicineChoiceBox.setValue(selectedThuoc.getMaLoaiThuoc());
+                            txtDonViTInh.setText(selectedThuoc.getDonViTinh());
+                            txtTacDung.setText(selectedThuoc.getMoTa());
+                            txtGiaBan.setText(String.valueOf(selectedThuoc.getDonGia()));
                         }
                     }
                 });
