@@ -13,7 +13,7 @@ public class NhanVienDAO implements DAOInterface {
     Transaction transaction = null;
     Session session = null;
     @Override
-    public void addData(Object data) {
+    public boolean addData(Object data) {
 
         session = HibernateUtil.getSession();
 
@@ -31,10 +31,11 @@ public class NhanVienDAO implements DAOInterface {
         } finally {
             session.close();
         }
+        return false;
     }
 
     @Override
-    public void updateData(Object data) {
+    public boolean updateData(Object data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -51,6 +52,7 @@ public class NhanVienDAO implements DAOInterface {
         } finally {
             session.close();
         }
+        return false;
     }
 
     @Override

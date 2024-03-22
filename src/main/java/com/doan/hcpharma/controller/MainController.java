@@ -27,7 +27,9 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
@@ -174,6 +176,7 @@ public class MainController implements Initializable {
 
     @FXML
     private void showMedicineTab() {
+        showTab(medicineTab, "THUỐC");
         kindOfMedicineChoiceBox.getItems().addAll("Kháng dị ứng"
                 ,"Kháng viêm"
                 ,"Ngừa thai"
@@ -384,6 +387,9 @@ public class MainController implements Initializable {
         dateTimeLabel.setText(formattedDateTime);
     }
 
+    /*----------------------------------------------------  THUỐC  ---------------------------------------------------------------*/
+    /*----------------------------------------------------------------------------------------------------------------------------*/
+
     //Show Thuốc lên bảng
 
     @FXML
@@ -457,7 +463,7 @@ public class MainController implements Initializable {
         }
 
     }
-
+    /*----------------------------------------------------  KHÁCH HÀNG ---------------------------------------------------------------*/
     //Show KH lên bảng
 
     @FXML
@@ -468,15 +474,19 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<KhachHangEntity, Date> ngaySinhKH;
 
-    // Định nghĩa GridPane và các Label
+    // Định nghĩa GridPane để Thêm, Sửa
 //    @FXML
 //    private GridPane gridPaneKH;
 
     @FXML
-    private Label lblMaKH,lblTenKH,lblSdtKH, lblNgaySinhKH;
+    private TextField txtMaKH,txtTenKH,txtSdtKH;
+    @FXML
+    private DatePicker dateNgaySinhKH;
+    @FXML
+    private RadioButton rdBtnNam,rdBtnNu;
+    KhachHangDAO khachHangDAO = new KhachHangDAO();
 
-    KhachHangDAO khachHangDAO = null;
-
+    //Hiện khách hàng lên table
     @FXML
     public void showKH() {
         if (tvKhachHang == null) {
@@ -492,7 +502,8 @@ public class MainController implements Initializable {
             sdtKH.setCellValueFactory(new PropertyValueFactory<>("sdtKh"));
             ngaySinhKH.setCellValueFactory(new PropertyValueFactory<>("ngaySinh"));
 
-            khachHangDAO = new KhachHangDAO();
+
+
             List<KhachHangEntity> li = khachHangDAO.getAll();
 
             if (li != null && !li.isEmpty()) {
@@ -505,10 +516,23 @@ public class MainController implements Initializable {
                     public void handle(MouseEvent event) {
                         KhachHangEntity selectedKH = tvKhachHang.getSelectionModel().getSelectedItem();
                         if (selectedKH != null) {
-                            lblMaKH.setText(selectedKH.getMaKh());
-                            lblTenKH.setText(selectedKH.getTenKh());
-                            lblSdtKH.setText(selectedKH.getSdtKh());
-                            lblNgaySinhKH.setText(String.valueOf(selectedKH.getNgaySinh()));
+                            txtMaKH.setText(selectedKH.getMaKh());
+                            txtMaKH.setEditable(false);
+                            if(selectedKH.getGioiTinh().equals("Nam")){
+                                rdBtnNam.setSelected(true);
+                                rdBtnNu.setSelected(false);
+                            }else {
+                                rdBtnNu.setSelected(true);
+                                rdBtnNam.setSelected(false);
+                            }
+                            txtTenKH.setText(selectedKH.getTenKh());
+                            txtSdtKH.setText(selectedKH.getSdtKh());
+                            //DatePicker
+                            Date ngaySinh = selectedKH.getNgaySinh();
+                            // Chuyển đổi từ java.sql.Date sang java.util.Date
+                            java.util.Date utilDate = new java.util.Date(ngaySinh.getTime());
+                            LocalDate localDate = utilDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                            dateNgaySinhKH.setValue(localDate);
                         }
                     }
                 });
@@ -525,6 +549,43 @@ public class MainController implements Initializable {
             e.printStackTrace(); // In stack trace để debug
         }
 
+    }
+    //Thêm khách hàng
+    @FXML
+    public void addKH() {
+        // Lấy thông tin từ các trường nhập liệu trên form
+        String maKH = txtMaKH.getText();
+        String tenKH = txtTenKH.getText();
+        String gioiTinh = rdBtnNam.isSelected() ? "Nam" : "Nữ";
+        String sdtKH = txtSdtKH.getText();
+        java.sql.Date ngaySinh = java.sql.Date.valueOf(dateNgaySinhKH.getValue()); // Lấy ngày sinh từ DatePicker
+
+        // Kiểm tra xem người dùng đã nhập đủ thông tin hay chưa
+        if (maKH.isEmpty() || tenKH.isEmpty() || sdtKH.isEmpty() || ngaySinh == null) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
+            return;
+        }
+        khachHangDAO=new KhachHangDAO();
+        KhachHangEntity newKH = new KhachHangEntity(maKH, tenKH, gioiTinh, ngaySinh, sdtKH );
+
+        // Thêm khách hàng mới vào cơ sở dữ liệu bằng cách sử dụng KhachHangDAO
+        if (khachHangDAO.addData(newKH)) {
+            showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Thêm khách hàng thành công.");
+            clearFieldsKH();
+            showKH();
+        } else {
+            // Hiển thị thông báo lỗi nếu thêm không thành công
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Thêm khách hàng thất bại.");
+        }
+    }
+
+    // Phương thức hiển thị hộp thoại thông báo
+    private void showAlert(Alert.AlertType alertType, String title, String content) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
     //Xóa Khách hàng
     public void deleteKH() {
@@ -552,15 +613,66 @@ public class MainController implements Initializable {
         ButtonType result = confirmAlert.showAndWait().orElse(ButtonType.CANCEL);
         if (result == ButtonType.OK) {
             // Nếu người dùng đồng ý, tiến hành xóa khách hàng
-            khachHangDAO = new KhachHangDAO();
             khachHangDAO.removeData(selected);
 
             // Cập nhật TableView sau khi xóa
             showKH();
+            clearFieldsKH();
         }
     }
 
     //Sửa khách hàng
+    public void updateKH() {
+        // Lấy thông tin khách hàng đã chọn từ bảng (nếu có)
+        KhachHangEntity selectedKH = tvKhachHang.getSelectionModel().getSelectedItem();
+
+        // Kiểm tra xem đã chọn khách hàng để sửa chưa
+        if (selectedKH == null) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng chọn khách hàng để sửa.");
+            return;
+        }
+        // Lấy thông tin đã chỉnh sửa
+        String tenKH = txtTenKH.getText();
+        String gioiTinh = rdBtnNam.isSelected() ? "Nam" : "Nữ";
+        String sdtKH = txtSdtKH.getText();
+        java.sql.Date ngaySinh = java.sql.Date.valueOf(dateNgaySinhKH.getValue());
+
+        // Kiểm tra xem người dùng đã nhập đủ thông tin hay chưa
+        if (tenKH.isEmpty() || sdtKH.isEmpty() || ngaySinh == null) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
+            return;
+        }
+
+        // Cập nhật thông tin cho đối tượng selectedKH
+        selectedKH.setTenKh(tenKH);
+        selectedKH.setGioiTinh(gioiTinh);
+        selectedKH.setSdtKh(sdtKH);
+        selectedKH.setNgaySinh(ngaySinh);
+
+        // Cập nhật thông tin khách hàng trong cơ sở dữ liệu
+        if (khachHangDAO.updateData(selectedKH)){
+            showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin khách hàng thành công.");
+            showKH();
+            clearFieldsKH();
+        } else {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Sửa thông tin khách hàng thất bại.");
+        }
+    }
+
+
+    //Xóa trắng KH
+    public void clearFieldsKH(){
+        txtMaKH.setText("");
+        txtMaKH.setEditable(true);
+        txtTenKH.setText("");
+        rdBtnNam.setSelected(false);
+        rdBtnNu.setSelected(false);
+        txtSdtKH.setText("");
+        dateNgaySinhKH.setValue(null);
+    }
+
+            /*----------------------------------------------------  NHÂN VIÊN  ---------------------------------------------------------------*/
+
 // Show nhân viên lên bảng
 
 

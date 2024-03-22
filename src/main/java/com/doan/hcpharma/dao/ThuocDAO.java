@@ -14,7 +14,7 @@ public class ThuocDAO implements DAOInterface<ThuocEntity> {
     Transaction transaction = null;
     Session session = null;
     @Override
-    public void addData(ThuocEntity data) {
+    public boolean addData(ThuocEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -31,10 +31,11 @@ public class ThuocDAO implements DAOInterface<ThuocEntity> {
         } finally {
             session.close();
         }
+        return false;
     }
 
     @Override
-    public void updateData(ThuocEntity data) {
+    public boolean updateData(ThuocEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -51,6 +52,7 @@ public class ThuocDAO implements DAOInterface<ThuocEntity> {
         } finally {
             session.close();
         }
+        return false;
     }
 
     @Override

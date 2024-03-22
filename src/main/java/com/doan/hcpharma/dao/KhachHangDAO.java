@@ -14,7 +14,7 @@ public class KhachHangDAO implements DAOInterface<KhachHangEntity>{
     Transaction transaction = null;
     Session session = null;
     @Override
-    public void addData(KhachHangEntity data) {
+    public boolean addData(KhachHangEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -31,10 +31,11 @@ public class KhachHangDAO implements DAOInterface<KhachHangEntity>{
         } finally {
             session.close();
         }
+        return true;
     }
 
     @Override
-    public void updateData(KhachHangEntity data) {
+    public boolean updateData(KhachHangEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -51,6 +52,7 @@ public class KhachHangDAO implements DAOInterface<KhachHangEntity>{
         } finally {
             session.close();
         }
+        return true;
     }
 
     @Override
