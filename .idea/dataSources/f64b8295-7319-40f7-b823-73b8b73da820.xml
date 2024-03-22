@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="qlnhathuoc@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.49">
-    <root id="1"/>
+    <root id="1">
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>8.0.36</ServerVersion>
+    </root>
     <collation id="2" parent="1" name="armscii8_general_ci">
       <Charset>armscii8</Charset>
       <DefaultForCharset>1</DefaultForCharset>
@@ -930,8 +934,8 @@
     </schema>
     <schema id="297" parent="1" name="qlnhathuoc">
       <Current>1</Current>
-      <IntrospectionTimestamp>2024-03-15.22:35:34</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-03-15.08:35:33</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-03-22.21:52:57</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-03-22.07:52:57</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="298" parent="1" name="nthien">

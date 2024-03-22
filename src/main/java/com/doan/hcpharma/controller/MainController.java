@@ -33,6 +33,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -42,85 +43,7 @@ public class MainController implements Initializable {
     private String currentTabName;
 
     @FXML
-    private AnchorPane overviewTab;
-
-    @FXML
-    private AnchorPane medicineTab;
-
-    @FXML
-    private AnchorPane storageTab;
-
-    @FXML
-    private AnchorPane customerTab;
-
-    @FXML
-    private AnchorPane employeeTab;
-
-    @FXML
-    private AnchorPane supplierTab;
-
-    @FXML
-    private Button btnAddEmployee;
-
-    @FXML
-    private Button btnEditEmployee;
-
-    @FXML
-    private Button btnDeleteEmployee;
-
-    @FXML
-    private Button btnClearEmployee;
-
-    @FXML
-    private Button btnAddMedicine;
-
-    @FXML
-    private Button btnEditMedicine;
-
-    @FXML
-    private Button btnDeleteMedicine;
-
-    @FXML
-    private Button btnDetailMedicine;
-
-    @FXML
-    private Button btnClearMedicine;
-
-    @FXML
-    private Button btnAddStorage;
-
-    @FXML
-    private Button btnEditStorage;
-
-    @FXML
-    private Button btnDeleteStorage;
-
-    @FXML
-    private Button btnClearStorage;
-
-    @FXML
-    private Button btnAddCustomer;
-
-    @FXML
-    private Button btnEditCustomer;
-
-    @FXML
-    private Button btnDeleteCustomer;
-
-    @FXML
-    private Button btnClearCustomer;
-
-    @FXML
-    private Button btnAddSupplier;
-
-    @FXML
-    private Button btnEditSupplier;
-
-    @FXML
-    private Button btnDeleteSupplier;
-
-    @FXML
-    private Button btnClearSupplier;
+    private AnchorPane overviewTab,medicineTab,storageTab,customerTab,employeeTab,supplierTab;
 
     @FXML
     private Label dateTimeLabel;
@@ -128,11 +51,6 @@ public class MainController implements Initializable {
     @FXML
     private ChoiceBox<String> kindOfMedicineChoiceBox;
 
-    @FXML
-    private ChoiceBox<String> sexEmployeeChoiceBox;
-
-    @FXML
-    private ChoiceBox<String> roleEmployeeChoiceBox;
 
 
 
@@ -178,19 +96,19 @@ public class MainController implements Initializable {
     private void showMedicineTab() {
         showTab(medicineTab, "THUỐC");
         kindOfMedicineChoiceBox.getItems().addAll("Kháng dị ứng"
-                ,"Kháng viêm"
-                ,"Ngừa thai"
-                ,"Cảm lạnh"
-                ,"Da liễu"
-                ,"Giảm cân"
-                ,"Mắt tai mũi"
-                ,"Tiêu hóa"
-                ,"Giảm đau hạ sốt"
-                ,"Thuốc cho Nam"
-                ,"Thuốc cho Nữ"
-                ,"Thuốc thần kinh"
-                ,"Thuốc xương khớp"
-                ,"Vitamin và khoáng chất");
+                , "Kháng viêm"
+                , "Ngừa thai"
+                , "Cảm lạnh"
+                , "Da liễu"
+                , "Giảm cân"
+                , "Mắt tai mũi"
+                , "Tiêu hóa"
+                , "Giảm đau hạ sốt"
+                , "Thuốc cho Nam"
+                , "Thuốc cho Nữ"
+                , "Thuốc thần kinh"
+                , "Thuốc xương khớp"
+                , "Vitamin và khoáng chất");
         showThuoc();
     }
 
@@ -208,8 +126,6 @@ public class MainController implements Initializable {
     @FXML
     private void showEmployeeTab() {
         showTab(employeeTab, "NHÂN VIÊN");
-        sexEmployeeChoiceBox.getItems().addAll("Nam", "Nữ");
-        roleEmployeeChoiceBox.getItems().addAll("Nhân viên", "Quản lý");
         showNV();
     }
 
@@ -251,9 +167,10 @@ public class MainController implements Initializable {
     @FXML
     private ChoiceBox<String> sexChoiceBox;
     @FXML
-    private TextField tfMaKH,tfTenKH,tfSdtKH;
+    private TextField tfMaKH, tfTenKH, tfSdtKH;
     @FXML
     private DatePicker datePickerKH;
+
     @FXML
     private void openAddMedicineModal(ActionEvent event) {
         openModal("/com/doan/hcpharma/view/add-medicine-modal.fxml", "THÊM THUỐC MỚI");
@@ -372,7 +289,6 @@ public class MainController implements Initializable {
     }
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> updateDateTime()));
@@ -387,6 +303,14 @@ public class MainController implements Initializable {
         dateTimeLabel.setText(formattedDateTime);
     }
 
+    // Phương thức hiển thị hộp thoại thông báo
+    private void showAlert(Alert.AlertType alertType, String title, String content) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
     /*----------------------------------------------------  THUỐC  ---------------------------------------------------------------*/
     /*----------------------------------------------------------------------------------------------------------------------------*/
 
@@ -422,7 +346,7 @@ public class MainController implements Initializable {
             loaiT.setCellValueFactory(new PropertyValueFactory<>("maLoaiThuoc"));
             donVi.setCellValueFactory(new PropertyValueFactory<>("donViTinh"));
             gia.setCellValueFactory(new PropertyValueFactory<>("donGia"));
-            xuatXu.setCellValueFactory(new PropertyValueFactory<>("xuatXu") );
+            xuatXu.setCellValueFactory(new PropertyValueFactory<>("xuatXu"));
             ngaySX.setCellValueFactory(new PropertyValueFactory<>("ngaySx"));
             ngayHH.setCellValueFactory(new PropertyValueFactory<>("ngayHh"));
             kvlt.setCellValueFactory(new PropertyValueFactory<>("maKhuVuc"));
@@ -469,7 +393,7 @@ public class MainController implements Initializable {
     @FXML
     private TableView<KhachHangEntity> tvKhachHang;
     @FXML
-    private TableColumn<KhachHangEntity, String> maKH, tenKH,gioiTinhKH, sdtKH ;
+    private TableColumn<KhachHangEntity, String> maKH, tenKH, gioiTinhKH, sdtKH;
 
     @FXML
     private TableColumn<KhachHangEntity, Date> ngaySinhKH;
@@ -479,11 +403,11 @@ public class MainController implements Initializable {
 //    private GridPane gridPaneKH;
 
     @FXML
-    private TextField txtMaKH,txtTenKH,txtSdtKH;
+    private TextField txtMaKH, txtTenKH, txtSdtKH;
     @FXML
     private DatePicker dateNgaySinhKH;
     @FXML
-    private RadioButton rdBtnNam,rdBtnNu;
+    private RadioButton rdBtnNam, rdBtnNu;
     KhachHangDAO khachHangDAO = new KhachHangDAO();
 
     //Hiện khách hàng lên table
@@ -503,7 +427,6 @@ public class MainController implements Initializable {
             ngaySinhKH.setCellValueFactory(new PropertyValueFactory<>("ngaySinh"));
 
 
-
             List<KhachHangEntity> li = khachHangDAO.getAll();
 
             if (li != null && !li.isEmpty()) {
@@ -518,10 +441,10 @@ public class MainController implements Initializable {
                         if (selectedKH != null) {
                             txtMaKH.setText(selectedKH.getMaKh());
                             txtMaKH.setEditable(false);
-                            if(selectedKH.getGioiTinh().equals("Nam")){
+                            if (selectedKH.getGioiTinh().equals("Nam")) {
                                 rdBtnNam.setSelected(true);
                                 rdBtnNu.setSelected(false);
-                            }else {
+                            } else {
                                 rdBtnNu.setSelected(true);
                                 rdBtnNam.setSelected(false);
                             }
@@ -550,6 +473,7 @@ public class MainController implements Initializable {
         }
 
     }
+
     //Thêm khách hàng
     @FXML
     public void addKH() {
@@ -565,8 +489,8 @@ public class MainController implements Initializable {
             showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
             return;
         }
-        khachHangDAO=new KhachHangDAO();
-        KhachHangEntity newKH = new KhachHangEntity(maKH, tenKH, gioiTinh, ngaySinh, sdtKH );
+        khachHangDAO = new KhachHangDAO();
+        KhachHangEntity newKH = new KhachHangEntity(maKH, tenKH, gioiTinh, ngaySinh, sdtKH);
 
         // Thêm khách hàng mới vào cơ sở dữ liệu bằng cách sử dụng KhachHangDAO
         if (khachHangDAO.addData(newKH)) {
@@ -579,14 +503,6 @@ public class MainController implements Initializable {
         }
     }
 
-    // Phương thức hiển thị hộp thoại thông báo
-    private void showAlert(Alert.AlertType alertType, String title, String content) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
     //Xóa Khách hàng
     public void deleteKH() {
         // Lấy khách hàng được chọn từ TableView
@@ -617,7 +533,7 @@ public class MainController implements Initializable {
 
             // Cập nhật TableView sau khi xóa
             showKH();
-            clearFieldsKH();
+
         }
     }
 
@@ -650,7 +566,7 @@ public class MainController implements Initializable {
         selectedKH.setNgaySinh(ngaySinh);
 
         // Cập nhật thông tin khách hàng trong cơ sở dữ liệu
-        if (khachHangDAO.updateData(selectedKH)){
+        if (khachHangDAO.updateData(selectedKH)) {
             showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin khách hàng thành công.");
             showKH();
             clearFieldsKH();
@@ -661,7 +577,7 @@ public class MainController implements Initializable {
 
 
     //Xóa trắng KH
-    public void clearFieldsKH(){
+    public void clearFieldsKH() {
         txtMaKH.setText("");
         txtMaKH.setEditable(true);
         txtTenKH.setText("");
@@ -671,7 +587,7 @@ public class MainController implements Initializable {
         dateNgaySinhKH.setValue(null);
     }
 
-            /*----------------------------------------------------  NHÂN VIÊN  ---------------------------------------------------------------*/
+    /*----------------------------------------------------  NHÂN VIÊN  ---------------------------------------------------------------*/
 
 // Show nhân viên lên bảng
 
@@ -679,7 +595,7 @@ public class MainController implements Initializable {
     @FXML
     private TableView<NhanVienEntity> tvNhanVien;
     @FXML
-    private TableColumn<NhanVienEntity, String> maNV, tenNV,gioiTinhNV, sdtNV, emailNV, taiKhoan, cccd;
+    private TableColumn<NhanVienEntity, String> maNV, tenNV, gioiTinhNV, sdtNV, emailNV, taiKhoan, cccd,diaChiNV, chucVu;
 
     @FXML
     private TableColumn<NhanVienEntity, Date> ngaySinhNV;
@@ -689,14 +605,22 @@ public class MainController implements Initializable {
 //    private GridPane gridPaneNV;
 
     @FXML
-    private Label lblMaNV,lblTenNV,lblSdtNV,
-            lblNgaySinhNV,lblCCCD,lblEmailNV,
-            lblGioiTinhNV,lblChucVu,lblDiaChi,lblTaiKhoan;
+    private TextField txtMaNV, txtTenNV, txtSdtNV,
+            txtCccdNV, txtEmailNV, txtDiaChiNV, txtTkNV;
+    @FXML
+    private RadioButton rdNamNV, rdNuNV;
+    @FXML
+    private DatePicker dateNgaySinhNV;
 
-    NhanVienDAO nhanVienDAO = null;
+    @FXML
+    private ComboBox<String> roleEmployeeChoiceBox;
+    NhanVienDAO nhanVienDAO = new NhanVienDAO();
 
     @FXML
     public void showNV() {
+        ObservableList<String> choices = FXCollections.observableArrayList("Nhân viên", "Quản lý");
+        roleEmployeeChoiceBox.setItems(choices);
+
         if (tvNhanVien == null) {
             // Xử lý trường hợp tvThuoc là null
             System.err.println("TableView tvNhanVien is null. Initialization failed.");
@@ -709,11 +633,13 @@ public class MainController implements Initializable {
             gioiTinhNV.setCellValueFactory(new PropertyValueFactory<>("gioiTinh"));
             taiKhoan.setCellValueFactory(new PropertyValueFactory<>("maTaiKhoan"));
             cccd.setCellValueFactory(new PropertyValueFactory<>("cccd"));
-            //sdtNV.setCellValueFactory(new PropertyValueFactory<>("sdtNv"));
-           // ngaySinhNV.setCellValueFactory(new PropertyValueFactory<>("ngaySinh"));
             emailNV.setCellValueFactory(new PropertyValueFactory<>("email"));
+            sdtNV.setCellValueFactory(new PropertyValueFactory<>("sdtNv"));
+            ngaySinhNV.setCellValueFactory(new PropertyValueFactory<>("ngaySinh"));
+            diaChiNV.setCellValueFactory(new PropertyValueFactory<>("diaChi"));
+            chucVu.setCellValueFactory(new PropertyValueFactory<>("chucVu"));
 
-            nhanVienDAO = new NhanVienDAO();
+
             List<NhanVienEntity> li = nhanVienDAO.getAll();
 
             if (li != null && !li.isEmpty()) {
@@ -726,16 +652,30 @@ public class MainController implements Initializable {
                     public void handle(MouseEvent event) {
                         NhanVienEntity selectedNV = tvNhanVien.getSelectionModel().getSelectedItem();
                         if (selectedNV != null) {
-                            lblMaNV.setText(selectedNV.getMaNv());
-                            lblTenNV.setText(selectedNV.getTenNv());
-                            lblGioiTinhNV.setText(selectedNV.getGioiTinh());
-                            lblChucVu.setText(selectedNV.getChucVu());
-                            lblSdtNV.setText(selectedNV.getSdtNv());
-                            lblEmailNV.setText(selectedNV.getEmail());
-                            lblCCCD.setText(selectedNV.getCccd());
-                            lblDiaChi.setText(selectedNV.getDiaChi());
-                            lblNgaySinhNV.setText(String.valueOf(selectedNV.getNgaySinh()));
-                            lblTaiKhoan.setText(selectedNV.getMaTaiKhoan());
+                            txtMaNV.setText(selectedNV.getMaNv());
+                            txtMaNV.setEditable(false);
+                            txtTenNV.setText(selectedNV.getTenNv());
+                            //DatePicker
+                            Date ngaySinh = selectedNV.getNgaySinh();
+                            // Chuyển đổi từ java.sql.Date sang java.util.Date
+                            java.util.Date utilDate = new java.util.Date(ngaySinh.getTime());
+                            LocalDate localDate = utilDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                            dateNgaySinhNV.setValue(localDate);
+
+                            if (selectedNV.getGioiTinh().equals("Nam")) {
+                                rdNamNV.setSelected(true);
+                                rdNuNV.setSelected(false);
+                            } else {
+                                rdNuNV.setSelected(true);
+                                rdNamNV.setSelected(false);
+                            }
+                            roleEmployeeChoiceBox.setValue(selectedNV.getChucVu());
+                            txtTkNV.setText(selectedNV.getMaTaiKhoan());
+                            txtSdtNV.setText(selectedNV.getSdtNv());
+                            txtEmailNV.setText(selectedNV.getEmail());
+                            txtCccdNV.setText(selectedNV.getCccd());
+                            txtDiaChiNV.setText(selectedNV.getDiaChi());
+
                         }
                     }
                 });
@@ -743,7 +683,7 @@ public class MainController implements Initializable {
 
             } else {
                 // Xử lý trường hợp danh sách rỗng
-                System.err.println("List of Thuốc is null or empty. No data to display.");
+                System.err.println("List of Nhân Viên is null or empty. No data to display.");
 
             }
         } catch (Exception e) {
@@ -753,6 +693,43 @@ public class MainController implements Initializable {
         }
 
     }
+
+    //Thêm nhân viên
+
+    @FXML
+    public void addNV() {
+        // Lấy thông tin từ các trường nhập liệu trên form
+        String maNV = txtMaNV.getText();
+        String tenNV = txtTenNV.getText();
+        java.sql.Date ngaySinh = java.sql.Date.valueOf(dateNgaySinhNV.getValue()); // Lấy ngày sinh từ DatePicker
+        String gioiTinh = rdNamNV.isSelected() ? "Nam" : "Nữ";
+        String chucVu = roleEmployeeChoiceBox.getValue();
+        String tkNv = txtTkNV.getText();
+        String sdtNV = txtSdtNV.getText();
+        String email = txtEmailNV.getText();
+        String cccd = txtCccdNV.getText();
+        String diaChi = txtDiaChiNV.getText();
+
+        // Kiểm tra xem người dùng đã nhập đủ thông tin hay chưa
+        if (maNV.isEmpty() || tenNV.isEmpty() || sdtNV.isEmpty() || ngaySinh == null
+                || chucVu==null|| tkNv.isEmpty() || email.isEmpty() || cccd.isEmpty() || diaChi.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
+            return;
+        }
+            NhanVienEntity newNV = new NhanVienEntity(maNV, tenNV, gioiTinh, cccd, chucVu, sdtNV, email, diaChi, ngaySinh, tkNv);
+            // Thêm khách hàng mới vào cơ sở dữ liệu bằng cách sử dụng KhachHangDAO
+            if (nhanVienDAO.addData(newNV)) {
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Thêm nhân viên thành công.");
+                clearFieldsNV();
+                showNV();
+            } else {
+                // Hiển thị thông báo lỗi nếu thêm không thành công
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin nhân viên thành công.");
+                showNV();
+            }
+    }
+
+
     //Xóa Nhân viên
     public void deleteNV() {
         // Lấy khách hàng được chọn từ TableView
@@ -787,14 +764,54 @@ public class MainController implements Initializable {
         }
     }
 
-//    public void refeshTableView() {
-//        khachHangDAO = new KhachHangDAO();
-//        List<KhachHangEntity> li = khachHangDAO.getAll();
-//
-//        if (li != null && !li.isEmpty()) {
-//            ObservableList<KhachHangEntity> allKH = FXCollections.observableList(li);
-//            tvKhachHang.setItems(allKH);
-//        }
-//    }
-}
+    // Sửa nhân viên
+    @FXML
+    public void updateNV() {
+        // Lấy thông tin từ các trường nhập liệu trên form
+        String maNV = txtMaNV.getText();
+        String tenNV = txtTenNV.getText();
+        java.sql.Date ngaySinh = java.sql.Date.valueOf(dateNgaySinhNV.getValue()); // Lấy ngày sinh từ DatePicker
+        String gioiTinh = rdNamNV.isSelected() ? "Nam" : "Nữ";
+        String chucVu = roleEmployeeChoiceBox.getValue() != null ? roleEmployeeChoiceBox.getValue().toString() : null;
+        String tkNv = txtTkNV.getText();
+        String sdtNV = txtSdtNV.getText();
+        String email = txtEmailNV.getText();
+        String cccd = txtCccdNV.getText();
+        String diaChi = txtDiaChiNV.getText();
 
+        // Kiểm tra xem người dùng đã nhập đủ thông tin hay chưa
+        if (maNV.isEmpty() || tenNV.isEmpty() || sdtNV.isEmpty() || ngaySinh == null
+                || chucVu == null || tkNv.isEmpty() || email.isEmpty() || cccd.isEmpty() || diaChi.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
+            return;
+        }
+
+        // Tạo đối tượng Nhân viên mới
+        NhanVienEntity editedNV = new NhanVienEntity(maNV, tenNV, gioiTinh, cccd, chucVu, sdtNV, email, diaChi, ngaySinh, tkNv);
+
+        // Gọi phương thức cập nhật dữ liệu trong DAO
+        if (nhanVienDAO.updateData(editedNV)) {
+            showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin nhân viên thành công.");
+            clearFieldsNV();
+            showNV();
+        } else {
+            // Hiển thị thông báo lỗi nếu sửa không thành công
+            showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin nhân viên thành công.");
+            showNV();
+        }
+    }
+    public void clearFieldsNV() {
+        txtMaNV.setText("");
+        txtMaNV.setEditable(true);
+        txtTenNV.setText("");
+        dateNgaySinhNV.setValue(null);
+        rdNamNV.setSelected(false);
+        rdNuNV.setSelected(false);
+        roleEmployeeChoiceBox.setValue(null);
+        txtTkNV.setText("");
+        txtSdtNV.setText("");
+        txtEmailNV.setText("");
+        txtCccdNV.setText("");
+        txtDiaChiNV.setText("");
+    }
+}
