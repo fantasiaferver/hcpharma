@@ -43,7 +43,7 @@ public class MainController implements Initializable {
     private String currentTabName;
 
     @FXML
-    private AnchorPane overviewTab,medicineTab,storageTab,customerTab,employeeTab,supplierTab;
+    private AnchorPane overviewTab,medicineTab,storageTab,customerTab,employeeTab,supplierTab, sellDrugsTab, sellNonPrescriptionDrugsTab, sellPrescriptionDrugsTab, prescriptionDrugsTab, accountTab, personalInformationTab, importMedicineTab;
 
     @FXML
     private Label dateTimeLabel;
@@ -83,6 +83,10 @@ public class MainController implements Initializable {
         customerTab.setVisible(tab == customerTab);
         employeeTab.setVisible(tab == employeeTab);
         supplierTab.setVisible(tab == supplierTab);
+        sellDrugsTab.setVisible(tab == sellDrugsTab);
+        accountTab.setVisible(tab == accountTab);
+        personalInformationTab.setVisible(tab == personalInformationTab);
+        importMedicineTab.setVisible(tab == importMedicineTab);
         currentTabName = tabName;
         updateTabLabel();
     }
@@ -146,6 +150,47 @@ public class MainController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void showSellDrugsTab() {
+        showTab(sellDrugsTab, "BÁN THUỐC");
+    }
+
+    @FXML
+    private void showAccountTab() {
+        showTab(accountTab, "QUẢN LÝ TÀI KHOẢN");
+    }
+    @FXML
+    private void showPersonalInformationTab() {
+        showTab(personalInformationTab, "THÔNG TIN TÀI KHOẢN");
+    }
+    @FXML
+    private void showimportMedicineTab() {
+        showTab(importMedicineTab, "NHẬP THUỐC");
+    }
+
+
+    //Chuyển qua lại giữa các tab trong tab mua thuốc
+    @FXML
+    private void showSellNonPrescriptionDrugsTab() {
+        sellNonPrescriptionDrugsTab.setVisible(true);
+        sellPrescriptionDrugsTab.setVisible(false);
+        prescriptionDrugsTab.setVisible(false);
+    }
+
+    @FXML
+    private void showSellPrescriptionDrugsTab() {
+        sellNonPrescriptionDrugsTab.setVisible(false);
+        sellPrescriptionDrugsTab.setVisible(true);
+        prescriptionDrugsTab.setVisible(false);
+    }
+
+    @FXML
+    private void showNonPrescriptionDrugsTab() {
+        sellNonPrescriptionDrugsTab.setVisible(false);
+        sellPrescriptionDrugsTab.setVisible(false);
+        prescriptionDrugsTab.setVisible(true);
     }
 
     @FXML

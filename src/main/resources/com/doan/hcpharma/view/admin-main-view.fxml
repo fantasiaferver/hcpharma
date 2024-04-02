@@ -107,12 +107,12 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="5.0" layoutY="246.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Bán thuốc" textFill="WHITE">
+                        <Button layoutX="5.0" layoutY="246.0" mnemonicParsing="false" onAction="#showSellDrugsTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Bán thuốc" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="5.0" layoutY="291.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Nhập thuốc" textFill="WHITE">
+                        <Button layoutX="5.0" layoutY="291.0" mnemonicParsing="false" onAction="#showimportMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Nhập thuốc" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -122,12 +122,12 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="5.0" layoutY="614.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Quản lý tài khoản" textFill="WHITE">
+                        <Button layoutX="5.0" layoutY="614.0" mnemonicParsing="false" onAction="#showAccountTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Quản lý tài khoản" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="5.0" layoutY="656.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thông tin tài khoản" textFill="WHITE">
+                        <Button layoutX="5.0" layoutY="656.0" mnemonicParsing="false" onAction="#showPersonalInformationTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thông tin tài khoản" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -1022,7 +1022,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="employeeTab" layoutX="6.0" prefHeight="707.0" prefWidth="1294.0">
+                        <AnchorPane fx:id="employeeTab" layoutX="6.0" prefHeight="707.0" prefWidth="1294.0" visible="false">
                            <children>
                               <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm nhân viên">
                                  <font>
@@ -1454,6 +1454,1044 @@
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="159.0" layoutY="52.0" prefHeight="655.0" prefWidth="1301.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="sellDrugsTab" prefHeight="707.2" prefWidth="1300.8">
+                           <children>
+                              <AnchorPane layoutX="85.0" layoutY="32.0" prefHeight="49.0" prefWidth="1301.0" AnchorPane.bottomAnchor="658.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Button alignment="BASELINE_CENTER" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#showSellNonPrescriptionDrugsTab" prefHeight="36.0" prefWidth="203.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Bán thuốc không kê đơn" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button alignment="BASELINE_CENTER" layoutX="227.0" layoutY="6.0" mnemonicParsing="false" onAction="#showSellPrescriptionDrugsTab" prefHeight="36.0" prefWidth="203.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Bán thuốc kê đơn" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fx:id="showSellPrescriptionDrugsTab">
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button alignment="BASELINE_CENTER" layoutX="440.0" layoutY="6.0" mnemonicParsing="false" onAction="#showNonPrescriptionDrugsTab" prefHeight="36.0" prefWidth="203.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text=" Đơn thuốc kê đơn" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="159.0" layoutY="52.0" prefHeight="655.0" prefWidth="1301.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
+                                 <children>
+                                    <AnchorPane fx:id="sellNonPrescriptionDrugsTab" prefHeight="655.2" prefWidth="1300.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <AnchorPane layoutX="650.0" prefHeight="650.0" prefWidth="647.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                                             <children>
+                                                <Button fx:id="btnAddSupplier111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="514.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="In hóa đơn" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="linear-blue-color" />
+                                                      <String fx:value="hover-button" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView fitHeight="18.0" fitWidth="18.0">
+                                                         <image>
+                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/printing.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btnAddSupplier1111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="559.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thanh toán" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="linear-green-color" />
+                                                      <String fx:value="hover-button" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView>
+                                                         <image>
+                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/check.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btnAddSupplier11111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="604.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hủy" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="linear-red-color" />
+                                                      <String fx:value="hover-button" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView>
+                                                         <image>
+                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/paper.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <TableView layoutX="8.0" layoutY="43.0" prefHeight="462.0" prefWidth="632.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="75.0" text="#" />
+                                                      <TableColumn prefWidth="128.800048828125" text="Tên sản phẩm" />
+                                                      <TableColumn prefWidth="144.800048828125" text="Số lượng" />
+                                                      <TableColumn prefWidth="130.39996337890625" text="Thành tiền" />
+                                                      <TableColumn prefWidth="150.4000244140625" text="Hành động" />
+                                                   </columns>
+                                                </TableView>
+                                                <GridPane layoutX="107.0" layoutY="514.0" prefHeight="131.0" prefWidth="288.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.60008544921874" minWidth="10.0" prefWidth="128.2" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.60008544921874" minWidth="5.599999999999994" prefWidth="9.599926757812511" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.199951171875" minWidth="10.0" prefWidth="145.60007324218748" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints maxHeight="45.4" minHeight="10.0" prefHeight="19.8" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="45.4" minHeight="10.0" prefHeight="27.8" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="46.6" minHeight="10.0" prefHeight="24.599987792968747" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="61.199987792968756" minHeight="10.0" prefHeight="59.59998779296873" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label text="10" GridPane.columnIndex="2">
+                                                         <font>
+                                                            <Font name="System Italic" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Số lượng thuốc">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Giảm giá" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="TỔNG TIỀN" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="100000 VND" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font name="System Bold Italic" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="20000 VND" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font name="System Italic" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Tổng giá thuốc" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="120000 VND" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font name="System Italic" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </GridPane>
+                                                <Label layoutX="16.0" layoutY="10.0" text="Khách hàng: ">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="109.0" layoutY="10.0" text="Vãng lai">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <styleClass>
+                                                <String fx:value="gray-background" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="6.0" prefHeight="649.0" prefWidth="638.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                                             <children>
+                                                <TextField layoutX="440.0" layoutY="14.0" prefHeight="26.0" prefWidth="182.0" promptText="Tìm Thuốc" />
+                                                <TableView layoutX="8.0" layoutY="57.0" prefHeight="334.0" prefWidth="622.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="67.20003700256348" text="Mã thuốc" />
+                                                      <TableColumn prefWidth="106.4000244140625" text="Tên thuốc" />
+                                                      <TableColumn prefWidth="70.40000915527344" text="Loại thuốc" />
+                                                      <TableColumn prefWidth="86.39991760253906" text="Giá bán" />
+                                                      <TableColumn prefWidth="104.800048828125" text="Ngày hết hạn" />
+                                                      <TableColumn prefWidth="90.4000244140625" text="Khu vực LT" />
+                                                      <TableColumn prefWidth="97.5999755859375" text="Chọn" />
+                                                   </columns>
+                                                </TableView>
+                                                <TableView layoutX="8.0" layoutY="446.0" prefHeight="191.0" prefWidth="622.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="75.0" text="Mã KH" />
+                                                      <TableColumn prefWidth="117.60003662109375" text="Tên" />
+                                                      <TableColumn prefWidth="110.39996337890625" text="Giới tính" />
+                                                      <TableColumn prefWidth="110.39996337890625" text="Số điện thoại" />
+                                                      <TableColumn prefWidth="122.4000244140625" text="Ngày sinh" />
+                                                      <TableColumn prefWidth="82.4000244140625" text="Chọn" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField layoutX="7.0" layoutY="410.0" promptText="Tìm khách hàng" />
+                                                <Label fx:id="tabLable1" layoutX="14.0" layoutY="17.0" styleClass="header-line-admin" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hóa đơn thuốc không kê đơn">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <styleClass>
+                                                <String fx:value="gray-background" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="sellPrescriptionDrugsTab" layoutX="5.0" layoutY="5.0" prefHeight="655.2" prefWidth="1300.8" visible="false">
+                                       <children>
+                                          <AnchorPane layoutY="-4.8" prefHeight="654.0" prefWidth="639.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="661.5999999999999" AnchorPane.topAnchor="-5.0">
+                                             <children>
+                                                <TextField layoutX="442.0" layoutY="14.0" prefHeight="26.0" prefWidth="182.0" promptText="Tìm hóa đơn thuốc kê đơn" />
+                                                <TableView layoutX="8.0" layoutY="51.0" prefHeight="342.0" prefWidth="625.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="59.200018882751465" text="Mã HĐ" />
+                                                      <TableColumn prefWidth="136.79998779296875" text="Tên đơn thuốc" />
+                                                      <TableColumn prefWidth="119.99990844726562" text="Nơi xuất HĐ" />
+                                                      <TableColumn prefWidth="98.39996337890625" text="Số lượng" />
+                                                      <TableColumn prefWidth="96.800048828125" text="Giá" />
+                                                      <TableColumn prefWidth="113.5999755859375" text="Chọn" />
+                                                   </columns>
+                                                </TableView>
+                                                <TableView layoutX="7.0" layoutY="450.0" prefHeight="191.0" prefWidth="626.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="75.0" text="Mã KH" />
+                                                      <TableColumn prefWidth="117.60003662109375" text="Tên" />
+                                                      <TableColumn prefWidth="117.60003662109375" text="Giới tính" />
+                                                      <TableColumn prefWidth="117.60003662109375" text="Số điện thoại" />
+                                                      <TableColumn prefWidth="113.5999755859375" text="Ngày sinh" />
+                                                      <TableColumn prefWidth="81.60007324218748" text="Chọn" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField layoutX="8.0" layoutY="414.0" promptText="Tìm khách hàng" />
+                                                <Label fx:id="tabLable11" layoutX="17.0" layoutY="17.0" styleClass="header-line-admin" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hóa đơn thuốc kê đơn">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <styleClass>
+                                                <String fx:value="gray-background" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="645.0" layoutY="-5.0" prefHeight="654.0" prefWidth="652.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                                             <children>
+                                                <Button fx:id="btnAddSupplier1111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="514.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="In hóa đơn" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="linear-blue-color" />
+                                                      <String fx:value="hover-button" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView fitHeight="18.0" fitWidth="18.0">
+                                                         <image>
+                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/printing.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btnAddSupplier11111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="559.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thanh toán" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="linear-green-color" />
+                                                      <String fx:value="hover-button" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView>
+                                                         <image>
+                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/check.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btnAddSupplier111111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="604.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hủy" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="linear-red-color" />
+                                                      <String fx:value="hover-button" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView>
+                                                         <image>
+                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/paper.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <TableView layoutX="8.0" layoutY="43.0" prefHeight="462.0" prefWidth="632.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="75.0" text="#" />
+                                                      <TableColumn prefWidth="128.800048828125" text="Tên đơn thuốc" />
+                                                      <TableColumn prefWidth="144.800048828125" text="Số lượng" />
+                                                      <TableColumn prefWidth="130.39996337890625" text="Thành tiền" />
+                                                      <TableColumn prefWidth="150.4000244140625" text="Hành động" />
+                                                   </columns>
+                                                </TableView>
+                                                <Label layoutX="16.0" layoutY="10.0" text="Khách hàng: ">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="109.0" layoutY="10.0" text="Vãng lai">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <GridPane layoutX="116.0" layoutY="514.0" prefHeight="131.0" prefWidth="288.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.60008544921874" minWidth="10.0" prefWidth="128.2" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.60008544921874" minWidth="5.599999999999994" prefWidth="9.599926757812511" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.199951171875" minWidth="10.0" prefWidth="145.60007324218748" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints maxHeight="45.4" minHeight="10.0" prefHeight="19.8" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="45.4" minHeight="10.0" prefHeight="27.8" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="46.6" minHeight="10.0" prefHeight="24.599987792968747" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="61.199987792968756" minHeight="10.0" prefHeight="59.59998779296873" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label text="10" GridPane.columnIndex="2">
+                                                         <font>
+                                                            <Font name="System Italic" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Số lượng thuốc">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Giảm giá" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="TỔNG TIỀN" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="100000 VND" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font name="System Bold Italic" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="20000 VND" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font name="System Italic" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Tổng giá thuốc" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="120000 VND" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font name="System Italic" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                             <styleClass>
+                                                <String fx:value="gray-background" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="prescriptionDrugsTab" layoutX="233.0" layoutY="176.0" prefHeight="660.8" prefWidth="1306.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <AnchorPane layoutX="4.0" layoutY="162.0" prefHeight="657.0" prefWidth="374.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="928.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <TableView layoutX="4.0" layoutY="96.0" prefHeight="556.0" prefWidth="362.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="96.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="49.600035667419434" text="Mã đơn" />
+                                                      <TableColumn prefWidth="130.39996719360352" text="Tên đơn" />
+                                                      <TableColumn prefWidth="179.99998474121094" text="Nơi tạo đơn" />
+                                                   </columns>
+                                                </TableView>
+                                                <Label layoutX="5.0" layoutY="8.0" styleClass="header-line-admin" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Đơn thuốc kê đơn">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField layoutX="4.0" layoutY="58.0" prefHeight="26.0" prefWidth="358.0" promptText="Tìm đơn thuốc" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="376.0" layoutY="107.0" prefHeight="654.0" prefWidth="922.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="376.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
+                                             <styleClass>
+                                                <String fx:value="gray-background" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
+                                             <children>
+                                                <TableView layoutX="8.0" layoutY="384.0" prefHeight="262.0" prefWidth="906.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="81.60003471374512" text="Mã thuốc" />
+                                                      <TableColumn prefWidth="168.0" text="Tên thuốc" />
+                                                      <TableColumn prefWidth="84.0" text="Loại" />
+                                                      <TableColumn prefWidth="152.00006103515625" text="Số lượng" />
+                                                      <TableColumn prefWidth="172.0" text="Ngày hết hạn" />
+                                                      <TableColumn prefWidth="128.0" text="Khu vực lưu trữ" />
+                                                      <TableColumn prefWidth="118.39987792968748" text="Thao tác" />
+                                                   </columns>
+                                                </TableView>
+                                                <Label layoutX="317.0" layoutY="14.0" text="THÔNG TIN ĐƠN THUỐC KÊ ĐƠN">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="btnDeleteEmployee1" layoutX="612.0" layoutY="334.0" mnemonicParsing="false" onAction="#deleteNV" prefHeight="36.0" prefWidth="122.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="linear-red-color" />
+                                                      <String fx:value="hover-button" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView>
+                                                         <image>
+                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/delete.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btnEditEmployee1" layoutX="766.0" layoutY="284.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="linear-yellow-color" />
+                                                      <String fx:value="hover-button" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView>
+                                                         <image>
+                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/edit-text.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btnAddEmployee1" alignment="BASELINE_CENTER" layoutX="612.0" layoutY="284.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thêm" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="linear-green-color" />
+                                                      <String fx:value="hover-button" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView>
+                                                         <image>
+                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btnClearEmployee1" alignment="BASELINE_CENTER" layoutX="769.0" layoutY="334.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="linear-blue-color" />
+                                                      <String fx:value="hover-button" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView>
+                                                         <image>
+                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/list.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <GridPane layoutX="9.0" layoutY="59.0" prefHeight="302.0" prefWidth="524.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="162.79998779296875" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.20001220703125" minWidth="0.0" prefWidth="22.399987792968744" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.4000244140625" minWidth="10.0" prefWidth="339.20001220703125" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints maxHeight="49.4" minHeight="10.0" prefHeight="45.4" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="52.599981689453124" minHeight="10.0" prefHeight="40.79999999999999" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="70.59998168945313" minHeight="0.0" prefHeight="49.59998779296873" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="167.99997253417968" minHeight="10.0" prefHeight="162.3999816894531" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label text="Mã thuốc kê đơn" GridPane.halignment="RIGHT">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Nơi tạo đơn" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Tên đơn" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Mô tả" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField GridPane.columnIndex="2" />
+                                                      <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                      <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                      <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                   </children>
+                                                </GridPane>
+                                                <TextField layoutX="599.0" layoutY="67.0" prefHeight="26.0" prefWidth="310.0" promptText="Thêm thuốc vào đơn" />
+                                                <TableView layoutX="599.0" layoutY="101.0" prefHeight="168.0" prefWidth="310.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="110.40008544921875" text="Tên thuốc" />
+                                                      <TableColumn prefWidth="100.7999267578125" text="Loại thuốc" />
+                                                      <TableColumn prefWidth="100.7999267578125" text="Thêm" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="accountTab" prefHeight="712.8" prefWidth="1306.4" visible="false">
+                           <children>
+                              <AnchorPane layoutX="9.0" layoutY="60.0" prefHeight="645.0" prefWidth="580.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="gray-background" />
+                                 </styleClass>
+                                 <children>
+                                    <Text layoutX="187.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THÔNG TIN TÀI KHOẢN">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <GridPane layoutX="81.0" layoutY="79.0" prefHeight="256.0" prefWidth="418.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="226.2000274658203" minWidth="10.0" prefWidth="115.1999725341797" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.2000274658203" minWidth="10.0" prefWidth="23.999984741210923" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="280.00001525878906" minWidth="10.0" prefWidth="280.00001525878906" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Mã tài khoản" GridPane.halignment="RIGHT">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Tên tài khoản" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Nhân viên" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Mật khẩu" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField GridPane.columnIndex="2">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <ChoiceBox prefHeight="26.0" prefWidth="199.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label text="Mô tả" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea prefHeight="200.0" prefWidth="281.0" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="BASELINE">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextArea>
+                                       </children>
+                                    </GridPane>
+                                    <Button fx:id="btnDeleteSupplier1" layoutX="301.0" layoutY="400.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="137.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-red-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/delete.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnEditSupplier1" layoutX="145.0" layoutY="444.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="135.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-yellow-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/edit-text.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnAddSupplier12" alignment="BASELINE_CENTER" layoutX="145.0" layoutY="398.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="134.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thêm" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnClearSupplier1" alignment="BASELINE_CENTER" layoutX="301.0" layoutY="446.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="138.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-blue-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/list.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <TextField layoutX="9.0" layoutY="21.0" prefHeight="26.0" prefWidth="283.0" promptText="Tìm tài khoản" />
+                              <TableView layoutX="602.0" layoutY="60.0" prefHeight="646.0" prefWidth="695.0">
+                                 <columns>
+                                    <TableColumn prefWidth="123.20001220703125" text="Mã tài khoản" />
+                                    <TableColumn prefWidth="148.00006103515625" text="Tên tài khoản" />
+                                    <TableColumn prefWidth="142.4000244140625" text="Mật khẩu" />
+                                    <TableColumn prefWidth="140.00006103515625" text="Nhân viên" />
+                                    <TableColumn prefWidth="140.00006103515625" text="Trạng thái" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="personalInformationTab" prefHeight="712.8" prefWidth="1306.4" visible="false">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="690.0" prefWidth="493.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                                 <styleClass>
+                                    <String fx:value="gray-background" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <ImageView fitHeight="164.0" fitWidth="156.0" layoutX="169.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/profile.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text layoutX="154.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phạm Văn Chính" textAlignment="CENTER" wrappingWidth="185.77886962890625">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="158.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhân viên bán hàng" textAlignment="CENTER" wrappingWidth="177.80157470703125">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="158.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="26/08/2001" textAlignment="CENTER" wrappingWidth="177.80157470703125">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="158.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0329807754" textAlignment="CENTER" wrappingWidth="177.80157470703125">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="158.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ChinhPham@gmail.com" textAlignment="CENTER" wrappingWidth="177.80157470703125">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="115.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="310/55 DQH, P5, Gò Vấp" textAlignment="CENTER" wrappingWidth="262.6015625">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="520.0" layoutY="14.0" prefHeight="690.0" prefWidth="772.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                                 <styleClass>
+                                    <String fx:value="gray-background" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <AreaChart layoutX="14.0" layoutY="14.0" prefHeight="674.0" prefWidth="744.0" title="Doanh số bán hàng">
+                                       <xAxis>
+                                          <CategoryAxis side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
+                                    </AreaChart>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="importMedicineTab" prefHeight="712.8" prefWidth="1306.4" visible="false">
+                           <children>
+                              <TableView layoutX="7.0" layoutY="48.8" prefHeight="303.0" prefWidth="572.0" AnchorPane.bottomAnchor="361.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="727.0" AnchorPane.topAnchor="49.0">
+                                 <columns>
+                                    <TableColumn prefWidth="82.40001505613327" text="Mã Thuốc" />
+                                    <TableColumn minWidth="0.0" prefWidth="108.0" text="Tên" />
+                                    <TableColumn prefWidth="71.19998168945312" text="Loại" />
+                                    <TableColumn prefWidth="65.60000610351562" text="Kê đơn" />
+                                    <TableColumn prefWidth="91.199951171875" text="Đơn vị" />
+                                    <TableColumn prefWidth="148.00006103515625" text="Thương hiệu" />
+                                 </columns>
+                              </TableView>
+                              <TextField layoutX="7.0" layoutY="14.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm thuốc">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                              <AnchorPane layoutX="584.0" layoutY="59.19999999999999" prefHeight="303.0" prefWidth="710.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" AnchorPane.bottomAnchor="359.0" AnchorPane.leftAnchor="584.0" AnchorPane.rightAnchor="13.0">
+                                 <children>
+                                    <Button alignment="BASELINE_CENTER" layoutX="374.0" layoutY="253.0" mnemonicParsing="false" onAction="#clearTextFieldMedicine" prefHeight="36.0" prefWidth="172.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa trắng" textFill="WHITE" AnchorPane.rightAnchor="165.0">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-blue-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/list.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Label layoutX="240.0" layoutY="14.0" text="THÔNG TIN THUỐC NHẬP">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button alignment="BASELINE_CENTER" layoutX="185.0" layoutY="253.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thêm vào hóa đơn" textFill="WHITE" AnchorPane.rightAnchor="360.60000000000014">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <GridPane layoutX="45.0" layoutY="58.0" prefHeight="188.0" prefWidth="444.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="155.19998779296876" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.20001220703125" minWidth="10.0" prefWidth="12.799984741210949" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.20002441406257" minWidth="10.0" prefWidth="347.2000152587891" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="39.000006103515624" minHeight="10.0" prefHeight="39.000006103515624" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="39.000006103515624" minHeight="10.0" prefHeight="39.000006103515624" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.00000610351562" minHeight="10.0" prefHeight="32.8" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="34.79999389648438" minHeight="10.0" prefHeight="32.80000762939453" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Giá nhập" GridPane.halignment="RIGHT">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Giá bán" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="20.0" prefWidth="95.0" text="Ngày hết hạn" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Ngày sản xuất" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField prefHeight="26.0" prefWidth="126.0" GridPane.columnIndex="2" />
+                                          <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label text="Số lượng" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <DatePicker prefHeight="26.0" prefWidth="179.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <DatePicker prefHeight="26.0" prefWidth="178.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="gray-background" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                              </AnchorPane>
+                              <AnchorPane layoutX="7.0" layoutY="363.0" prefHeight="344.0" prefWidth="1288.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                                 <styleClass>
+                                    <String fx:value="gray-background" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView layoutX="8.0" layoutY="43.2" prefHeight="294.0" prefWidth="915.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="365.0" AnchorPane.topAnchor="43.0">
+                                       <columns>
+                                          <TableColumn prefWidth="82.40001505613327" text="Mã Thuốc" />
+                                          <TableColumn minWidth="0.0" prefWidth="108.0" text="Tên" />
+                                          <TableColumn prefWidth="95.20001220703125" text="Giá nhập" />
+                                          <TableColumn prefWidth="92.00003051757812" text="Giá bán" />
+                                          <TableColumn prefWidth="101.60003662109375" text="Ngày sản xuất" />
+                                          <TableColumn prefWidth="120.0" text="Ngày hết hạn" />
+                                          <TableColumn prefWidth="100.80010986328125" text="Số lương" />
+                                          <TableColumn prefWidth="124.79998779296875" text="Thành tiền" />
+                                          <TableColumn prefWidth="85.5999633789063" text="Thao tác" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="14.0" layoutY="6.0" text="CHI TIẾT HÓA ĐƠN NHẬP THUỐC">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="931.0" layoutY="14.0" text="Đơn vị cung cấp">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox layoutX="931.0" layoutY="43.0" prefHeight="26.0" prefWidth="312.0" />
+                                    <Button alignment="BASELINE_CENTER" layoutX="937.0" layoutY="278.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="114.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="In hóa đơn" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-blue-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="18.0" fitWidth="18.0">
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/printing.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button alignment="BASELINE_CENTER" layoutX="1055.0" layoutY="278.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="109.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Lưu" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-green-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/check.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button alignment="BASELINE_CENTER" layoutX="1171.0" layoutY="278.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="110.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hủy" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="linear-red-color" />
+                                          <String fx:value="hover-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/paper.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <GridPane layoutX="938.0" layoutY="90.0" prefHeight="175.0" prefWidth="342.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.800048828125" minWidth="10.0" prefWidth="119.800048828125" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.199951171875" minWidth="10.0" prefWidth="18.199951171875" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.4000244140625" minWidth="10.0" prefWidth="204.4000244140625" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="44.59995117187499" minHeight="10.0" prefHeight="34.20004882812499" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="86.200048828125" minHeight="10.0" prefHeight="83.799951171875" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tổng loại thuốc" GridPane.halignment="RIGHT">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tiền thuốc nhập" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thuế (nếu có)" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TỔNG TIỀN" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <Label prefHeight="22.0" prefWidth="140.0" text="1000 VND" GridPane.columnIndex="2">
+                                             <font>
+                                                <Font name="System Italic" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="22.0" prefWidth="140.0" text="1000 VND" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Italic" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="22.0" prefWidth="140.0" text="100100 VND" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold Italic" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="22.0" prefWidth="140.0" text="100000 VND" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Italic" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                      </children>
