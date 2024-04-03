@@ -249,7 +249,7 @@
                      <children>
 
 <!--                        Overview Tab-->
-                        <AnchorPane fx:id="overviewTab" layoutX="225.0" layoutY="212.0" prefHeight="710.0" prefWidth="902.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="overviewTab" layoutX="225.0" layoutY="212.0" prefHeight="710.0" prefWidth="902.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="200.0" prefWidth="879.0" stylesheets="@../style/admin-main-view.css" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="14.0">
                                  <styleClass>
@@ -1456,7 +1456,7 @@
                               <AnchorPane layoutX="159.0" layoutY="52.0" prefHeight="655.0" prefWidth="1301.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="sellDrugsTab" prefHeight="707.2" prefWidth="1300.8">
+                        <AnchorPane fx:id="sellDrugsTab" prefHeight="707.2" prefWidth="1300.8" visible="false">
                            <children>
                               <AnchorPane layoutX="85.0" layoutY="32.0" prefHeight="49.0" prefWidth="1301.0" AnchorPane.bottomAnchor="658.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
