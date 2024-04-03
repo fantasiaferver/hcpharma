@@ -724,7 +724,7 @@ public class MainController implements Initializable {
                 showNV();
             } else {
                 // Hiển thị thông báo lỗi nếu thêm không thành công
-                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin nhân viên thành công.");
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "thêm thông tin nhân viên thành công.");
                 showNV();
             }
     }
