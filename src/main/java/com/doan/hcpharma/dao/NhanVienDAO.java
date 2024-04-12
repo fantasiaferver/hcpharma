@@ -1,5 +1,6 @@
 package com.doan.hcpharma.dao;
 
+import com.doan.hcpharma.model.KhachHangEntity;
 import com.doan.hcpharma.model.NhanVienEntity;
 import com.doan.hcpharma.util.HibernateUtil;
 import org.hibernate.HibernateException;
@@ -83,6 +84,31 @@ public class NhanVienDAO implements DAOInterface {
         session.close();
         return li;
 
+    }
+    public List<NhanVienEntity> searchEmployeesByNameOrPhone(String keyword) {
+        session= HibernateUtil.getSession();
+        try {
+            transaction =session.beginTransaction();
+            // Tạo câu truy vấn HQL
+            String hql = "FROM NhanVienEntity WHERE tenNv LIKE :keyword OR sdtNv  LIKE :keyword";
+
+            // Tạo truy vấn từ câu HQL và thiết lập tham số
+            Query query = session.createQuery(hql, NhanVienEntity.class);
+            query.setParameter("keyword", "%" + keyword + "%");
+
+            // Thực hiện truy vấn và trả về danh sách nhân viên tìm được
+            List<NhanVienEntity> result = query.getResultList();
+            session.getTransaction().commit();
+            return result;
+        } catch (Exception e) {
+            if (session.getTransaction() != null) {
+                session.getTransaction().rollback();
+            }
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 
 }

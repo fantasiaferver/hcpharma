@@ -11,8 +11,14 @@
         <property name="donGia">
             <column name="donGia" sql-type="double" precision="-1"/>
         </property>
+        <property name="donGiaNhap">
+            <column name="donGiaNhap" sql-type="double" precision="-1"/>
+        </property>
         <property name="donViTinh">
             <column name="donViTinh" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="doiTuongSD">
+            <column name="doiTuongSD" sql-type="varchar(255)" not-null="true"/>
         </property>
         <property name="moTa">
             <column name="moTa" sql-type="varchar(255)" not-null="true"/>
@@ -20,11 +26,14 @@
         <property name="ngayHh">
             <column name="ngayHH" sql-type="date" not-null="true"/>
         </property>
+        <property name="keDon">
+            <column name="keDon" sql-type="boolean" not-null="true"/>
+        </property>
+<!--        <property name="hinhAnh">-->
+<!--            <column name="hinhAnh" sql-type="varchar(255)" not-null="true"/>-->
+<!--        </property>-->
         <property name="ngaySx">
             <column name="ngaySX" sql-type="date" not-null="true"/>
-        </property>
-        <property name="soLuong">
-            <column name="soLuong" sql-type="int"/>
         </property>
         <property name="tenThuoc">
             <column name="tenThuoc" sql-type="varchar(255)" not-null="true"/>

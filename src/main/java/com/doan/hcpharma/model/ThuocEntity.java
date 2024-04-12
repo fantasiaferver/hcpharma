@@ -15,18 +15,16 @@ public class ThuocEntity {
     @Basic
     @Column(name = "donViTinh", nullable = true, length = 255)
     private String donViTinh;
+
     @Basic
     @Column(name = "moTa", nullable = true, length = 255)
-    private String moTa;
+    private String moTa;        //Mô tả tác dụng của thuốc
     @Basic
     @Column(name = "ngayHH", nullable = true)
     private Date ngayHh;
     @Basic
     @Column(name = "ngaySX", nullable = true)
     private Date ngaySx;
-    @Basic
-    @Column(name = "soLuong", nullable = false)
-    private int soLuong;
     @Basic
     @Column(name = "tenThuoc", nullable = true, length = 255)
     private String tenThuoc;
@@ -39,7 +37,51 @@ public class ThuocEntity {
     @Basic
     @Column(name = "maLoaiThuoc", nullable = true, length = 255)
     private String maLoaiThuoc;
+    @Basic
+    @Column(name = "keDon")
+    private Boolean keDon;
+//    @Basic
+//    @Column(name = "hinhAnh")
+//    private String hinhAnh = "default_image_url";
+    @Basic
+    @Column(name = "donGiaNhap")
+    private Double donGiaNhap;
+    @Basic
+    @Column(name = "doiTuongSD")
+    private String doiTuongSD;
 
+
+    public String getDoiTuongSD() {
+        return doiTuongSD;
+    }
+
+    public void setDoiTuongSD(String doiTuongSD) {
+        this.doiTuongSD = doiTuongSD;
+    }
+
+    public Double getDonGiaNhap() {
+        return donGiaNhap;
+    }
+
+    public void setDonGiaNhap(Double donGiaNhap) {
+        this.donGiaNhap = donGiaNhap;
+    }
+
+//    public String getHinhAnh() {
+//        return hinhAnh;
+//    }
+//
+//    public void setHinhAnh(String hinhAnh) {
+//        this.hinhAnh = hinhAnh;
+//    }
+
+    public Boolean getKeDon() {
+        return keDon;
+    }
+
+    public void setKeDon(Boolean keDon) {
+        this.keDon = keDon;
+    }
     public void setMaThuoc(int maThuoc) {
         this.maThuoc = maThuoc;
     }
@@ -53,6 +95,22 @@ public class ThuocEntity {
         this.tenThuoc=tenT;
         this.donViTinh=dvt;
         this.moTa=congdung;
+    }
+
+    public ThuocEntity(int maThuoc, String tenThuoc, String xuatXu, double donGiaNhap, double donGia, String donViTinh, String moTa, Date ngayHh, Date ngaySx, String maKhuVuc, String maLoaiThuoc, Boolean keDon, String doiTuongSD) {
+        this.maThuoc = maThuoc;
+        this.donGia = donGia;
+        this.donViTinh = donViTinh;
+        this.moTa = moTa;
+        this.ngayHh = ngayHh;
+        this.ngaySx = ngaySx;
+        this.tenThuoc = tenThuoc;
+        this.xuatXu = xuatXu;
+        this.maKhuVuc = maKhuVuc;
+        this.maLoaiThuoc = maLoaiThuoc;
+        this.keDon = keDon;
+        this.donGiaNhap = donGiaNhap;
+        this.doiTuongSD = doiTuongSD;
     }
 
     public int getMaThuoc() {
@@ -97,14 +155,6 @@ public class ThuocEntity {
 
     public void setNgaySx(Date ngaySx) {
         this.ngaySx = ngaySx;
-    }
-
-    public int getSoLuong() {
-        return soLuong;
-    }
-
-    public void setSoLuong(int soLuong) {
-        this.soLuong = soLuong;
     }
 
     public String getTenThuoc() {

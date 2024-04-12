@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "khuvucluutru", schema = "qlnhathuoc", catalog = "")
-public class KhuVucLuuTruEntity {
+public class  KhuVucLuuTruEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "maKV", nullable = false, length = 255)
@@ -12,6 +12,14 @@ public class KhuVucLuuTruEntity {
     @Basic
     @Column(name = "tenKV", nullable = true, length = 255)
     private String tenKv;
+
+    public KhuVucLuuTruEntity() {
+    }
+
+    public KhuVucLuuTruEntity(String maKv, String tenKv) {
+        this.maKv = maKv;
+        this.tenKv = tenKv;
+    }
 
     public String getMaKv() {
         return maKv;

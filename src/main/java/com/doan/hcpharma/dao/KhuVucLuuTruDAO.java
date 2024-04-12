@@ -1,7 +1,6 @@
 package com.doan.hcpharma.dao;
 
-
-import com.doan.hcpharma.model.KhachHangEntity;
+import com.doan.hcpharma.model.KhuVucLuuTruEntity;
 import com.doan.hcpharma.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -10,11 +9,11 @@ import org.hibernate.Transaction;
 import javax.persistence.Query;
 import java.util.List;
 
-public class KhachHangDAO implements DAOInterface<KhachHangEntity>{
+public class KhuVucLuuTruDAO implements DAOInterface<KhuVucLuuTruEntity> {
     Transaction transaction = null;
     Session session = null;
     @Override
-    public boolean addData(KhachHangEntity data) {
+    public boolean addData(KhuVucLuuTruEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -35,7 +34,7 @@ public class KhachHangDAO implements DAOInterface<KhachHangEntity>{
     }
 
     @Override
-    public boolean updateData(KhachHangEntity data) {
+    public boolean updateData(KhuVucLuuTruEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -56,7 +55,7 @@ public class KhachHangDAO implements DAOInterface<KhachHangEntity>{
     }
 
     @Override
-    public void removeData(KhachHangEntity data) {
+    public void removeData(KhuVucLuuTruEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -76,22 +75,19 @@ public class KhachHangDAO implements DAOInterface<KhachHangEntity>{
     }
 
     @Override
-    public List<KhachHangEntity> getAll() {
+    public List<KhuVucLuuTruEntity> getAll() {
         session = HibernateUtil.getSession();
-            Query req = session.createQuery("FROM KhachHangEntity ");
-            List<KhachHangEntity> li= req.getResultList();
-            session.close();
-            return li;
+        Query req = session.createQuery("FROM KhuVucLuuTruEntity ");
+        List<KhuVucLuuTruEntity> li= req.getResultList();
+        session.close();
+        return li;
 
-        }
-
-
-    public List<KhachHangEntity> findCustomerByPhoneNumber(String sdt) {
-        session= HibernateUtil.getSession();
-        try { transaction=session.beginTransaction();
-            String hql = "FROM KhachHangEntity WHERE sdtKh = :sdt";
-            Query query = session.createQuery(hql, KhachHangEntity.class);
-            query.setParameter("sdt", sdt);
+    }
+    public List<String> getAllKhuVuc() {
+        session = HibernateUtil.getSession();
+        try {
+            String hql = "SELECT DISTINCT kv.maKv FROM KhuVucLuuTruEntity kv";
+            Query query = session.createQuery(hql, String.class);
             return query.getResultList();
         } catch (Exception e) {
             e.printStackTrace();

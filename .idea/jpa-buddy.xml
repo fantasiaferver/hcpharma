@@ -3,5 +3,7 @@
   <component name="JpaBuddyIdeaProjectConfig">
     <option name="defaultUnitInitialized" value="true" />
     <option name="renamerInitialized" value="true" />
+    <option name="reverseEngineeringLastDbConnectionId" value="f64b8295-7319-40f7-b823-73b8b73da820__qlnhathuoc" />
+    <option name="reLastEntityCreationPackage" value="src/main/java/com/doan/hcpharma/model" />
   </component>
 </project>

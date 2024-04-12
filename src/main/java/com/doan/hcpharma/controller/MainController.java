@@ -1,10 +1,6 @@
 package com.doan.hcpharma.controller;
-import com.doan.hcpharma.dao.KhachHangDAO;
-import com.doan.hcpharma.dao.NhanVienDAO;
-import com.doan.hcpharma.dao.ThuocDAO;
-import com.doan.hcpharma.model.KhachHangEntity;
-import com.doan.hcpharma.model.NhanVienEntity;
-import com.doan.hcpharma.model.ThuocEntity;
+import com.doan.hcpharma.dao.*;
+import com.doan.hcpharma.model.*;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
@@ -19,6 +15,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -31,10 +29,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class MainController implements Initializable {
 
@@ -99,26 +94,27 @@ public class MainController implements Initializable {
     @FXML
     private void showMedicineTab() {
         showTab(medicineTab, "THUỐC");
-        kindOfMedicineChoiceBox.getItems().addAll("Kháng dị ứng"
-                , "Kháng viêm"
-                , "Ngừa thai"
-                , "Cảm lạnh"
-                , "Da liễu"
-                , "Giảm cân"
-                , "Mắt tai mũi"
-                , "Tiêu hóa"
-                , "Giảm đau hạ sốt"
-                , "Thuốc cho Nam"
-                , "Thuốc cho Nữ"
-                , "Thuốc thần kinh"
-                , "Thuốc xương khớp"
-                , "Vitamin và khoáng chất");
+        kindOfMedicineChoiceBox.getItems().addAll("KDU"
+                , "KV"
+                , "NT"
+                , "CL"
+                , "DL"
+                , "GC"
+                , "MTM"
+                , "TH"
+                , "GDHS"
+                , "TCN"
+                , "TCN"
+                , "TTK"
+                , "TXK"
+                , "VVKC");
         showThuoc();
     }
 
     @FXML
     private void showStorageTab() {
         showTab(storageTab, "KHU VỰC LƯU TRỮ");
+        showKV();
     }
 
     @FXML
@@ -134,8 +130,10 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void showSupplierTab() {
+    private void showSupplierTab()
+    {
         showTab(supplierTab, "NHÀ CUNG CẤP");
+        showNCC();
     }
 
     private void openModal(String fxmlPath, String title) {
@@ -283,55 +281,7 @@ public class MainController implements Initializable {
     }
 
 
-    // Xử lý button xóa rỗng
-    @FXML
-    private TextField txtDonViTInh;
 
-    @FXML
-    private TextField txtGiaBan;
-
-    @FXML
-    private TextField txtGiaNhap;
-
-    @FXML
-    private TextField txtKVLT;
-
-    @FXML
-    private TextField txtMaThuoc;
-
-    @FXML
-    private TextField txtSoLuongThuoc;
-
-    @FXML
-    private TextArea txtTacDung;
-
-    @FXML
-    private TextField txtTenThuoc;
-
-    @FXML
-    private TextArea txtThanhPhan;
-
-    @FXML
-    private TextField txtThuongHieu;
-
-    @FXML
-    private TextField txtDoiTuongSD;
-
-
-    @FXML
-    private void clearTextFieldMedicine() {
-        txtThanhPhan.setText("");
-        txtThuongHieu.setText("");
-        txtTenThuoc.setText("");
-        txtTacDung.setText("");
-        txtSoLuongThuoc.setText("");
-        txtMaThuoc.setText("");
-        txtKVLT.setText("");
-        txtGiaNhap.setText("");
-        txtGiaBan.setText("");
-        txtDonViTInh.setText("");
-        txtDoiTuongSD.setText("");
-    }
 
 
     @Override
@@ -359,7 +309,30 @@ public class MainController implements Initializable {
     /*----------------------------------------------------  THUỐC  ---------------------------------------------------------------*/
     /*----------------------------------------------------------------------------------------------------------------------------*/
 
-    //Show Thuốc lên bảng
+    @FXML
+    private TextField txtGiaBan;
+
+    @FXML
+    private TextField txtGiaNhap;
+
+    @FXML
+    private ChoiceBox cbKVLT, cbDVT;
+
+    @FXML
+    private TextField txtMaThuoc;
+
+    @FXML
+    private TextArea txtTacDung;
+
+    @FXML
+    private TextField txtTenThuoc;
+
+    @FXML
+    private TextField txtXuatXu;
+
+    @FXML
+    private TextField txtDoiTuongSD;
+
 
     @FXML
     private TableView<ThuocEntity> tvThuoc;
@@ -371,20 +344,36 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<ThuocEntity, Date> ngaySX, ngayHH;
 
+    @FXML
+    private TableColumn<ThuocEntity, Boolean> keDon;
+    @FXML
+    private CheckBox checkBoxKeDon;
+    @FXML
+    private ImageView hinhAnhThuoc;
+
+    @FXML
+    private DatePicker dateNSX,dateNHH;
+
     // Định nghĩa GridPane và các Label
     @FXML
     private GridPane gridPane;
 
-    ThuocDAO thuocDAO = null;
+    ThuocDAO thuocDAO = new ThuocDAO();
+
+
+    //Show Thuốc lên bảng
 
     @FXML
     public void showThuoc() {
+
+        List<String> khuVucList = khuVucLuuTruDAO.getAllKhuVuc(); // Lấy danh sách khu vực
+        cbKVLT.setItems(FXCollections.observableList(khuVucList));
+
         if (tvThuoc == null) {
-            // Xử lý trường hợp tvThuoc là null
-            System.err.println("TableView tvKH is null. Initialization failed.");
-            return; // Không thực hiện các thao tác khác nếu tvKH là null
+            System.err.println("TableView tvThuoc is null. Initialization failed.");
+            return;
         }
-        // Thiết lập giá trị của từng cột
+
         try {
             maT.setCellValueFactory(new PropertyValueFactory<>("maThuoc"));
             tenT.setCellValueFactory(new PropertyValueFactory<>("tenThuoc"));
@@ -395,26 +384,274 @@ public class MainController implements Initializable {
             ngaySX.setCellValueFactory(new PropertyValueFactory<>("ngaySx"));
             ngayHH.setCellValueFactory(new PropertyValueFactory<>("ngayHh"));
             kvlt.setCellValueFactory(new PropertyValueFactory<>("maKhuVuc"));
-
+            keDon.setCellValueFactory(new PropertyValueFactory<>("keDon"));
 
             thuocDAO = new ThuocDAO();
             List<ThuocEntity> li = thuocDAO.getAll();
 
+
+
             if (li != null && !li.isEmpty()) {
                 ObservableList<ThuocEntity> allThuoc = FXCollections.observableList(li);
                 tvThuoc.setItems(allThuoc);
-
 
                 tvThuoc.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
                         ThuocEntity selectedThuoc = tvThuoc.getSelectionModel().getSelectedItem();
                         if (selectedThuoc != null) {
+                            txtMaThuoc.setText(String.valueOf(selectedThuoc.getMaThuoc()));
                             txtTenThuoc.setText(selectedThuoc.getTenThuoc());
                             kindOfMedicineChoiceBox.setValue(selectedThuoc.getMaLoaiThuoc());
-                            txtDonViTInh.setText(selectedThuoc.getDonViTinh());
+
+                            cbDVT.setValue(selectedThuoc.getDonViTinh());
                             txtTacDung.setText(selectedThuoc.getMoTa());
+                            txtGiaNhap.setText(String.valueOf(selectedThuoc.getDonGiaNhap()));
                             txtGiaBan.setText(String.valueOf(selectedThuoc.getDonGia()));
+                            checkBoxKeDon.setSelected(selectedThuoc.getKeDon());
+                            cbKVLT.setValue(selectedThuoc.getMaKhuVuc());
+                            txtXuatXu.setText(selectedThuoc.getXuatXu());
+                            txtDoiTuongSD.setText(selectedThuoc.getDoiTuongSD());
+
+                            if (selectedThuoc.getNgaySx() != null) {
+                                //DatePicker ngaySX
+                                Date ngaySX = selectedThuoc.getNgaySx();
+                                java.util.Date utilDate = new java.util.Date(ngaySX.getTime());
+                                LocalDate localDate = utilDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                                dateNSX.setValue(localDate);
+                            }
+
+                            if (selectedThuoc.getNgayHh() != null) {
+                                //DatePicker ngayHH
+                                Date ngayHH = selectedThuoc.getNgayHh();
+                                java.util.Date utilDateHH = new java.util.Date(ngayHH.getTime());
+                                LocalDate localDateHH = utilDateHH.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                                dateNHH.setValue(localDateHH);
+                            }
+//
+//                            String imageUrl = selectedThuoc.getHinhAnh();
+//                            if (imageUrl != null && !imageUrl.isEmpty()) {
+//                                Image image = new Image(imageUrl);
+//                                hinhAnhThuoc.setImage(image);
+//                            }
+                        }
+                    }
+                });
+            } else {
+                System.err.println("List of Thuốc is null or empty. No data to display.");
+            }
+        } catch (Exception e) {
+            System.err.println("An error occurred during initialization: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+//    //Thêm thuốc
+    @FXML
+    public void addThuoc() {
+        try {
+            // Retrieve information from the input fields on the form
+            int maThuoc = Integer.parseInt(txtMaThuoc.getText());
+            String tenThuoc = txtTenThuoc.getText();
+            String loaiThuoc = kindOfMedicineChoiceBox.getValue();
+            boolean keDon = checkBoxKeDon.isSelected();
+            String donViTinh = String.valueOf(cbDVT.getValue());
+            Double giaNhap = Double.parseDouble(txtGiaNhap.getText());
+            Double giaBan = Double.parseDouble(txtGiaBan.getText());
+            String tacDung = txtTacDung.getText();
+            String xuatXu = txtXuatXu.getText();
+            String doiTuongSD = txtDoiTuongSD.getText();
+            String kvlt = String.valueOf(cbKVLT.getValue());
+            java.sql.Date ngaySX = java.sql.Date.valueOf(dateNSX.getValue()); // Get production date from DatePicker
+            java.sql.Date ngayHH = java.sql.Date.valueOf(dateNHH.getValue()); // Get expiry date from DatePicker
+
+            if (tenThuoc.isEmpty() || loaiThuoc == null || donViTinh.isEmpty() || tacDung.isEmpty() || xuatXu.isEmpty() || doiTuongSD.isEmpty() || kvlt.isEmpty()) {
+                showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
+                return;
+            }
+
+
+
+            // Create a new medicine entity with soLuong property
+            ThuocEntity newThuoc = new ThuocEntity(maThuoc, tenThuoc, xuatXu, giaNhap, giaBan, donViTinh, tacDung, ngayHH, ngaySX, kvlt, loaiThuoc, keDon, doiTuongSD);
+
+            // Add the medicine to the database
+            if (thuocDAO.addData(newThuoc)) {
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Thêm thuốc thành công.");
+                clearTextFieldMedicine();
+                showThuoc();
+            } else {
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Thêm thuốc thành công.");
+                clearTextFieldMedicine();
+                showThuoc();
+            }
+        } catch (NumberFormatException e) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đúng định dạng cho giá nhập và giá bán.");
+        } catch (Exception e) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Đã xảy ra lỗi khi thêm thuốc: " + e.getMessage());
+        }
+    }
+        //Xóa thuốc
+
+    public void deleteThuoc() {
+        // Lấy thuốc được chọn từ TableView
+        ThuocEntity selected = tvThuoc.getSelectionModel().getSelectedItem();
+
+        // Kiểm tra xem người dùng đã chọn thuốc để xóa chưa
+        if (selected == null) {
+            // Hiển thị thông báo lỗi nếu không có khách hàng nào được chọn
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText(null);
+            alert.setContentText("Vui lòng chọn một thuốc để xóa.");
+            alert.showAndWait();
+            return;
+        }
+
+        // Hiển thị hộp thoại xác nhận xóa
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Xác nhận xóa");
+        confirmAlert.setHeaderText(null);
+        confirmAlert.setContentText("Bạn có chắc chắn muốn xóa thuốc này?");
+
+        // Kiểm tra xem người dùng đã chọn đồng ý hoặc hủy bỏ
+        ButtonType result = confirmAlert.showAndWait().orElse(ButtonType.CANCEL);
+        if (result == ButtonType.OK) {
+            // Nếu người dùng đồng ý, tiến hành xóa khách hàng
+            thuocDAO.removeData(selected);
+
+            // Cập nhật TableView sau khi xóa
+            showThuoc();
+
+        }
+    }
+
+    //Sửa thuốc
+    @FXML
+    public void updateThuoc() {
+        // Lấy thông tin thuốc đã chọn từ bảng (nếu có)
+        ThuocEntity selectedThuoc = tvThuoc.getSelectionModel().getSelectedItem();
+
+        // Kiểm tra xem đã chọn thuốc để sửa chưa
+        if (selectedThuoc == null) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng chọn thuốc để sửa.");
+            return;
+        }
+
+        // Hiển thị hộp thoại xác nhận trước khi cập nhật
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Xác nhận sửa thông tin");
+        confirmAlert.setHeaderText(null);
+        confirmAlert.setContentText("Bạn có chắc chắn muốn sửa thông tin của thuốc này?");
+
+        Optional<ButtonType> result = confirmAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            // Lấy thông tin đã chỉnh sửa
+            String tenThuoc = txtTenThuoc.getText();
+            String loaiThuoc = kindOfMedicineChoiceBox.getValue();
+            boolean keDon = checkBoxKeDon.isSelected();
+            String donViTinh = String.valueOf(cbDVT.getValue());
+            Double giaNhap = Double.parseDouble(txtGiaNhap.getText());
+            Double giaBan = Double.parseDouble(txtGiaBan.getText());
+            String tacDung = txtTacDung.getText();
+            String xuatXu = txtXuatXu.getText();
+            String doiTuongSD = txtDoiTuongSD.getText();
+            String kvlt = String.valueOf(cbKVLT.getValue());
+            java.sql.Date ngaySX = java.sql.Date.valueOf(dateNSX.getValue());
+            java.sql.Date ngayHH = java.sql.Date.valueOf(dateNHH.getValue());
+
+            // Kiểm tra xem người dùng đã nhập đủ thông tin hay chưa
+            if ( tenThuoc.isEmpty() || donViTinh.isEmpty() || ngaySX == null
+                    || ngayHH == null || giaNhap == 0.0 || giaBan == 0.0 || kvlt.isEmpty()
+                    || tacDung.isEmpty() || xuatXu.isEmpty() || doiTuongSD.isEmpty()) {
+                showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
+                return;
+            }
+
+            // Cập nhật thông tin cho đối tượng selectedKH
+            selectedThuoc.setTenThuoc(tenThuoc);
+            selectedThuoc.setMaLoaiThuoc(loaiThuoc);
+            selectedThuoc.setKeDon(keDon);
+            selectedThuoc.setDonViTinh(donViTinh);
+            selectedThuoc.setDonGiaNhap(giaNhap);
+            selectedThuoc.setDonGia(giaBan);
+            selectedThuoc.setMoTa(tacDung);
+            selectedThuoc.setXuatXu(xuatXu);
+            selectedThuoc.setDoiTuongSD(doiTuongSD);
+            selectedThuoc.setMaKhuVuc(kvlt);
+            selectedThuoc.setNgayHh(ngayHH);
+            selectedThuoc.setNgaySx(ngaySX);
+
+            // Cập nhật thông tin thuốc trong cơ sở dữ liệu
+            if (thuocDAO.updateData(selectedThuoc)) {
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin thuốc thành công.");
+                clearTextFieldMedicine();
+                showThuoc();
+            } else {
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin thuốc thành công.");
+            }
+        }
+    }
+    // Xử lý button xóa rỗng
+
+    @FXML
+    private void clearTextFieldMedicine() {
+        txtMaThuoc.setText("");
+        txtXuatXu.setText("");
+        txtTenThuoc.setText("");
+        txtTacDung.setText("");
+        txtMaThuoc.setText("");
+        txtGiaNhap.setText("");
+        cbDVT.setValue(null);
+        cbKVLT.setValue(null);
+        txtGiaBan.setText("");
+        txtDoiTuongSD.setText("");
+        dateNSX.setValue(null);
+        dateNHH.setValue(null);
+    }
+//    /*----------------------------------------------------  KHU VỰC LƯU TRỮ ---------------------------------------------------------------*/
+    //Show Khu vực lên bảng
+
+    @FXML
+    private TableColumn<KhuVucLuuTruEntity, String> maKV, tenKV, soLuongThuoc, moTaKV;
+
+    @FXML
+    private TableView<KhuVucLuuTruEntity> tvKhuVucLuuTru;
+    @FXML
+    private TextField txtMaKV, txtTenKV;
+
+    KhuVucLuuTruDAO khuVucLuuTruDAO = new KhuVucLuuTruDAO();
+
+    @FXML
+    public void showKV() {
+        if (tvKhuVucLuuTru == null) {
+            // Xử lý trường hợp tvThuoc là null
+            System.err.println("TableView tvKVLT is null. Initialization failed.");
+            return; // Không thực hiện các thao tác khác nếu tvKH là null
+        }
+        // Thiết lập giá trị của từng cột
+        try {
+            maKV.setCellValueFactory(new PropertyValueFactory<>("maKv"));
+            tenKV.setCellValueFactory(new PropertyValueFactory<>("tenKv"));
+//            soLuongThuoc.setCellValueFactory(new PropertyValueFactory<>("soLuongThuoc"));
+//            moTaKV.setCellValueFactory(new PropertyValueFactory<>("moTa"));
+
+
+
+            List<KhuVucLuuTruEntity> li = khuVucLuuTruDAO.getAll();
+
+            if (li != null && !li.isEmpty()) {
+                ObservableList<KhuVucLuuTruEntity> allKV = FXCollections.observableList(li);
+                tvKhuVucLuuTru.setItems(allKV);
+
+
+                tvKhuVucLuuTru.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        KhuVucLuuTruEntity selectedKVLT = tvKhuVucLuuTru.getSelectionModel().getSelectedItem();
+                        if (selectedKVLT != null) {
+                            txtMaKV.setText(selectedKVLT.getMaKv());
+                            txtMaKV.setEditable(false);
+                            txtTenKV.setText(selectedKVLT.getTenKv());
                         }
                     }
                 });
@@ -432,8 +669,259 @@ public class MainController implements Initializable {
         }
 
     }
+
+    // Them KVLT
+    public void addKVLT(){
+        // Lấy thông tin từ các trường nhập liệu trên form
+        String maKV = txtMaKV.getText();
+        String tenKV = txtTenKV.getText();
+
+
+        KhuVucLuuTruEntity newKVLT = new KhuVucLuuTruEntity(maKV,tenKV);
+
+        // Thêm NCC mới vào cơ sở dữ liệu
+        if (khuVucLuuTruDAO.addData(newKVLT)) {
+            showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Thêm khu vực lưu trữ  thành công.");
+            clearFieldsKVLT();
+            showKV();
+        } else {
+            // Hiển thị thông báo lỗi nếu thêm không thành công
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Thêm khu vực lưu trữ thất bại.");
+        }
+    }
+    //BT Xóa KV
+    public void deleteKVLT() {
+        // Lấy KV được chọn từ TableView
+        KhuVucLuuTruEntity selected = tvKhuVucLuuTru.getSelectionModel().getSelectedItem();
+
+        // Kiểm tra xem người dùng đã chọn KV để xóa chưa
+        if (selected == null) {
+            // Hiển thị thông báo lỗi nếu không có khách hàng nào được chọn
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText(null);
+            alert.setContentText("Vui lòng chọn một khu vực để xóa.");
+            alert.showAndWait();
+            return;
+        }
+
+        // Hiển thị hộp thoại xác nhận xóa
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Xác nhận xóa");
+        confirmAlert.setHeaderText(null);
+        confirmAlert.setContentText("Bạn có chắc chắn muốn xóa khu vực này?");
+
+        // Kiểm tra xem người dùng đã chọn đồng ý hoặc hủy bỏ
+        ButtonType result = confirmAlert.showAndWait().orElse(ButtonType.CANCEL);
+        if (result == ButtonType.OK) {
+            // Nếu người dùng đồng ý, tiến hành xóa khách hàng
+            khuVucLuuTruDAO.removeData(selected);
+
+            // Cập nhật TableView sau khi xóa
+            showKV();
+            clearFieldsKVLT();
+
+        }
+    }
+    //BT Sửa KV
+    // Button Sửa NCC
+    public void updateKVLT() {
+        // Lấy thông tin khu vực đã chọn từ bảng (nếu có)
+        KhuVucLuuTruEntity selectedKVLT = tvKhuVucLuuTru.getSelectionModel().getSelectedItem();
+
+        // Kiểm tra xem đã chọn khách hàng để sửa chưa
+        if (selectedKVLT == null) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng chọn khu vực để sửa.");
+            return;
+        }
+        // Lấy thông tin đã chỉnh sửa
+        String tenKV = txtTenNCC.getText();
+
+        // Kiểm tra xem người dùng đã nhập đủ thông tin hay chưa
+        if (tenKV.isEmpty() ) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
+            return;
+        }
+
+        // Cập nhật thông tin cho đối tượng selectedKH
+        selectedKVLT.setTenKv(tenKV);
+
+        // Cập nhật thông tin khách hàng trong cơ sở dữ liệu
+        if (khuVucLuuTruDAO.updateData(selectedKVLT)) {
+            showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin khu vực lưu trữ thành công.");
+            showKV();
+            clearFieldsKVLT();
+        } else {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Sửa thông tin khu vực lưu trữ thất bại.");
+        }
+    }
+    //BT Xoa trăng KV
+    public void clearFieldsKVLT(){
+        txtMaKV.setText("");
+        txtMaKV.setEditable(true);
+        txtTenKV.setText("");
+    }
+    /*----------------------------------------------------  NHÀ CUNG CẤP  ---------------------------------------------------------------*/
+    //Show NCC lên bảng
+    @FXML
+    private TableView<NhaCungCapEntity> tvNCC;
+    @FXML
+    private TableColumn<NhaCungCapEntity,String> maNCC,tenNCC,diaChiNCC,sdtNCC;
+    @FXML
+    private TextField txtMaNCC,txtTenNCC,txtDiaChiNCC,txtSdtNCC;
+
+    NhaCungCapDAO nhaCungCapDAO=new NhaCungCapDAO();
+    @FXML
+    public void showNCC() {
+        if (tvNCC == null) {
+            // Xử lý trường hợp tvThuoc là null
+            System.err.println("TableView tvNCC is null. Initialization failed.");
+            return; // Không thực hiện các thao tác khác nếu tvKH là null
+        }
+        // Thiết lập giá trị của từng cột
+        try {
+            maNCC.setCellValueFactory(new PropertyValueFactory<>("maNcc"));
+            tenNCC.setCellValueFactory(new PropertyValueFactory<>("tenNcc"));
+            diaChiNCC.setCellValueFactory(new PropertyValueFactory<>("diaChiNcc"));
+            sdtNCC.setCellValueFactory(new PropertyValueFactory<>("soDtNcc"));
+
+
+            List<NhaCungCapEntity> li = nhaCungCapDAO.getAll();
+
+            if (li != null && !li.isEmpty()) {
+                ObservableList<NhaCungCapEntity> allNCC = FXCollections.observableList(li);
+                tvNCC.setItems(allNCC);
+
+
+                tvNCC.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        NhaCungCapEntity selectedNCC = tvNCC.getSelectionModel().getSelectedItem();
+                        if (selectedNCC != null) {
+                            txtMaNCC.setText(selectedNCC.getMaNcc());
+                            txtMaNCC.setEditable(false);
+                            txtTenNCC.setText(selectedNCC.getTenNcc());
+                            txtSdtNCC.setText(selectedNCC.getSoDtNcc());
+                            txtDiaChiNCC.setText(selectedNCC.getDiaChiNcc());
+                        }
+                    }
+                });
+
+
+            } else {
+                // Xử lý trường hợp danh sách rỗng
+                System.err.println("List of NCC is null or empty. No data to display.");
+
+            }
+        } catch (Exception e) {
+            // Xử lý ngoại lệ nếu có bất kỳ lỗi nào xảy ra trong quá trình khởi tạo
+            System.err.println("An error occurred during initialization: " + e.getMessage());
+            e.printStackTrace(); // In stack trace để debug
+        }
+
+    }
+    // Them NCC
+    public void addNCC(){
+        // Lấy thông tin từ các trường nhập liệu trên form
+        String maNCC = txtMaNCC.getText();
+        String tenNCC = txtTenNCC.getText();
+        String diaChiNCC = txtDiaChiNCC.getText();
+        String sdtNCC = txtSdtNCC.getText();
+
+        NhaCungCapEntity newNCC = new NhaCungCapEntity(maNCC, tenNCC, sdtNCC, diaChiNCC);
+
+        // Thêm NCC mới vào cơ sở dữ liệu
+        if (nhaCungCapDAO.addData(newNCC)) {
+            showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Thêm nhà cung cấp thành công.");
+            clearFieldsNCC();
+            showNCC();
+        } else {
+            // Hiển thị thông báo lỗi nếu thêm không thành công
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Thêm nhà cung cấp thất bại.");
+        }
+    }
+    // Button Sửa NCC
+    public void updateNCC() {
+        // Lấy thông tin khách hàng đã chọn từ bảng (nếu có)
+        NhaCungCapEntity selectedNCC = tvNCC.getSelectionModel().getSelectedItem();
+
+        // Kiểm tra xem đã chọn khách hàng để sửa chưa
+        if (selectedNCC == null) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng chọn nhà cung cấp để sửa.");
+            return;
+        }
+        // Lấy thông tin đã chỉnh sửa
+        String tenNCC = txtTenNCC.getText();
+        String diaChiNCC= txtDiaChiNCC.getText();
+        String sdtNCC = txtSdtNCC.getText();
+
+        // Kiểm tra xem người dùng đã nhập đủ thông tin hay chưa
+        if (tenNCC.isEmpty() || diaChiNCC.isEmpty() || sdtNCC.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
+            return;
+        }
+
+        // Cập nhật thông tin cho đối tượng selectedKH
+        selectedNCC.setTenNcc(tenNCC);
+        selectedNCC.setDiaChiNcc(diaChiNCC);
+        selectedNCC.setSoDtNcc(sdtNCC);
+
+        // Cập nhật thông tin khách hàng trong cơ sở dữ liệu
+        if (nhaCungCapDAO.updateData(selectedNCC)) {
+            showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin nhà cung cấp thành công.");
+            showNCC();
+            clearFieldsNCC();
+        } else {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Sửa thông tin nhà cung cấp thất bại.");
+        }
+    }
+
+    // Button Xóa NCC
+    public void deleteNCC() {
+        // Lấy khách hàng được chọn từ TableView
+        NhaCungCapEntity selected = tvNCC.getSelectionModel().getSelectedItem();
+
+        // Kiểm tra xem người dùng đã chọn khách hàng để xóa chưa
+        if (selected == null) {
+            // Hiển thị thông báo lỗi nếu không có khách hàng nào được chọn
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText(null);
+            alert.setContentText("Vui lòng chọn một nhà cung cấp để xóa.");
+            alert.showAndWait();
+            return;
+        }
+
+        // Hiển thị hộp thoại xác nhận xóa
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Xác nhận xóa");
+        confirmAlert.setHeaderText(null);
+        confirmAlert.setContentText("Bạn có chắc chắn muốn xóa nhà cung cấp này?");
+
+        // Kiểm tra xem người dùng đã chọn đồng ý hoặc hủy bỏ
+        ButtonType result = confirmAlert.showAndWait().orElse(ButtonType.CANCEL);
+        if (result == ButtonType.OK) {
+            // Nếu người dùng đồng ý, tiến hành xóa khách hàng
+            nhaCungCapDAO.removeData(selected);
+
+            // Cập nhật TableView sau khi xóa
+            showNCC();
+
+        }
+    }
+
+    // Button Xoa Trang NCC
+    public void clearFieldsNCC(){
+        txtMaNCC.setText("");
+        txtMaNCC.setEditable(true);
+        txtTenNCC.setText("");
+        txtSdtNCC.setText("");
+        txtDiaChiNCC.setText("");
+    }
+
     /*----------------------------------------------------  KHÁCH HÀNG ---------------------------------------------------------------*/
     //Show KH lên bảng
+
 
     @FXML
     private TableView<KhachHangEntity> tvKhachHang;
@@ -620,6 +1108,31 @@ public class MainController implements Initializable {
         }
     }
 
+
+    @FXML
+    private TextField txtSearchKH;
+    @FXML
+    public void searchCustomerByPhoneNumber() {
+        String sdt = txtSearchKH.getText(); // Lấy số điện thoại từ TextField
+
+        // Kiểm tra xem có nhập số điện thoại hay không
+        if (sdt.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập số điện thoại.");
+            return;
+        }
+
+        // Gọi hàm tìm kiếm khách hàng theo số điện thoại từ DAO
+        List<KhachHangEntity> result = khachHangDAO.findCustomerByPhoneNumber(sdt);
+
+        if (result != null && !result.isEmpty()) {
+            // Nếu tìm thấy khách hàng, hiển thị thông tin trong TableView hoặc ListView
+            ObservableList<KhachHangEntity> observableResult = FXCollections.observableArrayList(result);
+            tvKhachHang.setItems(observableResult); // tvKhachHang là TableView hoặc ListView
+        } else {
+            // Nếu không tìm thấy khách hàng, hiển thị thông báo
+            showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Không tìm thấy khách hàng với số điện thoại đã nhập.");
+        }
+    }
 
     //Xóa trắng KH
     public void clearFieldsKH() {
@@ -843,6 +1356,29 @@ public class MainController implements Initializable {
             // Hiển thị thông báo lỗi nếu sửa không thành công
             showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin nhân viên thành công.");
             showNV();
+        }
+    }
+
+    //Tìm nv theo sdt
+    @FXML
+    private TextField txtSearchNVKeyword;
+    @FXML
+    private void searchEmployees(ActionEvent event) {
+        String keyword = txtSearchNVKeyword.getText().trim();
+        if (!keyword.isEmpty()) {
+            // Gọi DAO để thực hiện tìm kiếm
+            List<NhanVienEntity> resultList = nhanVienDAO.searchEmployeesByNameOrPhone(keyword);
+            if (resultList != null && !resultList.isEmpty()) {
+                // Nếu tìm thấy kết quả, hiển thị vào bảng
+                ObservableList<NhanVienEntity> observableResultList = FXCollections.observableArrayList(resultList);
+                tvNhanVien.setItems(observableResultList);
+            } else {
+                // Nếu không tìm thấy kết quả, hiển thị thông báo
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Không tìm thấy nhân viên nào phù hợp.");
+            }
+        } else {
+            // Nếu không nhập từ khóa, hiển thị thông báo
+            showAlert(Alert.AlertType.WARNING, "Cảnh báo", "Vui lòng nhập từ khóa để tìm kiếm.");
         }
     }
     public void clearFieldsNV() {

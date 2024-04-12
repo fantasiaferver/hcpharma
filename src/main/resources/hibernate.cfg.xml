@@ -32,7 +32,8 @@
     <mapping class="com.doan.hcpharma.model.HoaDonEntity"></mapping>
     <mapping resource="HoaDonEntity.hbm.xml"></mapping>
 
-
+    <mapping class="com.doan.hcpharma.model.NhaCungCapEntity"></mapping>
+    <mapping resource="NhaCungCapEntity.xml"></mapping>
 
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->

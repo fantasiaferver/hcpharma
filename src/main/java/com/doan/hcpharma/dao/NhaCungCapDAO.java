@@ -1,7 +1,7 @@
 package com.doan.hcpharma.dao;
 
-
-import com.doan.hcpharma.model.KhachHangEntity;
+import com.doan.hcpharma.model.KhuVucLuuTruEntity;
+import com.doan.hcpharma.model.NhaCungCapEntity;
 import com.doan.hcpharma.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -10,11 +10,11 @@ import org.hibernate.Transaction;
 import javax.persistence.Query;
 import java.util.List;
 
-public class KhachHangDAO implements DAOInterface<KhachHangEntity>{
+public class NhaCungCapDAO implements DAOInterface<NhaCungCapEntity>{
     Transaction transaction = null;
     Session session = null;
     @Override
-    public boolean addData(KhachHangEntity data) {
+    public boolean addData(NhaCungCapEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -35,7 +35,7 @@ public class KhachHangDAO implements DAOInterface<KhachHangEntity>{
     }
 
     @Override
-    public boolean updateData(KhachHangEntity data) {
+    public boolean updateData(NhaCungCapEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -56,7 +56,7 @@ public class KhachHangDAO implements DAOInterface<KhachHangEntity>{
     }
 
     @Override
-    public void removeData(KhachHangEntity data) {
+    public void removeData(NhaCungCapEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -76,27 +76,11 @@ public class KhachHangDAO implements DAOInterface<KhachHangEntity>{
     }
 
     @Override
-    public List<KhachHangEntity> getAll() {
+    public List<NhaCungCapEntity> getAll() {
         session = HibernateUtil.getSession();
-            Query req = session.createQuery("FROM KhachHangEntity ");
-            List<KhachHangEntity> li= req.getResultList();
-            session.close();
-            return li;
-
-        }
-
-
-    public List<KhachHangEntity> findCustomerByPhoneNumber(String sdt) {
-        session= HibernateUtil.getSession();
-        try { transaction=session.beginTransaction();
-            String hql = "FROM KhachHangEntity WHERE sdtKh = :sdt";
-            Query query = session.createQuery(hql, KhachHangEntity.class);
-            query.setParameter("sdt", sdt);
-            return query.getResultList();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        Query req = session.createQuery("FROM NhaCungCapEntity ");
+        List<NhaCungCapEntity> li= req.getResultList();
+        session.close();
+        return li;
     }
-
 }
