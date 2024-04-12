@@ -30,6 +30,15 @@
     -fx-background-color: linear-gradient(#000000,#4D4855);
 }
 
+.linear-pink-gradient {
+    -fx-background-color: linear-gradient(#FFA69E,#861657);
+}
+
+.linear-lavender-gradient {
+    -fx-background-color: linear-gradient(#5F0A87,#A4508B);
+
+}
+
 .shadow {
      -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
 }
@@ -101,4 +110,6 @@
 .circle-image {
     -fx-background-radius: 100px;
 }
+
+
 
