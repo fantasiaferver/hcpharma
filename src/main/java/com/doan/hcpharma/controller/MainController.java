@@ -38,7 +38,7 @@ public class MainController implements Initializable {
     private String currentTabName;
 
     @FXML
-    private AnchorPane overviewTab,medicineTab,storageTab,customerTab,employeeTab,supplierTab, sellDrugsTab, sellNonPrescriptionDrugsTab, sellPrescriptionDrugsTab, prescriptionDrugsTab, accountTab, personalInformationTab, importMedicineTab;
+    private AnchorPane overviewTab,medicineTab,storageTab,customerTab,employeeTab,supplierTab, sellDrugsTab, sellNonPrescriptionDrugsTab, sellPrescriptionDrugsTab, prescriptionDrugsTab, accountTab, personalInformationTab, importMedicineTab, kindOfMedicineTab;
 
     @FXML
     private Label dateTimeLabel;
@@ -81,7 +81,7 @@ public class MainController implements Initializable {
         sellDrugsTab.setVisible(tab == sellDrugsTab);
         accountTab.setVisible(tab == accountTab);
         personalInformationTab.setVisible(tab == personalInformationTab);
-        importMedicineTab.setVisible(tab == importMedicineTab);
+        kindOfMedicineTab.setVisible(tab == kindOfMedicineTab);
         currentTabName = tabName;
         updateTabLabel();
     }
@@ -152,7 +152,7 @@ public class MainController implements Initializable {
 
     @FXML
     private void showSellDrugsTab() {
-        showTab(sellDrugsTab, "BÁN THUỐC");
+        showTab(sellDrugsTab, "HÓA ĐƠN BÁN THUỐC");
     }
 
     @FXML
@@ -165,7 +165,12 @@ public class MainController implements Initializable {
     }
     @FXML
     private void showimportMedicineTab() {
-        showTab(importMedicineTab, "NHẬP THUỐC");
+        showTab(importMedicineTab, "HÓA ĐƠN NHẬP THUỐC");
+    }
+
+    @FXML
+    private void showKindOfMedicineTab() {
+        showTab(kindOfMedicineTab, "LOẠI THUỐC");
     }
 
 
