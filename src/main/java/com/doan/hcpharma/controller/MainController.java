@@ -81,6 +81,7 @@ public class MainController implements Initializable {
         sellDrugsTab.setVisible(tab == sellDrugsTab);
         accountTab.setVisible(tab == accountTab);
         personalInformationTab.setVisible(tab == personalInformationTab);
+        importMedicineTab.setVisible(tab == importMedicineTab);
         kindOfMedicineTab.setVisible(tab == kindOfMedicineTab);
         currentTabName = tabName;
         updateTabLabel();
@@ -164,7 +165,7 @@ public class MainController implements Initializable {
         showTab(personalInformationTab, "THÔNG TIN TÀI KHOẢN");
     }
     @FXML
-    private void showimportMedicineTab() {
+    private void showImportMedicineTab() {
         showTab(importMedicineTab, "HÓA ĐƠN NHẬP THUỐC");
     }
 

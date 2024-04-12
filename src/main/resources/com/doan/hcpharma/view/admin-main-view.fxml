@@ -114,7 +114,7 @@
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="5.0" layoutY="280.0" mnemonicParsing="false" onAction="#showimportMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hóa đơn nhập thuốc" textFill="WHITE">
+                              <Button layoutX="5.0" layoutY="280.0" mnemonicParsing="false" onAction="#showImportMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hóa đơn nhập thuốc" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -189,57 +189,57 @@
                               </Label>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/dashboard.png" />
+                                    <Image url="@../image/dashboard.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/bar-chart.png" />
+                                    <Image url="@../image/bar-chart.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/drugs.png" />
+                                    <Image url="@../image/drugs.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="16.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/drug.png" />
+                                    <Image url="@../image/drug.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="14.0" layoutY="526.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/customer.png" />
+                                    <Image url="@../image/customer.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="14.0" layoutY="572.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/teamwork.png" />
+                                    <Image url="@../image/teamwork.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="15.0" layoutY="483.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/parcel.png" />
+                                    <Image url="@../image/parcel.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="16.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/invoice.png" />
+                                    <Image url="@../image/invoice.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="13.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/invoice%20(1).png" />
+                                    <Image url="@../image/invoice%20(1).png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="13.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/management.png" />
+                                    <Image url="@../image/management.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="13.0" layoutY="668.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/user%20(2).png" />
+                                    <Image url="@../image/user%20(2).png" />
                                  </image>
                               </ImageView>
                               <Button layoutX="4.0" layoutY="421.0" mnemonicParsing="false" onAction="#showStorageTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Khu vực lưu trữ" textFill="WHITE">
@@ -249,7 +249,7 @@
                               </Button>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="14.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/map.png" />
+                                    <Image url="@../image/map.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -1461,7 +1461,7 @@
                            <children>
                               <AnchorPane layoutX="85.0" layoutY="32.0" prefHeight="49.0" prefWidth="1301.0" AnchorPane.bottomAnchor="658.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Button alignment="BASELINE_CENTER" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#showSellNonPrescriptionDrugsTab" prefHeight="36.0" prefWidth="203.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Bán thuốc không kê đơn" textFill="WHITE">
+                                    <Button alignment="BASELINE_CENTER" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#showSellNonPrescriptionDrugsTab" prefHeight="36.0" prefWidth="203.0" stylesheets="@../style/admin-main-view.css" text="Bán thuốc không kê đơn" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -1473,12 +1473,12 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                                <Image url="@../image/addition.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button alignment="BASELINE_CENTER" layoutX="227.0" layoutY="6.0" mnemonicParsing="false" onAction="#showSellPrescriptionDrugsTab" prefHeight="36.0" prefWidth="203.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Bán thuốc kê đơn" textFill="WHITE">
+                                    <Button alignment="BASELINE_CENTER" layoutX="227.0" layoutY="6.0" mnemonicParsing="false" onAction="#showSellPrescriptionDrugsTab" prefHeight="36.0" prefWidth="203.0" stylesheets="@../style/admin-main-view.css" text="Bán thuốc kê đơn" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -1490,12 +1490,12 @@
                                        <graphic>
                                           <ImageView fx:id="showSellPrescriptionDrugsTab">
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                                <Image url="@../image/addition.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button alignment="BASELINE_CENTER" layoutX="440.0" layoutY="6.0" mnemonicParsing="false" onAction="#showNonPrescriptionDrugsTab" prefHeight="36.0" prefWidth="203.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text=" Đơn thuốc kê đơn" textFill="WHITE">
+                                    <Button alignment="BASELINE_CENTER" layoutX="440.0" layoutY="6.0" mnemonicParsing="false" onAction="#showNonPrescriptionDrugsTab" prefHeight="36.0" prefWidth="203.0" stylesheets="@../style/admin-main-view.css" text=" Đơn thuốc kê đơn" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -1507,7 +1507,7 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                                <Image url="@../image/addition.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -1518,9 +1518,9 @@
                                  <children>
                                     <AnchorPane fx:id="sellNonPrescriptionDrugsTab" prefHeight="655.2" prefWidth="1300.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <AnchorPane layoutX="650.0" prefHeight="650.0" prefWidth="647.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                                          <AnchorPane layoutX="650.0" prefHeight="650.0" prefWidth="647.0" stylesheets="@../style/admin-main-view.css">
                                              <children>
-                                                <Button fx:id="btnAddSupplier111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="514.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="In hóa đơn" textFill="WHITE">
+                                                <Button fx:id="btnAddSupplier111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="514.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../style/admin-main-view.css" text="In hóa đơn" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -1532,12 +1532,12 @@
                                                    <graphic>
                                                       <ImageView fitHeight="18.0" fitWidth="18.0">
                                                          <image>
-                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/printing.png" />
+                                                            <Image url="@../image/printing.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </Button>
-                                                <Button fx:id="btnAddSupplier1111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="559.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thanh toán" textFill="WHITE">
+                                                <Button fx:id="btnAddSupplier1111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="559.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../style/admin-main-view.css" text="Thanh toán" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -1549,12 +1549,12 @@
                                                    <graphic>
                                                       <ImageView>
                                                          <image>
-                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/check.png" />
+                                                            <Image url="@../image/check.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </Button>
-                                                <Button fx:id="btnAddSupplier11111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="604.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hủy" textFill="WHITE">
+                                                <Button fx:id="btnAddSupplier11111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="604.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../style/admin-main-view.css" text="Hủy" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -1566,7 +1566,7 @@
                                                    <graphic>
                                                       <ImageView>
                                                          <image>
-                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/paper.png" />
+                                                            <Image url="@../image/paper.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
@@ -1651,7 +1651,7 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </AnchorPane>
-                                          <AnchorPane layoutX="6.0" prefHeight="649.0" prefWidth="638.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                                          <AnchorPane layoutX="6.0" prefHeight="649.0" prefWidth="638.0" stylesheets="@../style/admin-main-view.css">
                                              <children>
                                                 <TextField layoutX="440.0" layoutY="14.0" prefHeight="26.0" prefWidth="182.0" promptText="Tìm Thuốc" />
                                                 <TableView fx:id="tvSellThuoc" layoutX="8.0" layoutY="57.0" prefHeight="334.0" prefWidth="622.0">
@@ -1676,7 +1676,7 @@
                                                    </columns>
                                                 </TableView>
                                                 <TextField layoutX="7.0" layoutY="410.0" promptText="Tìm khách hàng" />
-                                                <Label fx:id="tabLable1" layoutX="14.0" layoutY="17.0" styleClass="header-line-admin" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hóa đơn thuốc không kê đơn">
+                                                <Label fx:id="tabLable1" layoutX="14.0" layoutY="17.0" styleClass="header-line-admin" stylesheets="@../style/admin-main-view.css" text="Hóa đơn thuốc không kê đơn">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -1691,7 +1691,7 @@
                                     </AnchorPane>
                                     <AnchorPane fx:id="sellPrescriptionDrugsTab" layoutX="5.0" layoutY="5.0" prefHeight="655.2" prefWidth="1300.8" visible="false">
                                        <children>
-                                          <AnchorPane layoutY="-4.8" prefHeight="654.0" prefWidth="639.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="661.5999999999999" AnchorPane.topAnchor="-5.0">
+                                          <AnchorPane layoutY="-4.8" prefHeight="654.0" prefWidth="639.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="661.5999999999999" AnchorPane.topAnchor="-5.0">
                                              <children>
                                                 <TextField layoutX="442.0" layoutY="14.0" prefHeight="26.0" prefWidth="182.0" promptText="Tìm hóa đơn thuốc kê đơn" />
                                                 <TableView layoutX="8.0" layoutY="51.0" prefHeight="342.0" prefWidth="625.0">
@@ -1715,7 +1715,7 @@
                                                    </columns>
                                                 </TableView>
                                                 <TextField layoutX="8.0" layoutY="414.0" promptText="Tìm khách hàng" />
-                                                <Label fx:id="tabLable11" layoutX="17.0" layoutY="17.0" styleClass="header-line-admin" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hóa đơn thuốc kê đơn">
+                                                <Label fx:id="tabLable11" layoutX="17.0" layoutY="17.0" styleClass="header-line-admin" stylesheets="@../style/admin-main-view.css" text="Hóa đơn thuốc kê đơn">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -1726,9 +1726,9 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </AnchorPane>
-                                          <AnchorPane layoutX="645.0" layoutY="-5.0" prefHeight="654.0" prefWidth="652.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                                          <AnchorPane layoutX="645.0" layoutY="-5.0" prefHeight="654.0" prefWidth="652.0" stylesheets="@../style/admin-main-view.css">
                                              <children>
-                                                <Button fx:id="btnAddSupplier1111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="514.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="In hóa đơn" textFill="WHITE">
+                                                <Button fx:id="btnAddSupplier1111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="514.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../style/admin-main-view.css" text="In hóa đơn" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -1740,12 +1740,12 @@
                                                    <graphic>
                                                       <ImageView fitHeight="18.0" fitWidth="18.0">
                                                          <image>
-                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/printing.png" />
+                                                            <Image url="@../image/printing.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </Button>
-                                                <Button fx:id="btnAddSupplier11111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="559.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thanh toán" textFill="WHITE">
+                                                <Button fx:id="btnAddSupplier11111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="559.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../style/admin-main-view.css" text="Thanh toán" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -1757,12 +1757,12 @@
                                                    <graphic>
                                                       <ImageView>
                                                          <image>
-                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/check.png" />
+                                                            <Image url="@../image/check.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </Button>
-                                                <Button fx:id="btnAddSupplier111111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="604.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hủy" textFill="WHITE">
+                                                <Button fx:id="btnAddSupplier111111" alignment="BASELINE_CENTER" layoutX="447.0" layoutY="604.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" stylesheets="@../style/admin-main-view.css" text="Hủy" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -1774,7 +1774,7 @@
                                                    <graphic>
                                                       <ImageView>
                                                          <image>
-                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/paper.png" />
+                                                            <Image url="@../image/paper.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
@@ -1872,7 +1872,7 @@
                                                       <TableColumn prefWidth="179.99998474121094" text="Nơi tạo đơn" />
                                                    </columns>
                                                 </TableView>
-                                                <Label layoutX="5.0" layoutY="8.0" styleClass="header-line-admin" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Đơn thuốc kê đơn">
+                                                <Label layoutX="5.0" layoutY="8.0" styleClass="header-line-admin" stylesheets="@../style/admin-main-view.css" text="Đơn thuốc kê đơn">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -1880,7 +1880,7 @@
                                                 <TextField layoutX="4.0" layoutY="58.0" prefHeight="26.0" prefWidth="358.0" promptText="Tìm đơn thuốc" />
                                              </children>
                                           </AnchorPane>
-                                          <AnchorPane layoutX="376.0" layoutY="107.0" prefHeight="654.0" prefWidth="922.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="376.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
+                                          <AnchorPane layoutX="376.0" layoutY="107.0" prefHeight="654.0" prefWidth="922.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="376.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
                                              <styleClass>
                                                 <String fx:value="gray-background" />
                                                 <String fx:value="radius" />
@@ -1902,7 +1902,7 @@
                                                       <Font name="System Bold" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <Button fx:id="btnDeleteEmployee1" layoutX="612.0" layoutY="334.0" mnemonicParsing="false" onAction="#deleteNV" prefHeight="36.0" prefWidth="122.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                                <Button fx:id="btnDeleteEmployee1" layoutX="612.0" layoutY="334.0" mnemonicParsing="false" onAction="#deleteNV" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="13.0" />
                                                    </font>
@@ -1914,12 +1914,12 @@
                                                    <graphic>
                                                       <ImageView>
                                                          <image>
-                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/delete.png" />
+                                                            <Image url="@../image/delete.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </Button>
-                                                <Button fx:id="btnEditEmployee1" layoutX="766.0" layoutY="284.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                                <Button fx:id="btnEditEmployee1" layoutX="766.0" layoutY="284.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="13.0" />
                                                    </font>
@@ -1931,12 +1931,12 @@
                                                    <graphic>
                                                       <ImageView>
                                                          <image>
-                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/edit-text.png" />
+                                                            <Image url="@../image/edit-text.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </Button>
-                                                <Button fx:id="btnAddEmployee1" alignment="BASELINE_CENTER" layoutX="612.0" layoutY="284.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thêm" textFill="WHITE">
+                                                <Button fx:id="btnAddEmployee1" alignment="BASELINE_CENTER" layoutX="612.0" layoutY="284.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Thêm" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="13.0" />
                                                    </font>
@@ -1948,12 +1948,12 @@
                                                    <graphic>
                                                       <ImageView>
                                                          <image>
-                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                                            <Image url="@../image/addition.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
                                                 </Button>
-                                                <Button fx:id="btnClearEmployee1" alignment="BASELINE_CENTER" layoutX="769.0" layoutY="334.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
+                                                <Button fx:id="btnClearEmployee1" alignment="BASELINE_CENTER" layoutX="769.0" layoutY="334.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" stylesheets="@../style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -1965,7 +1965,7 @@
                                                    <graphic>
                                                       <ImageView>
                                                          <image>
-                                                            <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/list.png" />
+                                                            <Image url="@../image/list.png" />
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
@@ -2027,7 +2027,7 @@
                         </AnchorPane>
                         <AnchorPane fx:id="accountTab" prefHeight="712.8" prefWidth="1306.4" visible="false">
                            <children>
-                              <AnchorPane layoutX="9.0" layoutY="60.0" prefHeight="645.0" prefWidth="580.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                              <AnchorPane layoutX="9.0" layoutY="60.0" prefHeight="645.0" prefWidth="580.0" stylesheets="@../style/admin-main-view.css">
                                  <styleClass>
                                     <String fx:value="radius" />
                                     <String fx:value="gray-background" />
@@ -2100,7 +2100,7 @@
                                           </TextArea>
                                        </children>
                                     </GridPane>
-                                    <Button fx:id="btnDeleteSupplier1" layoutX="301.0" layoutY="400.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="137.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                    <Button fx:id="btnDeleteSupplier1" layoutX="301.0" layoutY="400.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="137.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2112,12 +2112,12 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/delete.png" />
+                                                <Image url="@../image/delete.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button fx:id="btnEditSupplier1" layoutX="145.0" layoutY="444.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="135.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                    <Button fx:id="btnEditSupplier1" layoutX="145.0" layoutY="444.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="135.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2129,12 +2129,12 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/edit-text.png" />
+                                                <Image url="@../image/edit-text.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button fx:id="btnAddSupplier12" alignment="BASELINE_CENTER" layoutX="145.0" layoutY="398.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="134.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thêm" textFill="WHITE">
+                                    <Button fx:id="btnAddSupplier12" alignment="BASELINE_CENTER" layoutX="145.0" layoutY="398.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="134.0" stylesheets="@../style/admin-main-view.css" text="Thêm" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2146,12 +2146,12 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                                <Image url="@../image/addition.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button fx:id="btnClearSupplier1" alignment="BASELINE_CENTER" layoutX="301.0" layoutY="446.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="138.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
+                                    <Button fx:id="btnClearSupplier1" alignment="BASELINE_CENTER" layoutX="301.0" layoutY="446.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="138.0" stylesheets="@../style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2163,7 +2163,7 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/list.png" />
+                                                <Image url="@../image/list.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -2184,7 +2184,7 @@
                         </AnchorPane>
                         <AnchorPane fx:id="personalInformationTab" prefHeight="712.8" prefWidth="1306.4" visible="false">
                            <children>
-                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="690.0" prefWidth="493.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="690.0" prefWidth="493.0" stylesheets="@../style/admin-main-view.css">
                                  <styleClass>
                                     <String fx:value="gray-background" />
                                     <String fx:value="radius" />
@@ -2192,7 +2192,7 @@
                                  <children>
                                     <ImageView fitHeight="164.0" fitWidth="156.0" layoutX="169.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/profile.png" />
+                                          <Image url="@../image/profile.png" />
                                        </image>
                                     </ImageView>
                                     <Text layoutX="154.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phạm Văn Chính" textAlignment="CENTER" wrappingWidth="185.77886962890625">
@@ -2227,7 +2227,7 @@
                                     </Text>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="520.0" layoutY="14.0" prefHeight="690.0" prefWidth="772.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                              <AnchorPane layoutX="520.0" layoutY="14.0" prefHeight="690.0" prefWidth="772.0" stylesheets="@../style/admin-main-view.css">
                                  <styleClass>
                                     <String fx:value="gray-background" />
                                     <String fx:value="radius" />
@@ -2262,9 +2262,9 @@
                                     <Font size="13.0" />
                                  </font>
                               </TextField>
-                              <AnchorPane layoutX="584.0" layoutY="59.19999999999999" prefHeight="303.0" prefWidth="710.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" AnchorPane.bottomAnchor="359.0" AnchorPane.leftAnchor="584.0" AnchorPane.rightAnchor="13.0">
+                              <AnchorPane layoutX="584.0" layoutY="59.19999999999999" prefHeight="303.0" prefWidth="710.0" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="359.0" AnchorPane.leftAnchor="584.0" AnchorPane.rightAnchor="13.0">
                                  <children>
-                                    <Button alignment="BASELINE_CENTER" layoutX="374.0" layoutY="253.0" mnemonicParsing="false" onAction="#clearTextFieldMedicine" prefHeight="36.0" prefWidth="172.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa trắng" textFill="WHITE" AnchorPane.rightAnchor="165.0">
+                                    <Button alignment="BASELINE_CENTER" layoutX="374.0" layoutY="253.0" mnemonicParsing="false" onAction="#clearTextFieldMedicine" prefHeight="36.0" prefWidth="172.0" stylesheets="@../style/admin-main-view.css" text="Xóa trắng" textFill="WHITE" AnchorPane.rightAnchor="165.0">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2276,7 +2276,7 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/list.png" />
+                                                <Image url="@../image/list.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -2286,7 +2286,7 @@
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Button alignment="BASELINE_CENTER" layoutX="185.0" layoutY="253.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thêm vào hóa đơn" textFill="WHITE" AnchorPane.rightAnchor="360.60000000000014">
+                                    <Button alignment="BASELINE_CENTER" layoutX="185.0" layoutY="253.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="164.0" stylesheets="@../style/admin-main-view.css" text="Thêm vào hóa đơn" textFill="WHITE" AnchorPane.rightAnchor="360.60000000000014">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2298,7 +2298,7 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                                <Image url="@../image/addition.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -2355,7 +2355,7 @@
                                     <String fx:value="radius" />
                                  </styleClass>
                               </AnchorPane>
-                              <AnchorPane layoutX="7.0" layoutY="363.0" prefHeight="344.0" prefWidth="1288.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                              <AnchorPane layoutX="7.0" layoutY="363.0" prefHeight="344.0" prefWidth="1288.0" stylesheets="@../style/admin-main-view.css">
                                  <styleClass>
                                     <String fx:value="gray-background" />
                                     <String fx:value="radius" />
@@ -2385,7 +2385,7 @@
                                        </font>
                                     </Label>
                                     <ChoiceBox layoutX="931.0" layoutY="43.0" prefHeight="26.0" prefWidth="312.0" />
-                                    <Button alignment="BASELINE_CENTER" layoutX="937.0" layoutY="278.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="114.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="In hóa đơn" textFill="WHITE">
+                                    <Button alignment="BASELINE_CENTER" layoutX="937.0" layoutY="278.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="114.0" stylesheets="@../style/admin-main-view.css" text="In hóa đơn" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2397,12 +2397,12 @@
                                        <graphic>
                                           <ImageView fitHeight="18.0" fitWidth="18.0">
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/printing.png" />
+                                                <Image url="@../image/printing.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button alignment="BASELINE_CENTER" layoutX="1055.0" layoutY="278.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="109.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Lưu" textFill="WHITE">
+                                    <Button alignment="BASELINE_CENTER" layoutX="1055.0" layoutY="278.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="109.0" stylesheets="@../style/admin-main-view.css" text="Lưu" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2414,12 +2414,12 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/check.png" />
+                                                <Image url="@../image/check.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button alignment="BASELINE_CENTER" layoutX="1171.0" layoutY="278.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="110.0" stylesheets="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hủy" textFill="WHITE">
+                                    <Button alignment="BASELINE_CENTER" layoutX="1171.0" layoutY="278.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="110.0" stylesheets="@../style/admin-main-view.css" text="Hủy" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2431,7 +2431,7 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../doan2/hcpharma/src/main/resources/com/doan/hcpharma/image/paper.png" />
+                                                <Image url="@../image/paper.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -2495,7 +2495,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="kindOfMedicineTab" prefHeight="707.2" prefWidth="900.8" visible="false">
+                        <AnchorPane fx:id="kindOfMedicineTab" prefHeight="707.2" prefWidth="900.8">
                            <children>
                               <TextField layoutX="13.0" layoutY="16.0" prefHeight="27.0" prefWidth="223.0" promptText="Tìm loại thuốc">
                                  <font>
@@ -2613,7 +2613,7 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                                <Image url="@../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
