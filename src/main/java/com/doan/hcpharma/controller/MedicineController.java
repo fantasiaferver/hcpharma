@@ -24,21 +24,6 @@ public class MedicineController implements Initializable {
     private TextArea taCongDung;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        kindOfMedicineChoiceBox.getItems().addAll("Kháng dị ứng"
-                ,"Kháng viêm"
-                ,"Ngừa thai"
-                ,"Cảm lạnh"
-                ,"Da liễu"
-                ,"Giảm cân"
-                ,"Mắt tai mũi"
-                ,"Tiêu hóa"
-                ,"Giảm đau hạ sốt"
-                ,"Thuốc cho Nam"
-               ,"Thuốc cho Nữ"
-                ,"Thuốc thần kinh"
-                ,"Thuốc xương khớp"
-                ,"Vitamin và khoáng chất");
-
     }
 
     ThuocDAO thuocDAO= null;

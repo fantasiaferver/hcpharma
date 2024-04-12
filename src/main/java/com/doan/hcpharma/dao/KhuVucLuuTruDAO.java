@@ -1,6 +1,7 @@
 package com.doan.hcpharma.dao;
 
 import com.doan.hcpharma.model.KhuVucLuuTruEntity;
+import com.doan.hcpharma.model.NhanVienEntity;
 import com.doan.hcpharma.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -95,4 +96,29 @@ public class KhuVucLuuTruDAO implements DAOInterface<KhuVucLuuTruEntity> {
         }
     }
 
+    public List<KhuVucLuuTruEntity> searchKVLTByNameOrID(String keyword) {
+        session = HibernateUtil.getSession();
+        try {
+            transaction = session.beginTransaction();
+            // Tạo câu truy vấn HQL
+            String hql = "FROM KhuVucLuuTruEntity WHERE maKv LIKE :keyword OR tenKv  LIKE :keyword";
+
+            // Tạo truy vấn từ câu HQL và thiết lập tham số
+            Query query = session.createQuery(hql, KhuVucLuuTruEntity.class);
+            query.setParameter("keyword", "%" + keyword + "%");
+
+            // Thực hiện truy vấn và trả về danh sách nhân viên tìm được
+            List<KhuVucLuuTruEntity> result = query.getResultList();
+            session.getTransaction().commit();
+            return result;
+        } catch (Exception e) {
+            if (session.getTransaction() != null) {
+                session.getTransaction().rollback();
+            }
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
 }

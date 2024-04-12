@@ -8,7 +8,7 @@ public class NhaCungCapEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "maNCC", nullable = false, length = 255)
-    private String      maNcc;
+    private String   maNcc;
     @Basic
     @Column(name = "tenNCC", nullable = true, length = 255)
     private String tenNcc;

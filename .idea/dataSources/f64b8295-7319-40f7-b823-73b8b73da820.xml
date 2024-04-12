@@ -1052,8 +1052,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="297" parent="1" name="qlnhathuoc">
       <Current>1</Current>
-      <IntrospectionTimestamp>2024-04-12.08:23:12</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-04-11.18:23:12</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-04-12.21:16:51</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-04-12.07:16:51</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="298" parent="1" name="socialweb">
@@ -1421,40 +1421,40 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="383" parent="320" name="xuatXu">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="383" parent="320" name="keDon">
+      <DasType>tinyint(1)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="384" parent="320" name="keDon">
-      <DasType>tinyint(1)|0s</DasType>
+    <column id="384" parent="320" name="donViTinh">
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="385" parent="320" name="donViTinh">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="385" parent="320" name="donGia">
+      <DasType>double|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="386" parent="320" name="donGia">
+    <column id="386" parent="320" name="donGiaNhap">
       <DasType>double|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="387" parent="320" name="donGiaNhap">
-      <DasType>double|0s</DasType>
+    <column id="387" parent="320" name="doiTuongSD">
+      <DasType>varchar(255)|0s</DasType>
       <Position>7</Position>
     </column>
-    <column id="388" parent="320" name="doiTuongSD">
+    <column id="388" parent="320" name="moTa">
       <DasType>varchar(255)|0s</DasType>
       <Position>8</Position>
     </column>
-    <column id="389" parent="320" name="moTa">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="389" parent="320" name="ngayHH">
+      <DasType>date|0s</DasType>
       <Position>9</Position>
     </column>
-    <column id="390" parent="320" name="ngayHH">
+    <column id="390" parent="320" name="ngaySX">
       <DasType>date|0s</DasType>
       <Position>10</Position>
     </column>
-    <column id="391" parent="320" name="ngaySX">
-      <DasType>date|0s</DasType>
+    <column id="391" parent="320" name="maNhaCungCap">
+      <DasType>varchar(255)|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="392" parent="320" name="maKhuVuc">
@@ -1465,30 +1465,39 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DasType>varchar(255)|0s</DasType>
       <Position>13</Position>
     </column>
-    <foreign-key id="394" parent="320" name="FKoc61f0jkg9sjbmd8qsj7proio">
+    <foreign-key id="394" parent="320" name="fk_thuoc_ncc">
+      <ColNames>maNhaCungCap</ColNames>
+      <RefColNames>maNCC</RefColNames>
+      <RefTableName>nhacungcap</RefTableName>
+    </foreign-key>
+    <foreign-key id="395" parent="320" name="FKoc61f0jkg9sjbmd8qsj7proio">
       <ColNames>maKhuVuc</ColNames>
       <RefColNames>maKV</RefColNames>
       <RefTableName>khuvucluutru</RefTableName>
     </foreign-key>
-    <foreign-key id="395" parent="320" name="FKdoohylbvh83q3rj41tb5dyff2">
+    <foreign-key id="396" parent="320" name="FKdoohylbvh83q3rj41tb5dyff2">
       <ColNames>maLoaiThuoc</ColNames>
       <RefColNames>maLoaiThuoc</RefColNames>
       <RefTableName>loaithuoc</RefTableName>
     </foreign-key>
-    <index id="396" parent="320" name="PRIMARY">
+    <index id="397" parent="320" name="PRIMARY">
       <ColNames>maThuoc</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="397" parent="320" name="FKoc61f0jkg9sjbmd8qsj7proio">
+    <index id="398" parent="320" name="fk_thuoc_ncc_idx">
+      <ColNames>maNhaCungCap</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="399" parent="320" name="FKoc61f0jkg9sjbmd8qsj7proio">
       <ColNames>maKhuVuc</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="398" parent="320" name="FKdoohylbvh83q3rj41tb5dyff2">
+    <index id="400" parent="320" name="FKdoohylbvh83q3rj41tb5dyff2">
       <ColNames>maLoaiThuoc</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="399" parent="320" name="PRIMARY">
+    <key id="401" parent="320" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

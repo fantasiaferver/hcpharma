@@ -38,8 +38,8 @@
         <property name="tenThuoc">
             <column name="tenThuoc" sql-type="varchar(255)" not-null="true"/>
         </property>
-        <property name="xuatXu">
-            <column name="xuatXu" sql-type="varchar(255)" not-null="true"/>
+        <property name="maNhaCungCap">
+            <column name="maNhaCungCap" sql-type="varchar(255)" not-null="true"/>
         </property>
         <property name="maKhuVuc">
             <column name="maKhuVuc" sql-type="varchar(255)" not-null="true"/>

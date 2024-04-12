@@ -1,22 +1,20 @@
 package com.doan.hcpharma.dao;
 
-
-import com.doan.hcpharma.model.NhanVienEntity;
-import com.doan.hcpharma.model.ThuocEntity;
+import com.doan.hcpharma.model.KhuVucLuuTruEntity;
+import com.doan.hcpharma.model.LoaiThuocEntity;
 import com.doan.hcpharma.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import javax.persistence.Query;
-import java.util.ArrayList;
 import java.util.List;
 
-public class ThuocDAO implements DAOInterface<ThuocEntity> {
+public class LoaiThuocDAO implements DAOInterface<LoaiThuocEntity>{
     Transaction transaction = null;
     Session session = null;
     @Override
-    public boolean addData(ThuocEntity data) {
+    public boolean addData(LoaiThuocEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -33,11 +31,11 @@ public class ThuocDAO implements DAOInterface<ThuocEntity> {
         } finally {
             session.close();
         }
-        return false;
+        return true;
     }
 
     @Override
-    public boolean updateData(ThuocEntity data) {
+    public boolean updateData(LoaiThuocEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -54,11 +52,11 @@ public class ThuocDAO implements DAOInterface<ThuocEntity> {
         } finally {
             session.close();
         }
-        return false;
+        return true;
     }
 
     @Override
-    public void removeData(ThuocEntity data) {
+    public void removeData(LoaiThuocEntity data) {
         session = HibernateUtil.getSession();
 
         try {
@@ -78,31 +76,38 @@ public class ThuocDAO implements DAOInterface<ThuocEntity> {
     }
 
     @Override
-    public List<ThuocEntity> getAll() {
-        List<ThuocEntity> li = new ArrayList<>();
-        try (Session session = HibernateUtil.getSession()) {
-            Query req = session.createQuery("FROM ThuocEntity");
-            li = req.getResultList();
-        } catch (HibernateException e) {
-            // Xử lý ngoại lệ nếu cần
-            e.printStackTrace();
-        }
+    public List<LoaiThuocEntity> getAll() {
+        session = HibernateUtil.getSession();
+        Query req = session.createQuery("FROM LoaiThuocEntity ");
+        List<LoaiThuocEntity> li= req.getResultList();
+        session.close();
         return li;
     }
 
-    public List<ThuocEntity> findThuocByNameOrKindOf(String keyword) {
-        session= HibernateUtil.getSession();
+    public List<String> getAllLoaiThuoc() {
+        session = HibernateUtil.getSession();
         try {
-            transaction =session.beginTransaction();
+            String hql = "SELECT DISTINCT lt.maLoaiThuoc FROM LoaiThuocEntity lt";
+            Query query = session.createQuery(hql, String.class);
+            return query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public List<LoaiThuocEntity> searchKVLTByNameOrID(String keyword) {
+        session = HibernateUtil.getSession();
+        try {
+            transaction = session.beginTransaction();
             // Tạo câu truy vấn HQL
-            String hql = "FROM ThuocEntity WHERE tenThuoc LIKE :keyword OR maLoaiThuoc  LIKE :keyword";
+            String hql = "FROM LoaiThuocEntity WHERE maLoaiThuoc LIKE :keyword OR tenLoaiThuoc  LIKE :keyword";
 
             // Tạo truy vấn từ câu HQL và thiết lập tham số
-            Query query = session.createQuery(hql, ThuocEntity.class);
+            Query query = session.createQuery(hql, LoaiThuocEntity.class);
             query.setParameter("keyword", "%" + keyword + "%");
 
             // Thực hiện truy vấn và trả về danh sách nhân viên tìm được
-            List<ThuocEntity> result = query.getResultList();
+            List<LoaiThuocEntity> result = query.getResultList();
             session.getTransaction().commit();
             return result;
         } catch (Exception e) {

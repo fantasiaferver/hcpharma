@@ -95,20 +95,15 @@ public class MainController implements Initializable {
     @FXML
     private void showMedicineTab() {
         showTab(medicineTab, "THUỐC");
-        kindOfMedicineChoiceBox.getItems().addAll("KDU"
-                , "KV"
-                , "NT"
-                , "CL"
-                , "DL"
-                , "GC"
-                , "MTM"
-                , "TH"
-                , "GDHS"
-                , "TCN"
-                , "TCN"
-                , "TTK"
-                , "TXK"
-                , "VVKC");
+        cbDVT.getItems().removeAll();
+        cbDVT.getItems().addAll("Hộp"
+                ,"Viên"
+                ,"Gói"
+                ,"Chai"
+                ,"Túi"
+                ,"Ống"
+                ,"Gam"
+                );
         showThuoc();
     }
 
@@ -171,7 +166,9 @@ public class MainController implements Initializable {
 
     @FXML
     private void showKindOfMedicineTab() {
+
         showTab(kindOfMedicineTab, "LOẠI THUỐC");
+        showLT();
     }
 
 
@@ -196,98 +193,6 @@ public class MainController implements Initializable {
         sellPrescriptionDrugsTab.setVisible(false);
         prescriptionDrugsTab.setVisible(true);
     }
-
-    @FXML
-    private void openAddEmployeeModel(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/add-employee-modal.fxml", "THÊM NHÂN VIÊN");
-    }
-
-    @FXML
-    private void openEditEmployeeModel(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/edit-employee-modal.fxml", "CẬP NHẬT NHÂN VIÊN");
-    }
-
-    @FXML
-    private void openDeleteEmployeePopup(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/delete-employee-popup.fxml", "XÓA NHÂN VIÊN");
-    }
-
-
-    @FXML
-    private ChoiceBox<String> sexChoiceBox;
-    @FXML
-    private TextField tfMaKH, tfTenKH, tfSdtKH;
-    @FXML
-    private DatePicker datePickerKH;
-
-    @FXML
-    private void openAddMedicineModal(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/add-medicine-modal.fxml", "THÊM THUỐC MỚI");
-
-    }
-
-    @FXML
-    private void openDetailMedicineModal(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/detail-medicine-modal.fxml", "THÔNG TIN CHI TIẾT THUỐC");
-    }
-
-    @FXML
-    private void openEditMedicineModal(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/edit-medicine-modal.fxml", "SỬA THÔNG TIN THUỐC");
-    }
-
-    @FXML
-    private void openDeleteMedicinePopup(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/delete-medicine-popup.fxml", "XÓA THUỐC");
-    }
-
-    @FXML
-    private void openAddStorageModel(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/add-storage-modal.fxml", "THÊM KHU VỰC LƯU TRỮ");
-    }
-
-    @FXML
-    private void openEditStorageModel(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/edit-storage-modal.fxml", "SỬA KHU VỰC LƯU TRỮ");
-    }
-
-    @FXML
-    private void openDeleteStoragePopup(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/delete-storage-popup.fxml", "XÓA KHU VỰC LƯU TRỮ");
-    }
-
-    @FXML
-    private void openAddCustomerModel(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/add-customer-modal.fxml", "THÊM KHÁCH HÀNG");
-    }
-
-    @FXML
-    private void openEditCustomerModel(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/edit-customer-modal.fxml", "SỬA KHÁCH HÀNG");
-    }
-
-    @FXML
-    private void openDeleteCustomerPopup(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/delete-customer-popup.fxml", "XÓA KHÁCH HÀNG");
-    }
-
-    @FXML
-    private void openAddSupplierModel(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/add-customer-modal.fxml", "THÊM NHÀ CUNG CẤP");
-    }
-
-    @FXML
-    private void openEditSupplierModel(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/edit-customer-modal.fxml", "SỬA NHÀ CUNG CẤP");
-    }
-
-    @FXML
-    private void openDeleteSupplierPopup(ActionEvent event) {
-        openModal("/com/doan/hcpharma/view/delete-customer-popup.fxml", "XÓA NHÀ CUNG CẤP");
-    }
-
-
-
 
 
     @Override
@@ -322,7 +227,7 @@ public class MainController implements Initializable {
     private TextField txtGiaNhap;
 
     @FXML
-    private ChoiceBox cbKVLT, cbDVT;
+    private ChoiceBox cbKVLT, cbDVT,cbNCC;
 
     @FXML
     private TextField txtMaThuoc;
@@ -333,8 +238,6 @@ public class MainController implements Initializable {
     @FXML
     private TextField txtTenThuoc;
 
-    @FXML
-    private TextField txtXuatXu;
 
     @FXML
     private TextField txtDoiTuongSD;
@@ -343,7 +246,7 @@ public class MainController implements Initializable {
     @FXML
     private TableView<ThuocEntity> tvThuoc;
     @FXML
-    private TableColumn<ThuocEntity, String> maT, tenT, loaiT, donVi, xuatXu, kvlt, moTa;
+    private TableColumn<ThuocEntity, String> maT, tenT, loaiT, donVi, nhaCungCap, kvlt, moTa;
     @FXML
     private TableColumn<ThuocEntity, Double> gia;
 
@@ -365,6 +268,7 @@ public class MainController implements Initializable {
     private GridPane gridPane;
 
     ThuocDAO thuocDAO = new ThuocDAO();
+    NhaCungCapDAO nhaCungCapDAO = new NhaCungCapDAO();
 
 
     //Show Thuốc lên bảng
@@ -374,6 +278,12 @@ public class MainController implements Initializable {
 
         List<String> khuVucList = khuVucLuuTruDAO.getAllKhuVuc(); // Lấy danh sách khu vực
         cbKVLT.setItems(FXCollections.observableList(khuVucList));
+
+        List<String> NccList = nhaCungCapDAO.getAllNCC(); // Lấy danh sách NCC
+        cbNCC.setItems(FXCollections.observableList(NccList));
+
+        List<String> LoaiThuocList = loaiThuocDAO.getAllLoaiThuoc(); // Lấy danh sách LT
+        kindOfMedicineChoiceBox.setItems(FXCollections.observableList(LoaiThuocList));
 
         if (tvThuoc == null) {
             System.err.println("TableView tvThuoc is null. Initialization failed.");
@@ -386,7 +296,7 @@ public class MainController implements Initializable {
             loaiT.setCellValueFactory(new PropertyValueFactory<>("maLoaiThuoc"));
             donVi.setCellValueFactory(new PropertyValueFactory<>("donViTinh"));
             gia.setCellValueFactory(new PropertyValueFactory<>("donGia"));
-            xuatXu.setCellValueFactory(new PropertyValueFactory<>("xuatXu"));
+            nhaCungCap.setCellValueFactory(new PropertyValueFactory<>("maNhaCungCap"));
             ngaySX.setCellValueFactory(new PropertyValueFactory<>("ngaySx"));
             ngayHH.setCellValueFactory(new PropertyValueFactory<>("ngayHh"));
             kvlt.setCellValueFactory(new PropertyValueFactory<>("maKhuVuc"));
@@ -409,14 +319,13 @@ public class MainController implements Initializable {
                             txtMaThuoc.setText(String.valueOf(selectedThuoc.getMaThuoc()));
                             txtTenThuoc.setText(selectedThuoc.getTenThuoc());
                             kindOfMedicineChoiceBox.setValue(selectedThuoc.getMaLoaiThuoc());
-
                             cbDVT.setValue(selectedThuoc.getDonViTinh());
                             txtTacDung.setText(selectedThuoc.getMoTa());
                             txtGiaNhap.setText(String.valueOf(selectedThuoc.getDonGiaNhap()));
                             txtGiaBan.setText(String.valueOf(selectedThuoc.getDonGia()));
                             checkBoxKeDon.setSelected(selectedThuoc.getKeDon());
                             cbKVLT.setValue(selectedThuoc.getMaKhuVuc());
-                            txtXuatXu.setText(selectedThuoc.getXuatXu());
+                            cbNCC.setValue(selectedThuoc.getMaNhaCungCap());
                             txtDoiTuongSD.setText(selectedThuoc.getDoiTuongSD());
 
                             if (selectedThuoc.getNgaySx() != null) {
@@ -458,19 +367,19 @@ public class MainController implements Initializable {
             // Retrieve information from the input fields on the form
             int maThuoc = Integer.parseInt(txtMaThuoc.getText());
             String tenThuoc = txtTenThuoc.getText();
-            String loaiThuoc = kindOfMedicineChoiceBox.getValue();
+            String loaiThuoc = String.valueOf(kindOfMedicineChoiceBox.getValue());
             boolean keDon = checkBoxKeDon.isSelected();
             String donViTinh = String.valueOf(cbDVT.getValue());
             Double giaNhap = Double.parseDouble(txtGiaNhap.getText());
             Double giaBan = Double.parseDouble(txtGiaBan.getText());
             String tacDung = txtTacDung.getText();
-            String xuatXu = txtXuatXu.getText();
+            String ncc = String.valueOf(cbNCC.getValue());
             String doiTuongSD = txtDoiTuongSD.getText();
             String kvlt = String.valueOf(cbKVLT.getValue());
             java.sql.Date ngaySX = java.sql.Date.valueOf(dateNSX.getValue()); // Get production date from DatePicker
             java.sql.Date ngayHH = java.sql.Date.valueOf(dateNHH.getValue()); // Get expiry date from DatePicker
 
-            if (tenThuoc.isEmpty() || loaiThuoc == null || donViTinh.isEmpty() || tacDung.isEmpty() || xuatXu.isEmpty() || doiTuongSD.isEmpty() || kvlt.isEmpty()) {
+            if (tenThuoc.isEmpty() || loaiThuoc == null || donViTinh.isEmpty() || tacDung.isEmpty() || ncc == null|| doiTuongSD.isEmpty() || kvlt.isEmpty()) {
                 showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
                 return;
             }
@@ -478,7 +387,7 @@ public class MainController implements Initializable {
 
 
             // Create a new medicine entity with soLuong property
-            ThuocEntity newThuoc = new ThuocEntity(maThuoc, tenThuoc, xuatXu, giaNhap, giaBan, donViTinh, tacDung, ngayHH, ngaySX, kvlt, loaiThuoc, keDon, doiTuongSD);
+            ThuocEntity newThuoc = new ThuocEntity(maThuoc, tenThuoc, ncc, giaNhap, giaBan, donViTinh, tacDung, ngayHH, ngaySX, kvlt, loaiThuoc, keDon, doiTuongSD);
 
             // Add the medicine to the database
             if (thuocDAO.addData(newThuoc)) {
@@ -490,8 +399,8 @@ public class MainController implements Initializable {
                 clearTextFieldMedicine();
                 showThuoc();
             }
-        } catch (NumberFormatException e) {
-            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đúng định dạng cho giá nhập và giá bán.");
+//        } catch (NumberFormatException e) {
+//            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đúng định dạng cho giá nhập và giá bán.");
         } catch (Exception e) {
             showAlert(Alert.AlertType.ERROR, "Lỗi", "Đã xảy ra lỗi khi thêm thuốc: " + e.getMessage());
         }
@@ -553,22 +462,22 @@ public class MainController implements Initializable {
         if (result.isPresent() && result.get() == ButtonType.OK) {
             // Lấy thông tin đã chỉnh sửa
             String tenThuoc = txtTenThuoc.getText();
-            String loaiThuoc = kindOfMedicineChoiceBox.getValue();
+            String loaiThuoc = String.valueOf(kindOfMedicineChoiceBox.getValue());
             boolean keDon = checkBoxKeDon.isSelected();
             String donViTinh = String.valueOf(cbDVT.getValue());
             Double giaNhap = Double.parseDouble(txtGiaNhap.getText());
             Double giaBan = Double.parseDouble(txtGiaBan.getText());
             String tacDung = txtTacDung.getText();
-            String xuatXu = txtXuatXu.getText();
+            String ncc = String.valueOf(cbNCC.getValue());
             String doiTuongSD = txtDoiTuongSD.getText();
             String kvlt = String.valueOf(cbKVLT.getValue());
-            java.sql.Date ngaySX = java.sql.Date.valueOf(dateNSX.getValue());
-            java.sql.Date ngayHH = java.sql.Date.valueOf(dateNHH.getValue());
+            java.sql.Date ngaySX = java.sql.Date.valueOf(dateNSX.getValue()); // Get production date from DatePicker
+            java.sql.Date ngayHH = java.sql.Date.valueOf(dateNHH.getValue()); // Get expiry date from DatePicker
 
             // Kiểm tra xem người dùng đã nhập đủ thông tin hay chưa
             if ( tenThuoc.isEmpty() || donViTinh.isEmpty() || ngaySX == null
                     || ngayHH == null || giaNhap == 0.0 || giaBan == 0.0 || kvlt.isEmpty()
-                    || tacDung.isEmpty() || xuatXu.isEmpty() || doiTuongSD.isEmpty()) {
+                    || tacDung.isEmpty() || ncc.isEmpty() || doiTuongSD.isEmpty()) {
                 showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
                 return;
             }
@@ -581,7 +490,7 @@ public class MainController implements Initializable {
             selectedThuoc.setDonGiaNhap(giaNhap);
             selectedThuoc.setDonGia(giaBan);
             selectedThuoc.setMoTa(tacDung);
-            selectedThuoc.setXuatXu(xuatXu);
+            selectedThuoc.setMaNhaCungCap(ncc);
             selectedThuoc.setDoiTuongSD(doiTuongSD);
             selectedThuoc.setMaKhuVuc(kvlt);
             selectedThuoc.setNgayHh(ngayHH);
@@ -594,7 +503,32 @@ public class MainController implements Initializable {
                 showThuoc();
             } else {
                 showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin thuốc thành công.");
+                clearTextFieldMedicine();
+                showThuoc();
             }
+        }
+    }
+
+    //Tìm kiếm thuốc theo tên và loại thuốc
+    @FXML
+    private TextField txtSearchThuocKeyword;
+    @FXML
+    private void searchMedicine(ActionEvent event) {
+        String keyword = txtSearchThuocKeyword.getText().trim();
+        if (!keyword.isEmpty()) {
+            // Gọi DAO để thực hiện tìm kiếm
+            List<ThuocEntity> resultList = thuocDAO.findThuocByNameOrKindOf(keyword);
+            if (resultList != null && !resultList.isEmpty()) {
+                // Nếu tìm thấy kết quả, hiển thị vào bảng
+                ObservableList<ThuocEntity> observableResultList = FXCollections.observableArrayList(resultList);
+                tvThuoc.setItems(observableResultList);
+            } else {
+                // Nếu không tìm thấy kết quả, hiển thị thông báo
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Không tìm thấy nhân viên nào phù hợp.");
+            }
+        } else {
+            // Nếu không nhập từ khóa, hiển thị thông báo
+            showAlert(Alert.AlertType.WARNING, "Cảnh báo", "Vui lòng nhập từ khóa để tìm kiếm.");
         }
     }
     // Xử lý button xóa rỗng
@@ -602,7 +536,7 @@ public class MainController implements Initializable {
     @FXML
     private void clearTextFieldMedicine() {
         txtMaThuoc.setText("");
-        txtXuatXu.setText("");
+        txtMaNCC.setText("");
         txtTenThuoc.setText("");
         txtTacDung.setText("");
         txtMaThuoc.setText("");
@@ -614,7 +548,175 @@ public class MainController implements Initializable {
         dateNSX.setValue(null);
         dateNHH.setValue(null);
     }
-//    /*----------------------------------------------------  KHU VỰC LƯU TRỮ ---------------------------------------------------------------*/
+    /*----------------------------------------------------  LOẠI THUỐC  ---------------------------------------------------------------*/
+    @FXML
+    private TableView<LoaiThuocEntity> tvLoaiThuoc;
+    @FXML
+    private TableColumn<LoaiThuocEntity,String> maLT,tenLT;
+    @FXML
+    private TextField txtMaLT,txtTenLT;
+
+    LoaiThuocDAO loaiThuocDAO=new LoaiThuocDAO();
+
+    //Show loại thuốc lên tv
+
+    public void showLT(){
+        if (tvLoaiThuoc == null) {
+            // Xử lý trường hợp tvThuoc là null
+            System.err.println("TableView tvLoaiThuoc is null. Initialization failed.");
+            return; // Không thực hiện các thao tác khác nếu tvKH là null
+        }
+        // Thiết lập giá trị của từng cột
+        try {
+            maLT.setCellValueFactory(new PropertyValueFactory<>("maLoaiThuoc"));
+            tenLT.setCellValueFactory(new PropertyValueFactory<>("tenLoaiThuoc"));
+
+            List<LoaiThuocEntity> li = loaiThuocDAO.getAll();
+
+            if (li != null && !li.isEmpty()) {
+                ObservableList<LoaiThuocEntity> allLT = FXCollections.observableList(li);
+                tvLoaiThuoc.setItems(allLT);
+
+
+                tvLoaiThuoc.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        LoaiThuocEntity selectedLT = tvLoaiThuoc.getSelectionModel().getSelectedItem();
+                        if (selectedLT != null) {
+                            txtMaLT.setText(selectedLT.getMaLoaiThuoc());
+                            txtMaLT.setEditable(false);
+                            txtTenLT.setText(selectedLT.getTenLoaiThuoc());
+                        }
+                    }
+                });
+
+
+            } else {
+                // Xử lý trường hợp danh sách rỗng
+                System.err.println("List of Loại Thuốc is null or empty. No data to display.");
+
+            }
+        } catch (Exception e) {
+            // Xử lý ngoại lệ nếu có bất kỳ lỗi nào xảy ra trong quá trình khởi tạo
+            System.err.println("An error occurred during initialization: " + e.getMessage());
+            e.printStackTrace(); // In stack trace để debug
+        }
+
+    }
+    // Them LT
+    public void addLT(){
+        // Lấy thông tin từ các trường nhập liệu trên form
+        String maLT = txtMaLT.getText();
+        String tenLT = txtTenLT.getText();
+
+
+        LoaiThuocEntity newLT = new LoaiThuocEntity(maLT,tenLT);
+
+        // Thêm NCC mới vào cơ sở dữ liệu
+        if (loaiThuocDAO.addData(newLT)) {
+            showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Thêm khu vực lưu trữ  thành công.");
+            clearFieldsLT();
+            showLT();
+        } else {
+            // Hiển thị thông báo lỗi nếu thêm không thành công
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Thêm khu vực lưu trữ thất bại.");
+        }
+    }
+    //BT Xóa LT
+    public void deleteLT() {
+        // Lấy KV được chọn từ TableView
+        LoaiThuocEntity selected = tvLoaiThuoc.getSelectionModel().getSelectedItem();
+
+        // Kiểm tra xem người dùng đã chọn KV để xóa chưa
+        if (selected == null) {
+            // Hiển thị thông báo lỗi nếu không có khách hàng nào được chọn
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText(null);
+            alert.setContentText("Vui lòng chọn một khu vực để xóa.");
+            alert.showAndWait();
+            return;
+        }
+
+        // Hiển thị hộp thoại xác nhận xóa
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setTitle("Xác nhận xóa");
+        confirmAlert.setHeaderText(null);
+        confirmAlert.setContentText("Bạn có chắc chắn muốn xóa khu vực này?");
+
+        // Kiểm tra xem người dùng đã chọn đồng ý hoặc hủy bỏ
+        ButtonType result = confirmAlert.showAndWait().orElse(ButtonType.CANCEL);
+        if (result == ButtonType.OK) {
+            // Nếu người dùng đồng ý, tiến hành xóa khách hàng
+            loaiThuocDAO.removeData(selected);
+
+            // Cập nhật TableView sau khi xóa
+            showLT();
+            clearFieldsLT();
+
+        }
+    }
+    //BT Sửa KV
+    // Button Sửa NCC
+    public void updateLT() {
+        // Lấy thông tin khu vực đã chọn từ bảng (nếu có)
+        LoaiThuocEntity selectedLT = tvLoaiThuoc.getSelectionModel().getSelectedItem();
+
+        // Kiểm tra xem đã chọn loại thuốc để sửa chưa
+        if (selectedLT == null) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng chọn khu vực để sửa.");
+            return;
+        }
+        // Lấy thông tin đã chỉnh sửa
+        String tenLT = txtTenLT.getText();
+
+        // Kiểm tra xem người dùng đã nhập đủ thông tin hay chưa
+        if (tenLT.isEmpty() ) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Vui lòng nhập đầy đủ thông tin.");
+            return;
+        }
+
+        // Cập nhật thông tin cho đối tượng selectedLT
+        selectedLT.setTenLoaiThuoc(tenLT);
+
+        // Cập nhật thông tin loại thuốc trong cơ sở dữ liệu
+        if (loaiThuocDAO.updateData(selectedLT)) {
+            showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Sửa thông tin khu vực lưu trữ thành công.");
+            showLT();
+            clearFieldsLT();
+        } else {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Sửa thông tin khu vực lưu trữ thất bại.");
+        }
+    }
+// Tìm kiếm LT
+    @FXML
+    private TextField txtSearchLTKeyword;
+    @FXML
+    private void searchLT(ActionEvent event) {
+        String keyword = txtSearchLTKeyword.getText().trim();
+        if (!keyword.isEmpty()) {
+            // Gọi DAO để thực hiện tìm kiếm
+            List<LoaiThuocEntity> resultList = loaiThuocDAO.searchKVLTByNameOrID(keyword);
+            if (resultList != null && !resultList.isEmpty()) {
+                // Nếu tìm thấy kết quả, hiển thị vào bảng
+                ObservableList<LoaiThuocEntity> observableResultList = FXCollections.observableArrayList(resultList);
+                tvLoaiThuoc.setItems(observableResultList);
+            } else {
+                // Nếu không tìm thấy kết quả, hiển thị thông báo
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Không tìm thấy nhân viên nào phù hợp.");
+            }
+        } else {
+            // Nếu không nhập từ khóa, hiển thị thông báo
+            showAlert(Alert.AlertType.WARNING, "Cảnh báo", "Vui lòng nhập từ khóa để tìm kiếm.");
+        }
+    }
+    //BT Xoa trăng LT
+    public void clearFieldsLT(){
+        txtMaLT.setText("");
+        txtMaLT.setEditable(true);
+        txtTenLT.setText("");
+    }
+    /*----------------------------------------------------  KHU VỰC LƯU TRỮ ---------------------------------------------------------------*/
     //Show Khu vực lên bảng
 
     @FXML
@@ -741,7 +843,7 @@ public class MainController implements Initializable {
             return;
         }
         // Lấy thông tin đã chỉnh sửa
-        String tenKV = txtTenNCC.getText();
+        String tenKV = txtTenKV.getText();
 
         // Kiểm tra xem người dùng đã nhập đủ thông tin hay chưa
         if (tenKV.isEmpty() ) {
@@ -761,6 +863,28 @@ public class MainController implements Initializable {
             showAlert(Alert.AlertType.ERROR, "Lỗi", "Sửa thông tin khu vực lưu trữ thất bại.");
         }
     }
+
+    @FXML
+    private TextField txtSearchKVLTKeyword;
+    @FXML
+    private void searchKVLT(ActionEvent event) {
+        String keyword = txtSearchKVLTKeyword.getText().trim();
+        if (!keyword.isEmpty()) {
+            // Gọi DAO để thực hiện tìm kiếm
+            List<KhuVucLuuTruEntity> resultList = khuVucLuuTruDAO.searchKVLTByNameOrID(keyword);
+            if (resultList != null && !resultList.isEmpty()) {
+                // Nếu tìm thấy kết quả, hiển thị vào bảng
+                ObservableList<KhuVucLuuTruEntity> observableResultList = FXCollections.observableArrayList(resultList);
+                tvKhuVucLuuTru.setItems(observableResultList);
+            } else {
+                // Nếu không tìm thấy kết quả, hiển thị thông báo
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Không tìm thấy nhân viên nào phù hợp.");
+            }
+        } else {
+            // Nếu không nhập từ khóa, hiển thị thông báo
+            showAlert(Alert.AlertType.WARNING, "Cảnh báo", "Vui lòng nhập từ khóa để tìm kiếm.");
+        }
+    }
     //BT Xoa trăng KV
     public void clearFieldsKVLT(){
         txtMaKV.setText("");
@@ -776,7 +900,7 @@ public class MainController implements Initializable {
     @FXML
     private TextField txtMaNCC,txtTenNCC,txtDiaChiNCC,txtSdtNCC;
 
-    NhaCungCapDAO nhaCungCapDAO=new NhaCungCapDAO();
+
     @FXML
     public void showNCC() {
         if (tvNCC == null) {
@@ -913,6 +1037,28 @@ public class MainController implements Initializable {
             // Cập nhật TableView sau khi xóa
             showNCC();
 
+        }
+    }
+
+    @FXML
+    private TextField txtSearchNCCKeyword;
+    @FXML
+    private void searchSupplier(ActionEvent event) {
+        String keyword = txtSearchNCCKeyword.getText().trim();
+        if (!keyword.isEmpty()) {
+            // Gọi DAO để thực hiện tìm kiếm
+            List<NhaCungCapEntity> resultList = nhaCungCapDAO.searchNCCByNameOrPhone(keyword);
+            if (resultList != null && !resultList.isEmpty()) {
+                // Nếu tìm thấy kết quả, hiển thị vào bảng
+                ObservableList<NhaCungCapEntity> observableResultList = FXCollections.observableArrayList(resultList);
+                tvNCC.setItems(observableResultList);
+            } else {
+                // Nếu không tìm thấy kết quả, hiển thị thông báo
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Không tìm thấy nhân viên nào phù hợp.");
+            }
+        } else {
+            // Nếu không nhập từ khóa, hiển thị thông báo
+            showAlert(Alert.AlertType.WARNING, "Cảnh báo", "Vui lòng nhập từ khóa để tìm kiếm.");
         }
     }
 
@@ -1114,7 +1260,7 @@ public class MainController implements Initializable {
         }
     }
 
-
+// Tìm kiếm khách hàng
     @FXML
     private TextField txtSearchKH;
     @FXML
@@ -1365,7 +1511,7 @@ public class MainController implements Initializable {
         }
     }
 
-    //Tìm nv theo sdt
+    //Tìm nv theo sdt và tên
     @FXML
     private TextField txtSearchNVKeyword;
     @FXML

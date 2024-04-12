@@ -2,6 +2,7 @@ package com.doan.hcpharma.model;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "loaithuoc", schema = "qlnhathuoc", catalog = "")
 public class LoaiThuocEntity {
@@ -12,6 +13,14 @@ public class LoaiThuocEntity {
     @Basic
     @Column(name = "tenLoaiThuoc", nullable = true, length = 255)
     private String tenLoaiThuoc;
+
+    public LoaiThuocEntity() {
+    }
+
+    public LoaiThuocEntity(String maLoaiThuoc, String tenLoaiThuoc) {
+        this.maLoaiThuoc = maLoaiThuoc;
+        this.tenLoaiThuoc = tenLoaiThuoc;
+    }
 
     public String getMaLoaiThuoc() {
         return maLoaiThuoc;

@@ -29,8 +29,17 @@ public class ThuocEntity {
     @Column(name = "tenThuoc", nullable = true, length = 255)
     private String tenThuoc;
     @Basic
-    @Column(name = "xuatXu", nullable = true, length = 255)
-    private String xuatXu;
+    @Column(name = "maNhaCungCap", nullable = true, length = 255)
+    private String maNhaCungCap;
+
+    public String getMaNhaCungCap() {
+        return maNhaCungCap;
+    }
+
+    public void setMaNhaCungCap(String maNhaCungCap) {
+        this.maNhaCungCap = maNhaCungCap;
+    }
+
     @Basic
     @Column(name = "maKhuVuc", nullable = true, length = 255)
     private String maKhuVuc;
@@ -97,7 +106,7 @@ public class ThuocEntity {
         this.moTa=congdung;
     }
 
-    public ThuocEntity(int maThuoc, String tenThuoc, String xuatXu, double donGiaNhap, double donGia, String donViTinh, String moTa, Date ngayHh, Date ngaySx, String maKhuVuc, String maLoaiThuoc, Boolean keDon, String doiTuongSD) {
+    public ThuocEntity(int maThuoc, String tenThuoc, String maNhaCungCap, double donGiaNhap, double donGia, String donViTinh, String moTa, Date ngayHh, Date ngaySx, String maKhuVuc, String maLoaiThuoc, Boolean keDon, String doiTuongSD) {
         this.maThuoc = maThuoc;
         this.donGia = donGia;
         this.donViTinh = donViTinh;
@@ -105,7 +114,7 @@ public class ThuocEntity {
         this.ngayHh = ngayHh;
         this.ngaySx = ngaySx;
         this.tenThuoc = tenThuoc;
-        this.xuatXu = xuatXu;
+        this.maNhaCungCap = maNhaCungCap;
         this.maKhuVuc = maKhuVuc;
         this.maLoaiThuoc = maLoaiThuoc;
         this.keDon = keDon;
@@ -165,13 +174,7 @@ public class ThuocEntity {
         this.tenThuoc = tenThuoc;
     }
 
-    public String getXuatXu() {
-        return xuatXu;
-    }
 
-    public void setXuatXu(String xuatXu) {
-        this.xuatXu = xuatXu;
-    }
 
     public String getMaKhuVuc() {
         return maKhuVuc;
