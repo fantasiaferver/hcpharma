@@ -178,6 +178,8 @@ public class MainController implements Initializable {
         sellNonPrescriptionDrugsTab.setVisible(true);
         sellPrescriptionDrugsTab.setVisible(false);
         prescriptionDrugsTab.setVisible(false);
+        showThuocSell();
+        showKHSell();
     }
 
     @FXML
@@ -217,6 +219,120 @@ public class MainController implements Initializable {
         alert.setContentText(content);
         alert.showAndWait();
     }
+
+    /*----------------------------------------------------  Hóa đơn bán thuôc  ---------------------------------------------------------------*/
+    @FXML
+    private TableView<ThuocEntity> tvSellThuoc;
+    @FXML
+    private TableColumn<ThuocEntity, String> maThuocSell, tenThuocSell, loaiThuocSell, kvltSell;
+    @FXML
+    private TableColumn<ThuocEntity, Double> giaBanThuocSell;
+
+    @FXML
+    private TableColumn<ThuocEntity, Date>  ngayHHThuocSell;
+
+    ThuocDAO thuocDAO = null;
+
+    @FXML
+    public void showThuocSell() {
+
+        if (tvSellThuoc == null) {
+            System.err.println("TableView tvThuoc is null. Initialization failed.");
+            return;
+        }
+
+        try {
+            maThuocSell.setCellValueFactory(new PropertyValueFactory<>("maThuoc"));
+            tenThuocSell.setCellValueFactory(new PropertyValueFactory<>("tenThuoc"));
+            loaiThuocSell.setCellValueFactory(new PropertyValueFactory<>("maLoaiThuoc"));
+  //          donVi.setCellValueFactory(new PropertyValueFactory<>("donViTinh"));
+            giaBanThuocSell.setCellValueFactory(new PropertyValueFactory<>("donGia"));
+            ngayHHThuocSell.setCellValueFactory(new PropertyValueFactory<>("ngayHh"));
+            kvltSell.setCellValueFactory(new PropertyValueFactory<>("maKhuVuc"));
+
+            thuocDAO = new ThuocDAO();
+            List<ThuocEntity> li = thuocDAO.getAll();
+
+
+
+            if (li != null && !li.isEmpty()) {
+                ObservableList<ThuocEntity> allThuoc = FXCollections.observableList(li);
+                tvSellThuoc.setItems(allThuoc);
+            } else {
+                System.err.println("List of Thuốc is null or empty. No data to display.");
+            }
+        } catch (Exception e) {
+            System.err.println("An error occurred during initialization: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    //Show KH lên bảng
+
+
+    @FXML
+    private TableView<KhachHangEntity> tvKhOrder;
+    @FXML
+    private TableColumn<KhachHangEntity, String> maKhOrder, tenKhOrder, sexKhOrder, sdtKhOrder  ;
+
+    @FXML
+    private TableColumn<KhachHangEntity, Date> ngaySinhKhOrder;
+    @FXML
+    private Label lblTenKHOrder;
+
+    KhachHangDAO khachHangDAO = null;
+
+    //Hiện khách hàng lên table
+    @FXML
+    public void showKHSell() {
+        if (tvKhOrder == null) {
+            // Xử lý trường hợp tvThuoc là null
+            System.err.println("TableView tvKH is null. Initialization failed.");
+            return; // Không thực hiện các thao tác khác nếu tvKH là null
+        }
+        // Thiết lập giá trị của từng cột
+        try {
+            maKhOrder.setCellValueFactory(new PropertyValueFactory<>("maKh"));
+            tenKhOrder.setCellValueFactory(new PropertyValueFactory<>("tenKh"));
+            sexKhOrder.setCellValueFactory(new PropertyValueFactory<>("gioiTinh"));
+            sdtKhOrder.setCellValueFactory(new PropertyValueFactory<>("sdtKh"));
+            ngaySinhKhOrder.setCellValueFactory(new PropertyValueFactory<>("ngaySinh"));
+
+            khachHangDAO= new KhachHangDAO();
+            List<KhachHangEntity> li = khachHangDAO.getAll();
+
+            if (li != null && !li.isEmpty()) {
+                ObservableList<KhachHangEntity> allKH = FXCollections.observableList(li);
+                tvKhOrder.setItems(allKH);
+
+
+                tvKhOrder.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        KhachHangEntity selectedKH = tvKhOrder.getSelectionModel().getSelectedItem();
+                        if (selectedKH != null) {
+                            lblTenKHOrder.setText(selectedKH.getTenKh());
+                        }
+                    }
+                });
+
+
+            } else {
+                // Xử lý trường hợp danh sách rỗng
+                System.err.println("List of Thuốc is null or empty. No data to display.");
+
+            }
+        } catch (Exception e) {
+            // Xử lý ngoại lệ nếu có bất kỳ lỗi nào xảy ra trong quá trình khởi tạo
+            System.err.println("An error occurred during initialization: " + e.getMessage());
+            e.printStackTrace(); // In stack trace để debug
+        }
+
+    }
+
+
+
+
     /*----------------------------------------------------  THUỐC  ---------------------------------------------------------------*/
     /*----------------------------------------------------------------------------------------------------------------------------*/
 
@@ -267,7 +383,6 @@ public class MainController implements Initializable {
     @FXML
     private GridPane gridPane;
 
-    ThuocDAO thuocDAO = new ThuocDAO();
     NhaCungCapDAO nhaCungCapDAO = new NhaCungCapDAO();
 
 
@@ -513,7 +628,7 @@ public class MainController implements Initializable {
     @FXML
     private TextField txtSearchThuocKeyword;
     @FXML
-    private void searchMedicine(ActionEvent event) {
+        private void searchMedicine(ActionEvent event) {
         String keyword = txtSearchThuocKeyword.getText().trim();
         if (!keyword.isEmpty()) {
             // Gọi DAO để thực hiện tìm kiếm
@@ -656,8 +771,7 @@ public class MainController implements Initializable {
 
         }
     }
-    //BT Sửa KV
-    // Button Sửa NCC
+    //BT Sửa LT
     public void updateLT() {
         // Lấy thông tin khu vực đã chọn từ bảng (nếu có)
         LoaiThuocEntity selectedLT = tvLoaiThuoc.getSelectionModel().getSelectedItem();
@@ -1093,7 +1207,7 @@ public class MainController implements Initializable {
     private DatePicker dateNgaySinhKH;
     @FXML
     private RadioButton rdBtnNam, rdBtnNu;
-    KhachHangDAO khachHangDAO = new KhachHangDAO();
+    ;
 
     //Hiện khách hàng lên table
     @FXML
@@ -1111,7 +1225,7 @@ public class MainController implements Initializable {
             sdtKH.setCellValueFactory(new PropertyValueFactory<>("sdtKh"));
             ngaySinhKH.setCellValueFactory(new PropertyValueFactory<>("ngaySinh"));
 
-
+            khachHangDAO= new KhachHangDAO();
             List<KhachHangEntity> li = khachHangDAO.getAll();
 
             if (li != null && !li.isEmpty()) {

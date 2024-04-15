@@ -82,66 +82,66 @@
                <left>
                   <AnchorPane prefHeight="710.0" prefWidth="199.0" styleClass="linear-background-color" stylesheets="@../style/admin-main-view.css" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane prefHeight="710.0" prefWidth="199.0" styleClass="linear-background-color" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                        <AnchorPane prefHeight="710.0" prefWidth="199.0" styleClass="linear-background-color" stylesheets="@../style/admin-main-view.css">
                            <children>
-                              <Button layoutX="5.0" layoutY="331.0" mnemonicParsing="false" onAction="#showMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thuốc" textFill="WHITE">
+                              <Button layoutX="5.0" layoutY="331.0" mnemonicParsing="false" onAction="#showMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thuốc" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="6.0" layoutY="376.0" mnemonicParsing="false" onAction="#showKindOfMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Loại thuốc" textFill="WHITE">
+                              <Button layoutX="6.0" layoutY="376.0" mnemonicParsing="false" onAction="#showKindOfMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Loại thuốc" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="4.0" layoutY="520.0" mnemonicParsing="false" onAction="#showCustomerTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Khách hàng" textFill="WHITE">
+                              <Button layoutX="4.0" layoutY="520.0" mnemonicParsing="false" onAction="#showCustomerTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Khách hàng" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="4.0" layoutY="566.0" mnemonicParsing="false" onAction="#showEmployeeTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Nhân viên" textFill="WHITE">
+                              <Button layoutX="4.0" layoutY="566.0" mnemonicParsing="false" onAction="#showEmployeeTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Nhân viên" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="4.0" layoutY="474.0" mnemonicParsing="false" onAction="#showSupplierTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Nhà cung cấp" textFill="WHITE">
+                              <Button layoutX="4.0" layoutY="474.0" mnemonicParsing="false" onAction="#showSupplierTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Nhà cung cấp" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="5.0" layoutY="235.0" mnemonicParsing="false" onAction="#showSellDrugsTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hóa đơn bán thuốc" textFill="WHITE">
+                              <Button layoutX="5.0" layoutY="235.0" mnemonicParsing="false" onAction="#showSellDrugsTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Hóa đơn bán thuốc" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="5.0" layoutY="280.0" mnemonicParsing="false" onAction="#showImportMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Hóa đơn nhập thuốc" textFill="WHITE">
+                              <Button layoutX="5.0" layoutY="280.0" mnemonicParsing="false" onAction="#showImportMedicineTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Hóa đơn nhập thuốc" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="6.0" layoutY="141.0" mnemonicParsing="false" onAction="#showOverviewTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Tổng quan" textFill="WHITE">
+                              <Button layoutX="6.0" layoutY="141.0" mnemonicParsing="false" onAction="#showOverviewTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Tổng quan" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="5.0" layoutY="618.0" mnemonicParsing="false" onAction="#showAccountTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Quản lý tài khoản" textFill="WHITE">
+                              <Button layoutX="5.0" layoutY="618.0" mnemonicParsing="false" onAction="#showAccountTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Quản lý tài khoản" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="5.0" layoutY="661.0" mnemonicParsing="false" onAction="#showPersonalInformationTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thông tin tài khoản" textFill="WHITE">
+                              <Button layoutX="5.0" layoutY="661.0" mnemonicParsing="false" onAction="#showPersonalInformationTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thông tin tài khoản" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="6.0" layoutY="185.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thống kê" textFill="WHITE">
+                              <Button layoutX="6.0" layoutY="185.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Thống kê" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Button>
                               <ImageView fitHeight="44.0" fitWidth="43.0" layoutX="81.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/user.png" />
+                                    <Image url="@../image/user.png" />
                                  </image>
                               </ImageView>
                               <Line endX="97.59999084472656" endY="-7.62939453125E-5" layoutX="100.0" layoutY="103.0" startX="-100.00001525878906" startY="-6.103515625E-5">
@@ -229,7 +229,7 @@
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="13.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../image/invoice%20(1).png" />
+                                    <Image url="@../image/invoice (1).png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="13.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
@@ -239,10 +239,10 @@
                               </ImageView>
                               <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="13.0" layoutY="668.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../image/user%20(2).png" />
+                                    <Image url="@../image/user (2).png" />
                                  </image>
                               </ImageView>
-                              <Button layoutX="4.0" layoutY="421.0" mnemonicParsing="false" onAction="#showStorageTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Khu vực lưu trữ" textFill="WHITE">
+                              <Button layoutX="4.0" layoutY="421.0" mnemonicParsing="false" onAction="#showStorageTab" prefHeight="37.0" prefWidth="187.0" styleClass="btn-main" stylesheets="@../style/admin-main-view.css" text="Khu vực lưu trữ" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -263,7 +263,7 @@
                      <children>
 
 <!--                        Overview Tab-->
-                        <AnchorPane fx:id="overviewTab" layoutX="225.0" layoutY="212.0" prefHeight="710.0" prefWidth="902.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="overviewTab" layoutX="225.0" layoutY="212.0" prefHeight="710.0" prefWidth="902.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="200.0" prefWidth="879.0" stylesheets="@../style/admin-main-view.css" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="14.0">
                                  <styleClass>
@@ -455,14 +455,14 @@
                                     <TableColumn fx:id="loaiT" prefWidth="63.999969482421875" text="Loại" />
                                     <TableColumn fx:id="donVi" prefWidth="77.60000610351562" text="Đơn vị" />
                                     <TableColumn fx:id="gia" prefWidth="129.5999755859375" text="Giá bán" />
-                                    <TableColumn prefWidth="186.39999389648438" text="Xuất xứ" fx:id="xuatXu" />
+                                    <TableColumn fx:id="nhaCungCap" prefWidth="186.39999389648438" text="Nhà cung cấp" />
                                     <TableColumn fx:id="ngaySX" prefWidth="173.60009765625" text="Ngày sản xuất" />
                                     <TableColumn fx:id="ngayHH" prefWidth="147.99993896484375" text="Ngày hết hạn" />
                                     <TableColumn fx:id="kvlt" minWidth="0.0" prefWidth="135.2001953125" text="Khu vực lưu trữ" />
                                     <TableColumn fx:id="keDon" prefWidth="147.2000732421875" text="Kê đơn" />
                                 </columns>
                               </TableView>
-                              <TextField layoutX="7.0" layoutY="14.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm thuốc">
+                              <TextField fx:id="txtSearchThuocKeyword" layoutX="7.0" layoutY="14.0" onAction="#searchMedicine" prefHeight="26.0" prefWidth="246.0" promptText="Tìm thuốc">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
@@ -599,7 +599,6 @@
                                           <TextField fx:id="txtMaThuoc" GridPane.columnIndex="2" />
                                           <TextField fx:id="txtTenThuoc" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                           <ChoiceBox fx:id="kindOfMedicineChoiceBox" prefHeight="26.0" prefWidth="151.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                          <TextField fx:id="txtXuatXu" prefHeight="26.0" prefWidth="309.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                                           <CheckBox fx:id="checkBoxKeDon" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                                           <Label GridPane.halignment="RIGHT" GridPane.rowIndex="6">
                                              <font>
@@ -613,6 +612,7 @@
                                           </Label>
                                           <TextField fx:id="txtDoiTuongSD" prefHeight="26.0" prefWidth="228.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                                           <ChoiceBox fx:id="cbDVT" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <ChoiceBox fx:id="cbNCC" prefHeight="25.0" prefWidth="309.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
                                     <GridPane layoutX="461.0" layoutY="41.0" prefHeight="258.0" prefWidth="417.0">
@@ -666,7 +666,7 @@
                                           <DatePicker fx:id="dateNSX" prefHeight="26.0" prefWidth="298.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                                           <DatePicker fx:id="dateNHH" prefHeight="26.0" prefWidth="310.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                                           <ChoiceBox fx:id="cbKVLT" prefWidth="150.0" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                                          <ChoiceBox prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <ChoiceBox fx:id="cbKVLT" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
                                  </children>
@@ -680,7 +680,7 @@
 <!--                        Storage Tab-->
                         <AnchorPane fx:id="storageTab" prefHeight="707.2" prefWidth="900.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm kho">
+                              <TextField fx:id="txtSearchKVLTKeyword" layoutX="13.0" layoutY="16.0" onAction="#searchKVLT" prefHeight="26.0" prefWidth="246.0" promptText="Tìm kho">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
@@ -1248,7 +1248,7 @@
                         </AnchorPane>
                         <AnchorPane fx:id="supplierTab" prefHeight="707.2" prefWidth="900.8" visible="false">
                            <children>
-                              <TextField layoutX="13.0" layoutY="16.0" prefHeight="26.0" prefWidth="246.0" promptText="Tìm nhà cung cấp">
+                              <TextField fx:id="txtSearchNCCKeyword" layoutX="13.0" layoutY="16.0" onAction="#searchSupplier" prefHeight="26.0" prefWidth="246.0" promptText="Tìm nhà cung cấp">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
@@ -1640,7 +1640,7 @@
                                                       <Font size="16.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="109.0" layoutY="10.0" text="Vãng lai">
+                                                <Label fx:id="lblTenKHOrder" layoutX="109.0" layoutY="10.0" text="Vãng lai">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
@@ -1665,13 +1665,13 @@
                                                       <TableColumn prefWidth="97.5999755859375" text="Chọn" />
                                                    </columns>
                                                 </TableView>
-                                                <TableView fx:id="tvKHSell" layoutX="8.0" layoutY="446.0" prefHeight="191.0" prefWidth="622.0">
+                                                <TableView fx:id="tvKhOrder" layoutX="8.0" layoutY="446.0" prefHeight="191.0" prefWidth="622.0">
                                                    <columns>
-                                                      <TableColumn prefWidth="75.0" text="Mã KH" />
-                                                      <TableColumn prefWidth="117.60003662109375" text="Tên" />
-                                                      <TableColumn prefWidth="110.39996337890625" text="Giới tính" />
-                                                      <TableColumn prefWidth="110.39996337890625" text="Số điện thoại" />
-                                                      <TableColumn prefWidth="122.4000244140625" text="Ngày sinh" />
+                                                      <TableColumn fx:id="maKhOrder" prefWidth="75.0" text="Mã KH" />
+                                                      <TableColumn fx:id="tenKhOrder" prefWidth="117.60003662109375" text="Tên" />
+                                                      <TableColumn fx:id="sexKhOrder" prefWidth="110.39996337890625" text="Giới tính" />
+                                                      <TableColumn fx:id="sdtKhOrder" prefWidth="110.39996337890625" text="Số điện thoại" />
+                                                      <TableColumn fx:id="ngaySinhKhOrder" prefWidth="122.4000244140625" text="Ngày sinh" />
                                                       <TableColumn prefWidth="82.4000244140625" text="Chọn" />
                                                    </columns>
                                                 </TableView>
@@ -2495,24 +2495,24 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="kindOfMedicineTab" prefHeight="707.2" prefWidth="900.8">
+                        <AnchorPane fx:id="kindOfMedicineTab" prefHeight="707.2" prefWidth="900.8" visible="false">
                            <children>
-                              <TextField layoutX="13.0" layoutY="16.0" prefHeight="27.0" prefWidth="223.0" promptText="Tìm loại thuốc">
+                              <TextField fx:id="txtSearchLTKeyword" layoutX="13.0" layoutY="16.0" onAction="#searchLT" prefHeight="27.0" prefWidth="223.0" promptText="Tìm loại thuốc">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
                               </TextField>
                               <AnchorPane layoutX="15.2" layoutY="73.0" prefHeight="643.0" prefWidth="251.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="15.0">
                                  <children>
-                                    <TableView prefHeight="643.0" prefWidth="251.0" styleClass="drop-shadow" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <TableView fx:id="tvLoaiThuoc" prefHeight="643.0" prefWidth="251.0" styleClass="drop-shadow" stylesheets="@../style/admin-main-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <columns>
-                                          <TableColumn prefWidth="83.99997079372406" resizable="false" text="Mã loại thuốc" />
-                                          <TableColumn prefWidth="163.9999542236328" resizable="false" text="Tên" />
+                                          <TableColumn fx:id="maLT" prefWidth="83.99997079372406" resizable="false" text="Mã loại thuốc" />
+                                          <TableColumn fx:id="tenLT" prefWidth="163.9999542236328" resizable="false" text="Tên" />
                                        </columns>
                                     </TableView>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="272.0" layoutY="56.0" prefHeight="651.0" prefWidth="1024.0" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css">
+                              <AnchorPane layoutX="272.0" layoutY="56.0" prefHeight="651.0" prefWidth="1024.0" stylesheets="@../style/admin-main-view.css">
                                  <children>
                                     <TableView layoutX="4.0" layoutY="280.8" prefHeight="334.0" prefWidth="433.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="281.0">
                                        <columns>
@@ -2534,7 +2534,7 @@
                                           <Font size="13.0" />
                                        </font>
                                     </TextField>
-                                    <Button layoutX="665.0" layoutY="169.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa" textFill="WHITE">
+                                    <Button layoutX="665.0" layoutY="169.0" mnemonicParsing="false" onAction="#deleteLT" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Xóa" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2546,12 +2546,12 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/delete.png" />
+                                                <Image url="@../image/delete.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button layoutX="399.0" layoutY="169.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Sửa " textFill="WHITE">
+                                    <Button layoutX="399.0" layoutY="169.0" mnemonicParsing="false" onAction="#updateLT" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Sửa " textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2563,7 +2563,7 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/edit-text.png" />
+                                                <Image url="@../image/edit-text.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -2589,19 +2589,19 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField GridPane.columnIndex="2">
+                                          <TextField fx:id="txtMaLT" GridPane.columnIndex="2">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
                                           </TextField>
-                                          <TextField prefWidth="221.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                          <TextField fx:id="txtTenLT" prefWidth="221.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
                                           </TextField>
                                        </children>
                                     </GridPane>
-                                    <Button alignment="BASELINE_CENTER" layoutX="266.0" layoutY="169.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Thêm" textFill="WHITE">
+                                    <Button alignment="BASELINE_CENTER" layoutX="266.0" layoutY="169.0" mnemonicParsing="false" onAction="#addLT" prefHeight="36.0" prefWidth="122.0" stylesheets="@../style/admin-main-view.css" text="Thêm" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2613,12 +2613,12 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/addition.png" />
+                                                <Image url="@../image/addition.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button alignment="BASELINE_CENTER" layoutX="532.0" layoutY="169.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="121.0" stylesheets="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
+                                    <Button alignment="BASELINE_CENTER" layoutX="532.0" layoutY="169.0" mnemonicParsing="false" onAction="#clearFieldsLT" prefHeight="36.0" prefWidth="121.0" stylesheets="@../style/admin-main-view.css" text="Xóa trắng" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -2630,7 +2630,7 @@
                                        <graphic>
                                           <ImageView>
                                              <image>
-                                                <Image url="@../../../../../../../../../tempproject/hcpharma/src/main/resources/com/doan/hcpharma/image/list.png" />
+                                                <Image url="@../image/list.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
