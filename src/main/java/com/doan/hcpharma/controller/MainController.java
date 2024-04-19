@@ -33,12 +33,19 @@ import java.util.*;
 
 public class MainController implements Initializable {
 
+
+//    ////////////////////////////////////CAROUSEL/////////////////////////////
+
+//    ////////////////////////////////////////////////////////////////////////
+
     @FXML
     private Label tabLable;
     private String currentTabName;
 
     @FXML
-    private AnchorPane overviewTab,medicineTab,storageTab,customerTab,employeeTab,supplierTab, sellDrugsTab, sellNonPrescriptionDrugsTab, sellPrescriptionDrugsTab, prescriptionDrugsTab, accountTab, personalInformationTab, importMedicineTab, kindOfMedicineTab;
+    private AnchorPane overviewTab,medicineTab,storageTab,customerTab,employeeTab,supplierTab,
+            sellDrugsTab, sellNonPrescriptionDrugsTab, sellPrescriptionDrugsTab, prescriptionDrugsTab, listOrderTab,
+            accountTab, personalInformationTab, importMedicineTab, kindOfMedicineTab, introduceTab;
 
     @FXML
     private Label dateTimeLabel;
@@ -83,6 +90,7 @@ public class MainController implements Initializable {
         personalInformationTab.setVisible(tab == personalInformationTab);
         importMedicineTab.setVisible(tab == importMedicineTab);
         kindOfMedicineTab.setVisible(tab == kindOfMedicineTab);
+        introduceTab.setVisible(false);
         currentTabName = tabName;
         updateTabLabel();
     }
@@ -178,6 +186,8 @@ public class MainController implements Initializable {
         sellNonPrescriptionDrugsTab.setVisible(true);
         sellPrescriptionDrugsTab.setVisible(false);
         prescriptionDrugsTab.setVisible(false);
+        listOrderTab.setVisible(false);
+
         showThuocSell();
         showKHSell();
     }
@@ -187,6 +197,7 @@ public class MainController implements Initializable {
         sellNonPrescriptionDrugsTab.setVisible(false);
         sellPrescriptionDrugsTab.setVisible(true);
         prescriptionDrugsTab.setVisible(false);
+        listOrderTab.setVisible(false);
     }
 
     @FXML
@@ -194,7 +205,20 @@ public class MainController implements Initializable {
         sellNonPrescriptionDrugsTab.setVisible(false);
         sellPrescriptionDrugsTab.setVisible(false);
         prescriptionDrugsTab.setVisible(true);
+        listOrderTab.setVisible(false);
+
     }
+
+    @FXML
+    private void showListOrderTab() {
+        sellNonPrescriptionDrugsTab.setVisible(false);
+        sellPrescriptionDrugsTab.setVisible(false);
+        prescriptionDrugsTab.setVisible(false);
+        listOrderTab.setVisible(true);
+
+    }
+
+
 
 
     @Override

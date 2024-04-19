@@ -10,6 +10,7 @@
     -fx-background-color: #E5E4E2;
 }
 
+
 .linear-blue-color {
     -fx-background-color: linear-gradient(#20A4F3,#182B3A);
 }
@@ -72,6 +73,16 @@
     -fx-text-fill: #294B29;
 }
 
+.menu-label {
+ -fx-text-fill: #fff;
+ -fx-cursor: hand;
+}
+
+.menu-label:hover {
+ -fx-text-fill: #C5C5C5;
+
+}
+
 .header-line-admin {
     -fx-border-color: linear-gradient(#009d80,#036759);
     -fx-border-width: 0 0 0 2px;
@@ -110,6 +121,30 @@
 .circle-image {
     -fx-background-radius: 100px;
 }
+
+
+
+
+.titled-pane > .title
+{
+    -fx-background-color: transparent;
+    -fx-padding: 5px 10px 0px 10px;
+}
+
+.titled-pane > *.content
+{
+    -fx-background-color: transparent;
+}
+
+.titled-pane > .title > .arrow-button .arrow
+{
+-fx-background-color: white;
+-fx-background-insets: 1 0 -1 0, 0;
+-fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+-fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+
 
 
 
